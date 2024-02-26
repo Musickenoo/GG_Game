@@ -3,6 +3,7 @@
 int main()
 {
     int i = 1;
+    int rela = 0;
     // กำหนดขนาด window
     sf::RenderWindow window(sf::VideoMode(1600, 900), "SFML works!");
 
@@ -17,6 +18,15 @@ int main()
     sf::Sprite back1image;
     back1image.setTexture(back1);
 
+    sf::Texture back2;
+    back2.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb2.jpg");
+
+    sf::Texture back3;
+    back3.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb3.jpg");
+
+    sf::Texture back4;
+    back4.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb6.PNG");
+
     // กำหนด starto
     sf::Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
     starto.setPosition(50, 50);
@@ -28,52 +38,46 @@ int main()
 
     // กำหนดคำถาม ques[]
     std::vector<std::string> ventiQuestions = {
-        "What is Venti's favorite food?",
-        "Where can Venti be found in Mondstadt?",
-        "What is Venti's true identity?",
-        "Why does Venti disguise himself?",
-        "How old is Venti?",
-        "What is Venti's connection to Barbatos?",
-        "What is Venti's vision?",
-        "What is Venti's Elemental Burst?",
-        "What is Venti's Elemental Skill?",
-        "What is Venti's constellation name?",
-        "What is Venti's role in Mondstadt?",
-        "What is Venti's relationship with Dvalin?",
-        "What is Venti's favorite pastime?",
-        "What is Venti's favorite song?",
-        "What is Venti's personality like?",
-        "What is Venti's relationship with the Traveler?",
-        "What is Venti's favorite instrument?",
-        "What is Venti's relationship with Jean?",
-        "What is Venti's connection to the Anemo Archon?",
-        "What is Venti's favorite hangout spot?",
-        "What is Venti's opinion on freedom?",
-        "What is Venti's role in the Archon War?",
-        "What is Venti's favorite drink?",
-        "What is Venti's favorite flower?",
-        "What is Venti's role in the Windblume Festival?",
-        "What is Venti's connection to Celestia?",
-        "What is Venti's favorite region?",
-        "What is Venti's relationship with Rosaria?",
-        "What is Venti's favorite place to nap?",
-        "What is Venti's opinion on Mondstadt's citizens?",
-        "What is Venti's role in the prologue of Genshin Impact?",
-        "What is Venti's favorite wind condition?",
-        "What is Venti's favorite holiday?",
-        "What is Venti's favorite book?",
-        "What is Venti's opinion on Stormterror's Lair?"
+        "สวัสดี! มีสิ่งใหม่ๆ ใน Mondstadt บ้างไหม?",
+        "เราเคยพบกันที่ไหนมาก่อนเหรอ?",
+        "คุณรู้สึกอย่างไรกับ Mondstadt วันนี้?",
+        "มีเหตุการณ์ใหม่ใน Mondstadt รึเปล่า?",
+        "คุณชอบสิ่งใดที่ทำให้คุณรู้สึกสนุกกับการผจญภัย?",
+        "วันนี้มีสิ่งอะไรที่น่าสนใจมากที่สุด?",
+        "สิ่งที่คุณอยากทำในวันนี้คืออะไร?"
+    };
+    std::vector<std::string> ventiAns = {
+        "ฉันเพิ่งสร้างเพลงใหม่ใน Mondstadt",
+        "ฉันคิดว่าเราพบกันที่ Temple of the Falcon",
+        "ฉันรู้สึกสดชื่นทุกครั้งที่อยู่ใน Mondstadt",
+        "มีเหตุการณ์ใหม่ที่ Stormterror's Lair",
+        "ฉันชอบการสืบสวนความลับของ Mondstadt",
+        "วันนี้ฉันได้เจอความท้าทายในการล่าสัตว์ประหลาด",
+        "ฉันอยากเล่นเพลงสดใน Mondstadt"
     };
 
     // สร้างอาร์เรย์ของ sf::Text จากประโยคคำถาม
-    std::vector<sf::Text> Vqus(35);
-    for (int i = 0; i < 35; ++i) {
-        Vqus[i].setFont(amazing);
-        Vqus[i].setString(ventiQuestions[i]); // กำหนดประโยคคำถามจากอาร์เรย์ ventiQuestions
-        Vqus[i].setCharacterSize(24);
-        Vqus[i].setPosition(50, 50 + i * 30); // ปรับตำแหน่งของแต่ละคำถาม
-        Vqus[i].setFillColor(sf::Color::White);
+    std::vector<sf::Text> Vqus;
+    for (const auto& question : ventiQuestions) {
+        sf::Text text;
+        text.setFont(Thai);
+        text.setString(question);
+        text.setCharacterSize(24);
+        text.setFillColor(sf::Color::Black);
+        Vqus.push_back(text);
     }
+
+    // สร้าง sf::Text สำหรับคำตอบของ Venti
+    std::vector<sf::Text> Vans;
+    for (const auto& answer : ventiAns) {
+        sf::Text text;
+        text.setFont(Thai);
+        text.setString(answer);
+        text.setCharacterSize(24);
+        text.setFillColor(sf::Color::Black);
+        Vans.push_back(text);
+    }
+
     // กำหนด choosen waifu
     sf::Text c1("choosen waifu", amazing, 80);
     c1.setPosition(1600, 900);
@@ -82,6 +86,10 @@ int main()
     sf::Text day("DAY " + std::to_string(i), amazing, 80);
     day.setPosition(1600, 900);
     day.setFillColor(sf::Color(0,255,0));
+
+    sf::Text relation("relation " + std::to_string(rela), amazing, 80);
+    relation.setPosition(1600, 900);
+    relation.setFillColor(sf::Color(0, 255, 0));
 
     // กำหนด buttonnoimage และ buttonckimage
     sf::Texture buttonno;
@@ -95,7 +103,7 @@ int main()
     sf::Sprite buttonckimage;
     buttonckimage.setTexture(buttonck);
     buttonckimage.setPosition(1200.f, 700.f);
-
+    //หน้าเลือกตัวตัวละคร
     sf::Texture waifu1Texture;
     waifu1Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\a_profile.jpg");
     sf::Sprite waifu1;
@@ -105,14 +113,23 @@ int main()
     sf::Texture waifu2Texture;
     waifu2Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\ac_profile.jpg");
 
-    sf::Texture back2;
-    back2.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb2.jpg");
+    // ภาพตัวแทนตัวละคร Venti
+    sf::Texture waifuface1Texture;
+    waifuface1Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\1a_normal.png");
+    sf::Texture waifuface2Texture;
+    waifuface2Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\2a_yes.png");
+    sf::Texture waifuface3Texture;
+    waifuface3Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\3a_sadd.png");
+    sf::Texture waifuface4Texture;
+    waifuface4Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\4a_cry.png");
+    sf::Texture waifuface5Texture;
+    waifuface5Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\5a_angry.png");
+    sf::Texture waifuface6Texture;
+    waifuface6Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\6a_happyy.png");
+    sf::Sprite waifu2;
+    waifu2.setTexture(waifu1Texture);
+    waifu2.setPosition(1600.f, 900.f);
 
-    sf::Texture back3;
-    back3.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb3.jpg");
-
-    sf::Texture back4;
-    back4.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb4.jpg");
 
 
     bool buttonHovered = false;
@@ -156,11 +173,11 @@ int main()
                         }
 
                         // เลื่อนตำแหน่ง waifu1 และ c1 ไปยังตำแหน่งที่ระบุ (1600, 900)
-                        waifu1.setPosition(1600.f, 900.f);
+                        waifu1.setPosition(700.f, 900.f);
                         c1.setPosition(1600, 900);
 
 
-                        for (; i <= 7; i++) {
+                        for (; i <= 1; i++) {
                             day.setPosition(700, 400);
                             back1image.setTexture(back3);
                             clock.restart();
@@ -170,12 +187,21 @@ int main()
                                 window.clear();
                                 window.draw(back1image);
                                 window.draw(day);
+                                window.draw(relation);
                                 window.draw(waifu1);
                                 window.display();
+                                
                             }
                             back1image.setTexture(back4);
                             day.setPosition(10, 10);
-                            day.setFillColor(sf::Color(0,0 ,0));
+                            day.setFillColor(sf::Color(0, 0, 0));
+                            relation.setPosition(1200, 10);
+                            relation.setFillColor(sf::Color(0, 0, 0));
+
+                            // เลื่อนตำแหน่ง waifu1 ไปยังตำแหน่งที่ระบุ (700, 900)
+                            waifu2.setPosition(700.f, 900.f);
+
+
                         }
                     }
                 }
@@ -210,7 +236,9 @@ int main()
         window.draw(back1image);
         window.draw(c1);
         window.draw(day);
+        window.draw(relation);
         window.draw(waifu1);
+        window.draw(waifu2);
         window.draw(starto);
         window.draw(buttonnoimage);
         window.display();
