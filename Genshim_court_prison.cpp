@@ -1,45 +1,15 @@
-#include <SFML/Graphics.hpp>
+#include "../GG_Game/event/choice.h"
 
 int main()
 {   
+    init();
     int j = 0;
     int i = 1,a = 0;
     int rela = 0;
-    // กำหนดขนาด window
-    sf::RenderWindow window(sf::VideoMode(1600, 900), "SFML works!");
-
-    sf::Font amazing;
-    amazing.loadFromFile("../GG_Game/Font/LoveDays-2v7Oe.ttf");
-    sf::Font Thai;
-    Thai.loadFromFile("../GG_Game/Font/EkkamaiNew-Regular.ttf");
-
-    // ภาพ back1image จะเป็นภาพอยู่หลังสุด
-    sf::Texture back1;
-    back1.loadFromFile("../GG_Game/image/background/testb1.jpg");
-    sf::Sprite back1image;
-    back1image.setTexture(back1);
-
-    sf::Texture back2;
-    back2.loadFromFile("../GG_Game/image/background/testb2.jpg");
-
-    sf::Texture back3;
-    back3.loadFromFile("../GG_Game/image/background/testb3.jpg");
-
-    sf::Texture back4;
-    back4.loadFromFile("../GG_Game/image/background/testb6.PNG");
-
-    // กำหนด starto
-    sf::Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
-    starto.setPosition(50, 50);
-    starto.setFillColor(sf::Color(255, 0, 108));
-
-    sf::Text thaiText("สวัสดีชาวโลก",Thai, 80);
-    thaiText.setFillColor(sf::Color(255, 0, 108));;
-    thaiText.setPosition(10, 10);
 
     // กำหนดคำถาม ques[]
 
-    std::vector<std::string> ventitalk = {
+    vector<string> ventitalk = {
     ".......................",
     "เราชื่อ Venti น่ะ",
     "คุณรู้สึกอย่างไรกับ Mondstadt วันนี้?",
@@ -56,7 +26,7 @@ int main()
     "มีแผนอะไรใหม่ๆ ในวันนี้บ้าง?"
     };
 
-    std::vector<std::string> Usertalk = {
+    vector<string> Usertalk = {
         "สวัสดี! เธอชื่ออะไรหรอ",
         "เคยเจอกันมาก่อนไหม",
         "รู้สึกดีมาก! อากาศดีมากเลย",
@@ -73,7 +43,7 @@ int main()
         "วานนี้เราจะไปเที่ยวที่ป่าดำกัน"
     };
 
-    std::vector<std::string> ventiQuestions = {
+    vector<string> ventiQuestions = {
         "เธอลองเดาซิว่าเจอกันครั้งแรกที่ไหน",
         "ความจำเธอดีนิ เครื่องเล่นดนตรีเราคืออะไรล่ะ",
         "เราเคยพบกันที่ไหนมาก่อนเหรอ?",
@@ -84,7 +54,7 @@ int main()
         "สิ่งที่คุณอยากทำในวันนี้คืออะไร?"
     };
 
-    std::vector<std::string> Useranswer1 = {
+    vector<string> Useranswer1 = {
         "Mondstadt",
         "Apple Cider",
         "ฉันคิดว่าเราพบกันที่ Temple of the Falcon",
@@ -95,7 +65,7 @@ int main()
         "ฉันอยากเล่นเพลงสดใน Mondstadt"
     };
 
-    std::vector<std::string> Useranswer2 = {
+    vector<string> Useranswer2 = {
         "Liyue Harbor",
         "Windwheel Aster",
         "ฉันคิดว่าเราพบกันที่ Temple of the Falcon",
@@ -106,7 +76,7 @@ int main()
         "ฉันอยากเล่นเพลงสดใน Mondstadt"
     };
     
-    std::vector<std::string> Useranswer3 = {
+    vector<string> Useranswer3 = {
         "Inazuma",
         "Lyre",
         "ฉันคิดว่าเราพบกันที่ Temple of the Falcon",
@@ -117,147 +87,143 @@ int main()
         "ฉันอยากเล่นเพลงสดใน Mondstadt"
     };
 
-    // สร้างอาร์เรย์ของ sf::Text จากประโยคคำถาม
-    std::vector<sf::Text> Vtalk;
+    // สร้างอาร์เรย์ของ Text จากประโยคคำถาม
+    vector<Text> Vtalk;
     for (const auto& question : ventitalk) {
-        sf::Text text;
+        Text text;
         text.setFont(Thai);
         text.setString(question);
         text.setCharacterSize(60);
         text.setPosition(1600, 900);
-        text.setFillColor(sf::Color::Black);
+        text.setFillColor(Color::Black);
         Vtalk.push_back(text);
     }
 
-    std::vector<sf::Text>  Utalk;
+    vector<Text>  Utalk;
     for (const auto& question : Usertalk) {
-        sf::Text text;
+        Text text;
         text.setFont(Thai);
         text.setString(question);
         text.setCharacterSize(60);
         text.setPosition(1600, 900);
-        text.setFillColor(sf::Color::Black);
+        text.setFillColor(Color::Black);
         Utalk.push_back(text);
     }
 
-    std::vector<sf::Text>  Vqus;
+    vector<Text>  Vqus;
     for (const auto& question : ventiQuestions) {
-        sf::Text text;
+        Text text;
         text.setFont(Thai);
         text.setString(question);
         text.setCharacterSize(60);
         text.setPosition(1600, 900);
-        text.setFillColor(sf::Color::Black);
+        text.setFillColor(Color::Black);
         Vqus.push_back(text);
     }
 
-    std::vector<sf::Text> Uans1;
+    vector<Text> Uans1;
     for (const auto& question : Useranswer1) {
-        sf::Text text;
+        Text text;
         text.setFont(Thai);
         text.setString(question);
         text.setCharacterSize(60);
         text.setPosition(1600, 900);
-        text.setFillColor(sf::Color::Black);
+        text.setFillColor(Color::Black);
         Uans1.push_back(text);
     }
 
-    std::vector<sf::Text> Uans2;
+    vector<Text> Uans2;
     for (const auto& question : Useranswer2) {
-        sf::Text text;
+        Text text;
         text.setFont(Thai);
         text.setString(question);
         text.setCharacterSize(60);
         text.setPosition(1600, 900);
-        text.setFillColor(sf::Color::Black);
+        text.setFillColor(Color::Black);
         Uans2.push_back(text);
     }
 
-    // สร้าง sf::Text สำหรับคำตอบของ Venti
-    std::vector<sf::Text> Uans3;
+    // สร้าง Text สำหรับคำตอบของ Venti
+    vector<Text> Uans3;
     for (const auto& answer : Useranswer2) {
-        sf::Text text;
+        Text text;
         text.setFont(Thai);
         text.setString(answer);
         text.setCharacterSize(24);
-        text.setFillColor(sf::Color::Black);
+        text.setFillColor(Color::Black);
         Uans3.push_back(text);
     }
 
     // กำหนด choosen waifu
-    sf::Text c1("choosen waifu", amazing, 80);
+    Text c1("choosen waifu", amazing, 80);
     c1.setPosition(1600, 900);
-    c1.setFillColor(sf::Color(255, 0, 108));
+    c1.setFillColor(Color(255, 0, 108));
 
-    sf::Text day("DAY " + std::to_string(i), amazing, 80);
+    Text day("DAY " + to_string(i), amazing, 80);
     day.setPosition(1600, 900);
-    day.setFillColor(sf::Color(0,255,0));
+    day.setFillColor(Color(0,255,0));
 
-    sf::Text relation("relation " + std::to_string(rela), amazing, 80);
+    Text relation("relation " + to_string(rela), amazing, 80);
     relation.setPosition(1600, 900);
-    relation.setFillColor(sf::Color(0, 255, 0));
+    relation.setFillColor(Color(0, 255, 0));
 
     // กำหนด buttonnoimage และ buttonckimage
-    sf::Texture buttonno;
+    Texture buttonno;
     buttonno.loadFromFile("../GG_Game/image/button/nclick1.jpg");
-    sf::Sprite buttonnoimage;
+    Sprite buttonnoimage;
     buttonnoimage.setTexture(buttonno);
     buttonnoimage.setPosition(1200.f, 700.f);
 
-    sf::Texture buttonck;
+    Texture buttonck;
     buttonck.loadFromFile("../GG_Game/image/button/click1.jpg");
-    sf::Sprite buttonckimage;
+    Sprite buttonckimage;
     buttonckimage.setTexture(buttonck);
     buttonckimage.setPosition(1200.f, 700.f);
 
     //หน้าเลือกตัวตัวละคร
-    sf::Texture waifu1Texture;
+    Texture waifu1Texture;
     waifu1Texture.loadFromFile("../GG_Game/image/test_charec/a_profile.jpg");
-    sf::Sprite waifu1;
+    Sprite waifu1;
     waifu1.setTexture(waifu1Texture);
     waifu1.setPosition(1600.f, 900.f);
 
-    sf::Texture waifu2Texture;
+    Texture waifu2Texture;
     waifu2Texture.loadFromFile("../GG_Game/image/test_charec/ac_profile.jpg");
 
     // ภาพตัวแทนตัวละคร Venti
-    sf::Texture waifuface1Texture;
+    Texture waifuface1Texture;
     waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
-    sf::Texture waifuface2Texture;
+    Texture waifuface2Texture;
     waifuface2Texture.loadFromFile("../GG_Game/image/test_charec/2a_yes.png");
-    sf::Texture waifuface3Texture;
+    Texture waifuface3Texture;
     waifuface3Texture.loadFromFile("../GG_Game/image/test_charec/3a_sadd.png");
-    sf::Texture waifuface4Texture;
+    Texture waifuface4Texture;
     waifuface4Texture.loadFromFile("../GG_Game/image/test_charec/4a_cry.png");
-    sf::Texture waifuface5Texture;
+    Texture waifuface5Texture;
     waifuface5Texture.loadFromFile("../GG_Game/image/test_charec/5a_angry.png");
-    sf::Texture waifuface6Texture;
+    Texture waifuface6Texture;
     waifuface6Texture.loadFromFile("../GG_Game/image/test_charec/6a_happyy.png");
-    sf::Sprite waifu2;
+    Sprite waifu2;
     waifu2.setTexture(waifuface1Texture);
     waifu2.setPosition(1600.f, 900.f);
     waifu2.setScale(1.7f, 1.8f);
 
-    sf::RectangleShape rectangle(sf::Vector2f(1600, 150));
-    rectangle.setPosition(1600, 900);
-    rectangle.setFillColor(sf::Color(200, 200, 200, 100));
-
     bool buttonHovered = false;
     int state = 0;
-    sf::Clock clock;
+    Clock clock;
     while (window.isOpen())
     {
-        sf::Event event;
+        Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == Event::Closed)
                 window.close();
-            if (event.type == sf::Event::MouseButtonPressed)
+            if (event.type == Event::MouseButtonPressed)
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                if (event.mouseButton.button == Mouse::Left)
                 {
                     // ตรวจสอบว่าคลิกที่ buttonckimage หรือไม่
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+                    Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
                     if (buttonckimage.getGlobalBounds().contains(mousePos))
                     {
                         starto.setPosition(1600, 900);
@@ -272,6 +238,7 @@ int main()
                         waifu1.setTexture(waifu2Texture);
 
                         // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
+                        clock.restart();
                         while (clock.getElapsedTime().asMilliseconds() < 3000)
                         {
                             // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
@@ -304,9 +271,9 @@ int main()
                         }
                         back1image.setTexture(back4);
                         day.setPosition(10, 10);
-                        day.setFillColor(sf::Color(0, 0, 0));
+                        day.setFillColor(Color(0, 0, 0));
                         relation.setPosition(1200, 10);
-                        relation.setFillColor(sf::Color(0, 0, 0));
+                        relation.setFillColor(Color(0, 0, 0));
 
                         waifu2.setPosition(350.f, -180.f);
                         clock.restart();
@@ -323,7 +290,7 @@ int main()
                         rectangle.setPosition(0, 750);
                         window.draw(rectangle);
                         Vtalk[j].setPosition(600, 750);
-                        Vtalk[j].setFillColor(sf::Color(0, 0, 0));
+                        Vtalk[j].setFillColor(Color(0, 0, 0));
                     }
                     else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
@@ -344,7 +311,7 @@ int main()
         }
 
         // ตรวจสอบว่าเมาส์อยู่ในพื้นที่ของ buttonnoimage หรือไม่
-        sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+        Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
         if (buttonnoimage.getGlobalBounds().contains(mousePos))
         {
             // เมาส์อยู่ในพื้นที่ของ buttonnoimage แสดง buttonckimage
