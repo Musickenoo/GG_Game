@@ -2,6 +2,12 @@
 #include <iostream>
 #include <vector>
 
+#include "../GG_Game/charecter/Venti.h"
+#include "../GG_Game/charecter/furina.h"
+#include "../GG_Game/charecter/nahida.h"
+#include "../GG_Game/charecter/raiden.h"
+#include "../GG_Game/charecter/zhongli.h"
+
 using namespace sf;
 using namespace std;
 
@@ -51,4 +57,5 @@ init::init(){
     Text thaiText("สวัสดีชาวโลก",Thai, 80);
     thaiText.setFillColor(Color(255, 0, 108));;
     thaiText.setPosition(10, 10);
+
 }
