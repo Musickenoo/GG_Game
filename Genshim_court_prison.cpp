@@ -1,92 +1,39 @@
-#include "../GG_Game/init.h"
 #include "../GG_Game/event/choice.h"
 
-int main()
-{   
-    init init;
-    int j = 0;
-    int i = 1,a = 0;
-    int rela = 0;
+int main(){
+    RenderWindow window(VideoMode(1600, 900), "SFML works!");
 
-    // สร้างอาร์เรย์ของ Text จากประโยคคำถาม
-    vector<Text> Vtalk;
-    for (const auto& question : ventitalk) {
-        Text text;
-        text.setFont(Thai);
-        text.setString(question);
-        text.setCharacterSize(60);
-        text.setPosition(1600, 900);
-        text.setFillColor(Color::Black);
-        Vtalk.push_back(text);
-    }
+    Font amazing = init.amazing;
+    Font Thai = init.Thai;
+    Texture back1 = init.back1;
+    Sprite back1image = init.back1image;
+    Texture back2 = init.back2;
+    Texture back3 = init.back3;
+    Texture back4 = init.back4;
 
-    vector<Text>  Utalk;
-    for (const auto& question : Usertalk) {
-        Text text;
-        text.setFont(Thai);
-        text.setString(question);
-        text.setCharacterSize(60);
-        text.setPosition(1600, 900);
-        text.setFillColor(Color::Black);
-        Utalk.push_back(text);
-    }
+    RectangleShape rectangle(Vector2f(1600, 150));
+    rectangle.setPosition(1600, 900);
+    rectangle.setFillColor(Color(200, 200, 200, 100));
 
-    vector<Text>  Vqus;
-    for (const auto& question : ventiQuestions) {
-        Text text;
-        text.setFont(init.Thai);
-        text.setString(question);
-        text.setCharacterSize(60);
-        text.setPosition(1600, 900);
-        text.setFillColor(Color::Black);
-        Vqus.push_back(text);
-    }
+    int relation = Relation();
 
-    vector<Text> Uans1;
-    for (const auto& question : Useranswer1) {
-        Text text;
-        text.setFont(Thai);
-        text.setString(question);
-        text.setCharacterSize(60);
-        text.setPosition(1600, 900);
-        text.setFillColor(Color::Black);
-        Uans1.push_back(text);
-    }
+    // กำหนด starto
+    Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
+    starto.setPosition(50, 50);
+    starto.setFillColor(Color(255, 0, 108));
 
-    vector<Text> Uans2;
-    for (const auto& question : Useranswer2) {
-        Text text;
-        text.setFont(Thai);
-        text.setString(question);
-        text.setCharacterSize(60);
-        text.setPosition(1600, 900);
-        text.setFillColor(Color::Black);
-        Uans2.push_back(text);
-    }
-
-    // สร้าง Text สำหรับคำตอบของ Venti
-    vector<Text> Uans3;
-    for (const auto& answer : Useranswer2) {
-        Text text;
-        text.setFont(Thai);
-        text.setString(answer);
-        text.setCharacterSize(24);
-        text.setFillColor(Color::Black);
-        Uans3.push_back(text);
-    }
+    Text thaiText("สวัสดีชาวโลก",Thai, 80);
+    thaiText.setFillColor(Color(255, 0, 108));;
+    thaiText.setPosition(10, 10);
 
     // กำหนด choosen waifu
     Text c1("choosen waifu", amazing, 80);
     c1.setPosition(1600, 900);
     c1.setFillColor(Color(255, 0, 108));
 
-    Text day("DAY " + to_string(i), amazing, 80);
+    Text day("DAY " + to_string(0), amazing, 80);
     day.setPosition(1600, 900);
     day.setFillColor(Color(0,255,0));
-
-    Text relation("relation " + to_string(rela), amazing, 80);
-    relation.setPosition(1600, 900);
-    relation.setFillColor(Color(0, 255, 0));
 
     // กำหนด buttonnoimage และ buttonckimage
     Texture buttonno;
@@ -185,7 +132,6 @@ int main()
                                 window.clear();
                                 window.draw(back1image);
                                 window.draw(day);
-                                window.draw(relation);
                                 window.draw(waifu1);
                                 window.display();
 
@@ -193,8 +139,6 @@ int main()
                         back1image.setTexture(back4);
                         day.setPosition(10, 10);
                         day.setFillColor(Color(0, 0, 0));
-                        relation.setPosition(1200, 10);
-                        relation.setFillColor(Color(0, 0, 0));
 
                         waifu2.setPosition(350.f, -180.f);
                         clock.restart();
@@ -203,15 +147,15 @@ int main()
                             window.clear();
                             window.draw(back1image);
                             window.draw(day);
-                            window.draw(relation);
                             window.draw(waifu2);
 
                             window.display();
                         }
+
                         rectangle.setPosition(0, 750);
                         window.draw(rectangle);
-                        Vtalk[j].setPosition(600, 750);
-                        Vtalk[j].setFillColor(Color(0, 0, 0));
+                        // Vtalk[j].setPosition(600, 750);
+                        // Vtalk[j].setFillColor(Color(0, 0, 0));
                     }
                     else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
@@ -221,7 +165,6 @@ int main()
                             window.clear();
                             window.draw(back1image);
                             window.draw(day);
-                            window.draw(relation);
                             window.draw(waifu2);
 
                             window.display();
@@ -259,16 +202,15 @@ int main()
         window.draw(back1image);
         window.draw(c1);
         window.draw(day);
-        window.draw(relation);
         window.draw(waifu1);
         window.draw(waifu2);
         window.draw(rectangle);
-        window.draw(Vtalk[j]);
-        window.draw(Utalk[j]);
-        window.draw(Vqus[j]);
-        window.draw(Uans1[j]);
-        window.draw(Uans2[j]);
-        window.draw(Uans3[j]);
+        // window.draw(Vtalk[j]);
+        // window.draw(Utalk[j]);
+        // window.draw(Vqus[j]);
+        // window.draw(Uans1[j]);
+        // window.draw(Uans2[j]);
+        // window.draw(Uans3[j]);
         window.draw(starto);
         window.draw(buttonnoimage);
         window.display();

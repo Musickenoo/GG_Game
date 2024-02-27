@@ -1,7 +1,15 @@
-vector<vector<string>> ventiTalk, userTalk, ventiQuestions;
-vector<vector<vector<string>>> userAnswers;
+#pragma once
 
-void ventiInit(){
+#include "../initGame.h"
+
+class Venti{
+    public:
+        vector<vector<string>> ventiTalk, userTalk, ventiQuestions;
+        vector<vector<vector<string>>> userAnswers;
+        Venti();
+};
+
+Venti::Venti(){
     ventiTalk = {
         // วันที่ 1
         {   
@@ -178,7 +186,7 @@ void ventiInit(){
 
         },
 
-        // วันที่ 2
+        // วันที่ 1
         {
             {
                 "Lumine", 
@@ -199,7 +207,7 @@ void ventiInit(){
             }
         },
 
-        // วันที่ 3
+        // วันที่ 1
         {
             {
                 "Jean", 
@@ -220,7 +228,7 @@ void ventiInit(){
             }
         },
 
-        // วันที่ 4
+        // วันที่ 1
         {
             {
                 "มาปลุกไง", 
@@ -241,7 +249,7 @@ void ventiInit(){
             }   
         },
 
-        // วันที่ 5
+        // วันที่ 1
         {
             {
                 "Vennessa วีรชนผู้ยิ่งใหญ่", 
@@ -262,7 +270,7 @@ void ventiInit(){
             }
         },
 
-        // วันที่ 6
+        // วันที่ 1
         {
             {
                 "มีอะไรก็เล่าให้ฟังก็ได้น่ะ", 
@@ -283,7 +291,7 @@ void ventiInit(){
             }
         },
 
-        // วันที่ 7
+        // วันที่ 1
         {
             {
                 "เอาเหล้าที่แพงที่สุดให้", 
