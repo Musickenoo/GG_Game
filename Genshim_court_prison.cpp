@@ -9,24 +9,24 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1600, 900), "SFML works!");
 
     sf::Font amazing;
-    amazing.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\Font\\LoveDays-2v7Oe.ttf");
+    amazing.loadFromFile("../GG_Game/Font/LoveDays-2v7Oe.ttf");
     sf::Font Thai;
-    Thai.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\Font\\EkkamaiNew-Regular.ttf");
+    Thai.loadFromFile("../GG_Game/Font/EkkamaiNew-Regular.ttf");
 
     // ภาพ back1image จะเป็นภาพอยู่หลังสุด
     sf::Texture back1;
-    back1.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb1.jpg");
+    back1.loadFromFile("../GG_Game/image/background/testb1.jpg");
     sf::Sprite back1image;
     back1image.setTexture(back1);
 
     sf::Texture back2;
-    back2.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb2.jpg");
+    back2.loadFromFile("../GG_Game/image/background/testb2.jpg");
 
     sf::Texture back3;
-    back3.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb3.jpg");
+    back3.loadFromFile("../GG_Game/image/background/testb3.jpg");
 
     sf::Texture back4;
-    back4.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\background\\testb6.PNG");
+    back4.loadFromFile("../GG_Game/image/background/testb6.PNG");
 
     // กำหนด starto
     sf::Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
@@ -40,7 +40,7 @@ int main()
     // กำหนดคำถาม ques[]
 
     std::vector<std::string> ventitalk = {
-    "....................",
+    ".......................",
     "เราชื่อ Venti น่ะ",
     "คุณรู้สึกอย่างไรกับ Mondstadt วันนี้?",
     "มีเหตุการณ์ใหม่ใน Mondstadt รึเปล่า?",
@@ -199,40 +199,40 @@ int main()
 
     // กำหนด buttonnoimage และ buttonckimage
     sf::Texture buttonno;
-    buttonno.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\button\\nclick1.jpg");
+    buttonno.loadFromFile("../GG_Game/image/button/nclick1.jpg");
     sf::Sprite buttonnoimage;
     buttonnoimage.setTexture(buttonno);
     buttonnoimage.setPosition(1200.f, 700.f);
 
     sf::Texture buttonck;
-    buttonck.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\button\\click1.jpg");
+    buttonck.loadFromFile("../GG_Game/image/button/click1.jpg");
     sf::Sprite buttonckimage;
     buttonckimage.setTexture(buttonck);
     buttonckimage.setPosition(1200.f, 700.f);
 
     //หน้าเลือกตัวตัวละคร
     sf::Texture waifu1Texture;
-    waifu1Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\a_profile.jpg");
+    waifu1Texture.loadFromFile("../GG_Game/image/test_charec/a_profile.jpg");
     sf::Sprite waifu1;
     waifu1.setTexture(waifu1Texture);
     waifu1.setPosition(1600.f, 900.f);
 
     sf::Texture waifu2Texture;
-    waifu2Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\ac_profile.jpg");
+    waifu2Texture.loadFromFile("../GG_Game/image/test_charec/ac_profile.jpg");
 
     // ภาพตัวแทนตัวละคร Venti
     sf::Texture waifuface1Texture;
-    waifuface1Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\IMG_0273.PNG");
+    waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
     sf::Texture waifuface2Texture;
-    waifuface2Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\2a_yes.png");
+    waifuface2Texture.loadFromFile("../GG_Game/image/test_charec/2a_yes.png");
     sf::Texture waifuface3Texture;
-    waifuface3Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\3a_sadd.png");
+    waifuface3Texture.loadFromFile("../GG_Game/image/test_charec/3a_sadd.png");
     sf::Texture waifuface4Texture;
-    waifuface4Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\4a_cry.png");
+    waifuface4Texture.loadFromFile("../GG_Game/image/test_charec/4a_cry.png");
     sf::Texture waifuface5Texture;
-    waifuface5Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\5a_angry.png");
+    waifuface5Texture.loadFromFile("../GG_Game/image/test_charec/5a_angry.png");
     sf::Texture waifuface6Texture;
-    waifuface6Texture.loadFromFile("D:\\testD\\Genshim_court_prison\\GG_Game\\image\\test_charec\\6a_happyy.png");
+    waifuface6Texture.loadFromFile("../GG_Game/image/test_charec/6a_happyy.png");
     sf::Sprite waifu2;
     waifu2.setTexture(waifuface1Texture);
     waifu2.setPosition(1600.f, 900.f);
@@ -244,6 +244,7 @@ int main()
 
     bool buttonHovered = false;
     int state = 0;
+    sf::Clock clock;
     while (window.isOpen())
     {
         sf::Event event;
@@ -271,7 +272,6 @@ int main()
                         waifu1.setTexture(waifu2Texture);
 
                         // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
-                        sf::Clock clock;
                         while (clock.getElapsedTime().asMilliseconds() < 3000)
                         {
                             // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
@@ -326,12 +326,18 @@ int main()
                         Vtalk[j].setFillColor(sf::Color(0, 0, 0));
                     }
                     else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
-                    {
-                        // เปลี่ยนรูป waifu1Texture เป็น waifu12Texture
-                        
+                    {   
+                        clock.restart();
+                        while (clock.getElapsedTime().asMilliseconds() < 3000)
+                        {
+                            window.clear();
+                            window.draw(back1image);
+                            window.draw(day);
+                            window.draw(relation);
+                            window.draw(waifu2);
 
-
-                        
+                            window.display();
+                        }
                     }
                 }
             }
