@@ -6,9 +6,8 @@ class Venti{
     public:
         Venti();
         vector<vector<string>> ventiTalk, userTalk, ventiQuestions;
-        vector<vector<vector<string>>> userAnswers;
-        vector<vector<vector<string>>> ventiaction;
-        vector<vector<vector<int>>> userrelation;
+        vector<vector<vector<string>>> userAnswers, ventiAction;
+        vector<vector<vector<int>>> actionRelation;
         Texture waifuface1Texture;
         Texture waifuface2Texture;
         Texture waifuface3Texture;
@@ -332,7 +331,7 @@ Venti::Venti(){
         }
 
     };
-    ventiaction = {
+    ventiAction = {
         // วันแรก
         {
             {"Venti :นายจำได้ด้วยหรอเนี่ยเก่งจัง งั้น","Venti :นี่นายจำสลับกับเพื่อนฉันหรอ","Venti :ฉันไม่ได้อยู่ inazuma สักหน่อย"},
@@ -382,7 +381,7 @@ Venti::Venti(){
             {"Venti :เช่นกัน","คุณได้ ending เคลียร์ใจ", "คุณได้ ending  escape"}
         }
     };
-    userrelation = {
+    actionRelation = {
         // วันแรก
         {
             {5, 0, 0},

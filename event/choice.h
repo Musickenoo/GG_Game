@@ -10,20 +10,30 @@
 // Get Class
 initGame init;
 
+vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
+vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
+vector<vector<vector<int>>> actionRelation;
+
 Texture waifuface1Texture;
 Texture waifuface2Texture;
 Texture waifuface3Texture;
 Texture waifuface4Texture;
 Texture waifuface5Texture;
 Texture waifuface6Texture;
-Sprite waifu2;
-vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
-vector<vector<vector<string>>> userAnswerMessage;
 
-// Variable
+Sprite waifu2;
+
 int Charactor = 'Venti';
 
+// Variable
+
 int Relation() {
+    
+    // Variable
+    int finalDay = 7, endBasicTalk = 2, relation = 0;
+    Text text;
+    string s;
+
     // ดึงค่าข้อมูลตัวละคร
     Venti Venti;
 
@@ -32,6 +42,8 @@ int Relation() {
                         userTalkMessege          = Venti.userTalk; 
                         charactorQuestionMessage = Venti.ventiQuestions;
                         userAnswerMessage        = Venti.userAnswers;
+                        charactorActionMessage   = Venti.ventiAction;
+                        actionRelation           = Venti.actionRelation;
                         waifuface1Texture        = Venti.waifuface1Texture; 
                         waifuface2Texture        = Venti.waifuface2Texture;
                         waifuface3Texture        = Venti.waifuface3Texture;
@@ -46,11 +58,6 @@ int Relation() {
     waifu2.setPosition(1600.f, 900.f);
     waifu2.setScale(1.7f, 1.8f);
 
-
-    // Variable
-    int finalDay = 7, endBasicTalk = 2, relation = 0;
-    Text text;
-    string s;
 
     // สร้างอาร์เรย์ของ Text จากประโยคคำถาม
     vector<vector<Text>> charactorTalk(charactorTalkMessege.size()); // Resize the vector
@@ -108,24 +115,50 @@ int Relation() {
         }
     }
 
+    vector<vector<vector<Text>>> charactorAction(charactorActionMessage.size());  // Resize the vector
+    for (int Day = 0; Day < charactorActionMessage.size(); Day++) {
+        charactorAction[Day].resize(charactorActionMessage[Day].size());  // Resize the inner vector
+        for (int Question = 0; Question < charactorActionMessage[Day].size(); Question++) {
+            for (int Action = 0; Action < charactorActionMessage[Day][Question].size(); Action++) {
+                s = charactorActionMessage[Day][Question][Action];
+                text.setFont(init.Thai);
+                text.setString(s);
+                text.setCharacterSize(60);
+                text.setPosition(1600, 900);
+                text.setFillColor(Color::Black);
+                charactorAction[Day][Question].push_back(text);
+            }
+        }
+    }
+
     for (int Day = 0; Day < finalDay; Day++) {
         for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++) {
-            cout << charactorTalkMessege[Day][basicTalk] << endl;
-            cout << userTalkMessege[Day][basicTalk] << endl;
+            cout << charactorTalkMessege[Day][basicTalk] << endl; // เทส
+            cout << userTalkMessege[Day][basicTalk] << endl; // เทส
         }
         for (int Question = 0; Question < charactorQuestionMessage[Day].size(); Question++){   
-            cout << endl << "คำถามที่ " << Question+1 << " " << charactorQuestionMessage[Day][Question] << endl;
+            cout << endl << "คำถามที่ " << Question+1 << " " << charactorQuestionMessage[Day][Question] << endl; // เทส
             for (int Answer = 0; Answer < userAnswerMessage[Day][Question].size(); Answer++){
-                cout << "คำตอบที่ " << Answer+1 << " " << userAnswerMessage[Day][Question][Answer] << endl;
+                cout << "คำตอบที่ " << Answer+1 << " " << userAnswerMessage[Day][Question][Answer] << endl; // เทส
             }
             while (true) {
                 // ทำ function กดเลือกช้อย
-                break;
+                if (เลือกคำตอบแล้ว){   
+                    int action; 
+                    if(เลือกคำตอบที่ 1) action = 0;
+                    if(เลือกคำตอบที่ 2) action = 1;
+                    if(เลือกคำตอบที่ 3) action = 2;
+                    // put text ขึ้นจอตรงนี้
+                    cout << charactorActionMessage[Day][Question][action]; // เทส
+                    relation += actionRelation[Day][Question][action];
+                    break;
+                }
+                break; // เทส
             }
             cin.get(); // ตัวเทส
         }
-        cout << endl << charactorTalkMessege[Day][endBasicTalk] << endl;
-        cout << userTalkMessege[Day][endBasicTalk] << endl << endl;
+        cout << endl << charactorTalkMessege[Day][endBasicTalk] << endl; // เทส
+        cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส
     }
     return relation;
 }
