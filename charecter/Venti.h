@@ -4,12 +4,29 @@
 
 class Venti{
     public:
+        Venti();
         vector<vector<string>> ventiTalk, userTalk, ventiQuestions;
         vector<vector<vector<string>>> userAnswers;
-        Venti();
+        Texture waifuface1Texture;
+        Texture waifuface2Texture;
+        Texture waifuface3Texture;
+        Texture waifuface4Texture;
+        Texture waifuface5Texture;
+        Texture waifuface6Texture;
+        Sprite waifu2;
 };
 
+
 Venti::Venti(){
+    
+    // ภาพตัวแทนตัวละคร Venti
+    waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
+    waifuface2Texture.loadFromFile("../GG_Game/image/test_charec/2a_yes.png");
+    waifuface3Texture.loadFromFile("../GG_Game/image/test_charec/3a_sadd.png");
+    waifuface4Texture.loadFromFile("../GG_Game/image/test_charec/4a_cry.png");
+    waifuface5Texture.loadFromFile("../GG_Game/image/test_charec/5a_angry.png");
+    waifuface6Texture.loadFromFile("../GG_Game/image/test_charec/6a_happyy.png");
+
     ventiTalk = {
         // วันที่ 1
         {   
@@ -66,14 +83,14 @@ Venti::Venti(){
         {
             "คุณ : สวัสดี! เธอชื่ออะไรหรอ",
             "คุณ : เคยเจอกันมาก่อนไหม",
-            "คุณ :ยินดีที่ได้อยู่จักอีกรอบน่ะ"
+            "คุณ : ยินดีที่ได้อยู่จักอีกรอบน่ะ"
         },
         
         // วันที่ 2
         {
             "คุณ : สงสัยอย่างหนึ่ง ทำไมถึงมาอยู่ในคุกนี้ได้ล่ะ",
             "Venti :แถมบอกว่ามีเหล้าให้ในคุกแค่นั้นก็เพียงพอแล้ว-3-",
-            "คุณ :เธอนี้แปลกดีเหมือนกันไว้ชวนไปบางขวานน่ะ"
+            "คุณ : เธอนี้แปลกดีเหมือนกันไว้ชวนไปบางขวานน่ะ"
         },
         
         // วันที่ 3

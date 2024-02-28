@@ -1,6 +1,8 @@
 #include "../GG_Game/event/choice.h"
 
 int main(){
+    int relation = Relation();
+    
     RenderWindow window(VideoMode(1600, 900), "SFML works!");
 
     Font amazing = init.amazing;
@@ -15,7 +17,6 @@ int main(){
     rectangle.setPosition(1600, 900);
     rectangle.setFillColor(Color(200, 200, 200, 100));
 
-    int relation = Relation();
 
     // กำหนด starto
     Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
@@ -58,24 +59,6 @@ int main(){
     Texture waifu2Texture;
     waifu2Texture.loadFromFile("../GG_Game/image/test_charec/ac_profile.jpg");
 
-    // ภาพตัวแทนตัวละคร Venti
-    Texture waifuface1Texture;
-    waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
-    Texture waifuface2Texture;
-    waifuface2Texture.loadFromFile("../GG_Game/image/test_charec/2a_yes.png");
-    Texture waifuface3Texture;
-    waifuface3Texture.loadFromFile("../GG_Game/image/test_charec/3a_sadd.png");
-    Texture waifuface4Texture;
-    waifuface4Texture.loadFromFile("../GG_Game/image/test_charec/4a_cry.png");
-    Texture waifuface5Texture;
-    waifuface5Texture.loadFromFile("../GG_Game/image/test_charec/5a_angry.png");
-    Texture waifuface6Texture;
-    waifuface6Texture.loadFromFile("../GG_Game/image/test_charec/6a_happyy.png");
-    Sprite waifu2;
-    waifu2.setTexture(waifuface1Texture);
-    waifu2.setPosition(1600.f, 900.f);
-    waifu2.setScale(1.7f, 1.8f);
-
     bool buttonHovered = false;
     int state = 0;
     Clock clock;
@@ -107,7 +90,7 @@ int main(){
 
                         // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
                         clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 3000)
+                        while (clock.getElapsedTime().asMilliseconds() < 1000)
                         {
                             // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
                             window.clear();
@@ -142,7 +125,7 @@ int main(){
 
                         waifu2.setPosition(350.f, -180.f);
                         clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 3000)
+                        while (clock.getElapsedTime().asMilliseconds() < 1000)
                         {
                             window.clear();
                             window.draw(back1image);
@@ -160,7 +143,7 @@ int main(){
                     else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
                         clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 3000)
+                        while (clock.getElapsedTime().asMilliseconds() < 1000)
                         {
                             window.clear();
                             window.draw(back1image);
