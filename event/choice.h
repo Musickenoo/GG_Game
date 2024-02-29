@@ -156,7 +156,7 @@ int Relation() {
     for (int Day = 0; Day < finalDay; Day++) {
         for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++){ 
             while (true) {
-                
+                break;
             }
         }
     
