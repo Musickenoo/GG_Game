@@ -143,15 +143,15 @@ int Relation() {
             }
             while (true) {
                 // ทำ function กดเลือกช้อย
-                /*if (เลือกคำตอบแล้ว){   
+                if (เลือกคำตอบแล้ว){   
                     int action; 
-                    if(เลือกคำตอบที่ 1) action = 0;
-                    if(เลือกคำตอบที่ 2) action = 1;
-                    if(เลือกคำตอบที่ 3) action = 2;
+                    //if(เลือกคำตอบที่ 1) action = 0;
+                    //if(เลือกคำตอบที่ 2) action = 1;
+                    //if(เลือกคำตอบที่ 3) action = 2;
                     // put text ขึ้นจอตรงนี้
                     cout << charactorActionMessage[Day][Question][action]; // เทส
                     relation += actionRelation[Day][Question][action];
-                    break; */
+                    break; 
                 }
                 break; // เทส
             }
