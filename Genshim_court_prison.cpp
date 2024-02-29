@@ -17,11 +17,6 @@ int main(){
     rectangle.setPosition(1600, 900);
     rectangle.setFillColor(Color(200, 200, 200, 100));
 
-<<<<<<< HEAD
-    int relation = Relation();
-
-=======
->>>>>>> 94ba47b00df457f7c13e80ba482cca763bab283f
     // กำหนด starto
     Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
     starto.setPosition(50, 50);

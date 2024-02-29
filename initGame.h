@@ -24,17 +24,10 @@ initGame::initGame(){
     Thai.loadFromFile("../GG_Game/Font/EkkamaiNew-Regular.ttf");
 
     // ภาพ back1image จะเป็นภาพอยู่หลังสุด
-<<<<<<< HEAD
-    back1.loadFromFile("../GG_Game/image/background/backwall1.png");
-    back1image.setTexture(back1);
-
-    back2.loadFromFile("../GG_Game/image/background/backwall2.png");
-=======
     back1.loadFromFile("../GG_Game/image/background/testb1.jpg");
     back1image.setTexture(back1);
 
     back2.loadFromFile("../GG_Game/image/background/testb2.jpg");
->>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
 
     back3.loadFromFile("../GG_Game/image/background/testb3.jpg");
 
