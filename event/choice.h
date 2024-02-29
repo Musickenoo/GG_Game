@@ -44,12 +44,12 @@ int Relation() {
                         userAnswerMessage        = Venti.userAnswers;
                         charactorActionMessage   = Venti.ventiAction;
                         actionRelation           = Venti.actionRelation;
-                        waifuface1Texture        = Venti.V1; 
-                        waifuface2Texture        = Venti.V2;
-                        waifuface3Texture        = Venti.V3;
-                        waifuface4Texture        = Venti.V4;
-                        waifuface5Texture        = Venti.V5;
-                        waifuface6Texture        = Venti.V6;
+                        waifuface1Texture        = Venti.waifuface1Texture; 
+                        waifuface2Texture        = Venti.waifuface2Texture;
+                        waifuface3Texture        = Venti.waifuface3Texture;
+                        waifuface4Texture        = Venti.waifuface4Texture;
+                        waifuface5Texture        = Venti.waifuface5Texture;
+                        waifuface6Texture        = Venti.waifuface6Texture;
                         break;
         case 'e'     :  break;
     }
@@ -122,22 +122,11 @@ int Relation() {
             }
         }
     }
-    window.draw(charactorTalk);
+  
     for (int Day = 0; Day < finalDay; Day++) {
-        for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++) 
+        for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++){ 
             while (true) {
-                if (rectangle.getGlobalBounds().contains(mousePos)) {
-                    charactorTalk[Day][basicTalk].setPosition(600, 750);
-                    window.draw(charactorTalk[Day][basicTalk]);
-                    while (true) {
-                        if (rectangle.getGlobalBounds().contains(mousePos)) {
-                            userTalk[Day][basicTalk].setPosition(600, 750);
-                            window.draw(userTalk[Day][basicTalk]);
-                            break;
-                        }             
-                    }
-                    break;
-                }
+                
             }
         }
     
@@ -155,18 +144,16 @@ int Relation() {
                     //if(เลือกคำตอบที่ 2) action = 1;
                     //if(เลือกคำตอบที่ 3) action = 2;
                     // put text ขึ้นจอตรงนี้
-                    //cout << charactorActionMessage[Day][Question][action]; // เทส
-                    //relation += actionRelation[Day][Question][action];
+                    cout << charactorActionMessage[Day][Question][action]; // เทส
+                    relation += actionRelation[Day][Question][action];
                     break; 
-            }
+                }
                 break; // เทส
-            
-        cin.get(); // ตัวเทส
+            }
+            cin.get(); // ตัวเทส
         }
         cout << endl << charactorTalkMessege[Day][endBasicTalk] << endl; // เทส
         cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส  
     }
-    }
     return relation;
-
-    }
+}
