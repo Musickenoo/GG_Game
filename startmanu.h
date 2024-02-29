@@ -6,12 +6,12 @@
 
 class StartMenu {
 public:
-    StartMenu(sf::RenderWindow& window, void (*changeScene)()); // เพิ่มพารามิเตอร์สำหรับ function pointer
+    StartMenu(sf::RenderWindow& window, void (*changeScene)()); // ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ function pointer
     void run();
 
 private:
     sf::RenderWindow& window;
-    void (*changeScene)(); // เพิ่ม function pointer เพื่อเรียกฟังก์ชันเปลี่ยนฉาก
+    void (*changeScene)(); // ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ function pointer ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝยก๏ฟฝัง๏ฟฝ๏ฟฝัน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝยน๏ฟฝาก
     sf::Sprite back1image;
     sf::Text starto;
     sf::Sprite buttonnoimage;
