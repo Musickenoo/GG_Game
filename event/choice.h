@@ -143,8 +143,8 @@ int Relation() {
             }
             while (true) {
                 // ทำ function กดเลือกช้อย
-                if (เลือกคำตอบแล้ว){   
-                    int action; 
+                //if (เลือกคำตอบแล้ว){   
+                    //int action; 
                     //if(เลือกคำตอบที่ 1) action = 0;
                     //if(เลือกคำตอบที่ 2) action = 1;
                     //if(เลือกคำตอบที่ 3) action = 2;
