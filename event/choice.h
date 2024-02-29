@@ -20,6 +20,17 @@ Texture waifuface3Texture;
 Texture waifuface4Texture;
 Texture waifuface5Texture;
 Texture waifuface6Texture;
+Texture waifuface7Texture;
+Texture waifuface8Texture;
+Texture waifuface9Texture;
+Texture waifuface10Texture;
+Texture waifuface11Texture;
+Texture waifuface12Texture;
+Texture waifuface13Texture;
+Texture waifuface14Texture;
+Texture waifuface15Texture;
+Texture waifuface16Texture;
+Texture waifuface17Texture;
 
 Sprite waifu2;
 
@@ -50,6 +61,18 @@ int Relation() {
                         waifuface4Texture        = Venti.V4;
                         waifuface5Texture        = Venti.V5;
                         waifuface6Texture        = Venti.V6;
+                        waifuface7Texture        = Venti.V7;
+                        waifuface8Texture        = Venti.V8;
+                        waifuface9Texture        = Venti.V9;
+                        waifuface10Texture       = Venti.V10;
+                        waifuface11Texture       = Venti.V11;
+                        waifuface12Texture       = Venti.V12;
+                        waifuface13Texture       = Venti.V13;
+                        waifuface14Texture       = Venti.V14;
+                        waifuface15Texture       = Venti.V15;
+                        waifuface16Texture       = Venti.V16;
+                        waifuface17Texture       = Venti.V17;
+
                         break;
         case 'e'     :  break;
     }
@@ -162,5 +185,10 @@ int Relation() {
         cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส  
     }
 
+
     return relation;
 }
+
+
+
+
