@@ -1,4 +1,4 @@
-/* #pragma once
+#pragma once
 
 #include "../initGame.h"
 #include "../charecter/Venti.h"
@@ -161,4 +161,4 @@ int Relation() {
         cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส  
     }
     return relation;
-}*/
+}
