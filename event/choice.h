@@ -44,12 +44,12 @@ int Relation() {
                         userAnswerMessage        = Venti.userAnswers;
                         charactorActionMessage   = Venti.ventiAction;
                         actionRelation           = Venti.actionRelation;
-                        waifuface1Texture        = Venti.waifuface1Texture; 
-                        waifuface2Texture        = Venti.waifuface2Texture;
-                        waifuface3Texture        = Venti.waifuface3Texture;
-                        waifuface4Texture        = Venti.waifuface4Texture;
-                        waifuface5Texture        = Venti.waifuface5Texture;
-                        waifuface6Texture        = Venti.waifuface6Texture;
+                        waifuface1Texture        = Venti.V1; 
+                        waifuface2Texture        = Venti.V2;
+                        waifuface3Texture        = Venti.V3;
+                        waifuface4Texture        = Venti.V4;
+                        waifuface5Texture        = Venti.V5;
+                        waifuface6Texture        = Venti.V6;
                         break;
         case 'e'     :  break;
     }
@@ -149,8 +149,8 @@ int Relation() {
                     //if(เลือกคำตอบที่ 2) action = 1;
                     //if(เลือกคำตอบที่ 3) action = 2;
                     // put text ขึ้นจอตรงนี้
-                    cout << charactorActionMessage[Day][Question][action]; // เทส
-                    relation += actionRelation[Day][Question][action];
+                    //cout << charactorActionMessage[Day][Question][action]; // เทส
+                    //relation += actionRelation[Day][Question][action];
                     break; 
                 }
                 break; // เทส
