@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../initGame.h"
+#include "../charecter/Sakura.h"
 #include "../charecter/Venti.h"
 #include "../charecter/furina.h"
 #include "../charecter/nahida.h"
@@ -47,6 +48,8 @@ int Relation() {
 
     // ดึงค่าข้อมูลตัวละคร
     Venti Venti;
+    Sakura Sakura;
+
 
     switch(Charactor){
         case 'Venti' :  charactorTalkMessege     = Venti.ventiTalk;
@@ -74,6 +77,21 @@ int Relation() {
                         waifuface17Texture       = Venti.V17;
 
                         break;
+
+        case 'Sakura' : charactorTalkMessege     = Sakura.SakuraTalk;
+                        userTalkMessege          = Sakura.userTalk; 
+                        charactorQuestionMessage = Sakura.SakuraQuestions;
+                        userAnswerMessage        = Sakura.userAnswers;
+                        charactorActionMessage   = Sakura.SakuraAction;
+                        actionRelation           = Sakura.actionRelation;
+                        waifuface1Texture        = Sakura.waifuface1Texture; 
+                        waifuface2Texture        = Sakura.waifuface2Texture;
+                        waifuface3Texture        = Sakura.waifuface3Texture;
+                        waifuface4Texture        = Sakura.waifuface4Texture;
+                        waifuface5Texture        = Sakura.waifuface5Texture;
+                        waifuface6Texture        = Sakura.waifuface6Texture;
+                        break;
+        
         case 'e'     :  break;
     }
 
