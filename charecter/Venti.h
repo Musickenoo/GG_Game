@@ -51,7 +51,11 @@ Venti::Venti() {
     V15.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisadtalk.png");
     V16.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisad.png");
     V17.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventilaught.png");
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
 
     ventiTalk = {
         // วันที่ 1
@@ -500,4 +504,8 @@ Venti::Venti() {
             {3, 200, 500}
         }
     };
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea

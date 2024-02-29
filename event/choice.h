@@ -44,6 +44,7 @@ int Relation() {
         userAnswerMessage = Venti.userAnswers;
         charactorActionMessage = Venti.ventiAction;
         actionRelation = Venti.actionRelation;
+<<<<<<< HEAD
         waifuface1Texture = Venti.V1;
         waifuface2Texture = Venti.V2;
         waifuface3Texture = Venti.V3;
@@ -62,6 +63,14 @@ int Relation() {
         waifuface16Texture = Venti.V16;
         waifuface17Texture = Venti.V17;
 
+=======
+        waifuface1Texture = Venti.waifuface1Texture;
+        waifuface2Texture = Venti.waifuface2Texture;
+        waifuface3Texture = Venti.waifuface3Texture;
+        waifuface4Texture = Venti.waifuface4Texture;
+        waifuface5Texture = Venti.waifuface5Texture;
+        waifuface6Texture = Venti.waifuface6Texture;
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
         break;
     case 'e':  break;
     }
@@ -174,4 +183,8 @@ int Relation() {
     }
 
 return relation;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
