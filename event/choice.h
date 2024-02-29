@@ -8,7 +8,7 @@
 #include "../charecter/zhongli.h"
 
 // Get Class
-initGame init;
+/*initGame init;
 
 vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
 vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
@@ -161,4 +161,4 @@ int Relation() {
         cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส
     }
     return relation;
-}
+}*/
