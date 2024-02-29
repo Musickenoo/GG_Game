@@ -456,6 +456,7 @@ Venti::Venti() {
             {"Venti :เช่นกัน","คุณได้ ending เคลียร์ใจ", "คุณได้ ending  escape"}
         }
     };*/
+    
     actionRelation = {
         // วันแรก
         {
