@@ -11,10 +11,25 @@
 // Get Class
 initGame init;
 Venti venti;
+void test();
+int thisIsCharacterNum;
+
+
+Clock myTime;
+Text c1("choosen waifu", amazing, 80);
+Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
+Text thaiText("สวัสดีชาวโลก",Thai, 80);
+Text day("DAY " + to_string(0), amazing, 80);
+Sprite waifu1;
+RectangleShape rectangle(Vector2f(1600, 150));
+Text text;
+string s;
+
 
 vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
 vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
 vector<vector<vector<int>>> actionRelation;
+vector<vector<Text>> charactorTalk(charactorTalkMessege.size()); // Resize the vector
 
 Texture V1;
 Texture V2;
@@ -39,25 +54,19 @@ Texture V20;
 Texture V21;
 Texture V22;
 
-
-Sprite waifu2;
-    // ดึงค่าข้อมูลตัวละคร
-    //Sakura Sakura;
-
 int Charactor = 'Venti';
 
-// Variable
+class choice
+{
+private:
+    /* data */
+public:
+    choice(/* args */);
+    ~choice();
+};
 
-int Relation() {
-
-    // Variable
-    int finalDay = 7, endBasicTalk = 2, relation = 0;
-    Text text;
-    string s;
-
-   
-
-
+choice::choice(/* args */)
+{
     switch (Charactor) {
     case 'Venti':  charactorTalkMessege = venti.ventiTalk;
         userTalkMessege = venti.userTalk;
@@ -87,6 +96,8 @@ int Relation() {
         V20 = venti.V20;
         V21 = venti.V21;
         V22 = venti.V22;
+        thisIsCharacterNum = 0;
+
 
         break;
 
@@ -108,20 +119,102 @@ int Relation() {
     */
     }
 
-    waifu2.setTexture(V1);
+
+
+}
+
+choice::~choice()
+{
+}
+
+
+// Variable
+
+void test(){
+
+    waifu2.setTexture(venti.V6);
     waifu2.setPosition(1600.f, 900.f);
-    waifu2.setScale(1.7f, 1.8f);
+    waifu2.setScale(0.27f, 0.27f);
+    
+        // เปลี่ยนรูป waifu1Texture เป็น waifu12Texture
+                        // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
+                        myTime.restart();
+                        while (myTime.getElapsedTime().asMilliseconds() < 1000)
+                        {
+                            // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+                            window.clear();
+                            window.draw(back1image);
+                            window.draw(c1);
+                            window.draw(waifu1);
+                            window.display();
+                        }
+
+                        // เลื่อนตำแหน่ง waifu1 และ c1 ไปยังตำแหน่งที่ระบุ (1600, 900)
+                        waifu1.setPosition(700.f, 900.f);
+                        c1.setPosition(1600, 900);
+
+
+                        
+                        day.setPosition(700, 400);
+                        back1image.setTexture(back3);
+                        myTime.restart();
+                        while (myTime.getElapsedTime().asMilliseconds() < 1000)
+                        {
+                                // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+                                window.clear();
+                                window.draw(back1image);
+                                window.draw(day);
+                                window.draw(waifu1);
+                                window.display();
+
+                        }
+                        back1image.setTexture(back4);
+                        day.setPosition(10, 10);
+                        day.setFillColor(Color(0, 0, 0));
+
+                        waifu2.setPosition(450.f, 200.f);
+                        myTime.restart();
+                        while (myTime.getElapsedTime().asMilliseconds() < 1000)
+                        {
+                            window.clear();
+                            window.draw(back1image);
+                            window.draw(day);
+                            window.draw(waifu2);
+
+                            window.display();
+                        }
+
+                        rectangle.setPosition(0, 750);
+                        window.draw(rectangle);
+                        // Vtalk[j].setPosition(600, 750);
+                        // Vtalk[j].setFillColor(Color(0, 0, 0));
+                        
+                    
+}
+
+int Relation() {
+
+    // Variable
+    int finalDay = 7, endBasicTalk = 2, relation = 0;
+    
+    text.setCharacterSize(50);
+    text.setFillColor(Color::White);
+
+    // ภาพตัวแทนตัวละคร Venti
+
+    // waifu2.setTexture(PictureCharectorChosses[thisIsCharacterNum]);
+    // waifu2.setPosition(1600.f , 900.f);
+    // waifu2.setScale(0.27f, 0.27f);
 
 
     // สร้างอาร์เรย์ของ Text จากประโยคคำถาม
-    vector<vector<Text>> charactorTalk(charactorTalkMessege.size()); // Resize the vector
     for (int Day = 0; Day < charactorTalkMessege.size(); Day++) {
         for (int Question = 0; Question < charactorTalkMessege[Day].size(); Question++) {
             s = charactorTalkMessege[Day][Question];
-            text.setFont(init.Thai);
+            text.setFont(Thai);
             text.setString(s);
             text.setCharacterSize(60);
-            text.setPosition(1600, 900);
+            text.setPosition(100, 90);
             text.setFillColor(Color::Black);
             charactorTalk[Day].push_back(text);
         }
@@ -131,10 +224,10 @@ int Relation() {
     for (int Day = 0; Day < userTalkMessege.size(); Day++) {
         for (int Question = 0; Question < userTalkMessege[Day].size(); Question++) {
             s = venti.userTalk[Day][Question];
-            text.setFont(init.Thai);
+            text.setFont(Thai);
             text.setString(s);
             text.setCharacterSize(60);
-            text.setPosition(1600, 900);
+            text.setPosition(160, 90);
             text.setFillColor(Color::Black);
             userTalk[Day].push_back(text);
         }
@@ -144,10 +237,10 @@ int Relation() {
     for (int Day = 0; Day < charactorQuestionMessage.size(); Day++) {
         for (int Question = 0; Question < charactorQuestionMessage[Day].size(); Question++) {
             s = charactorQuestionMessage[Day][Question];
-            text.setFont(init.Thai);
+            text.setFont(Thai);
             text.setString(s);
             text.setCharacterSize(60);
-            text.setPosition(1600, 900);
+            text.setPosition(100, 90);
             text.setFillColor(Color::Black);
             charactorQuestions[Day].push_back(text);
         }
@@ -158,10 +251,10 @@ int Relation() {
         for (int Question = 0; Question < userAnswerMessage[Day].size(); Question++) {
             for (int Answer = 0; Answer < userAnswerMessage[Day][Question].size(); Answer++) {
                 s = userAnswerMessage[Day][Question][Answer];
-                text.setFont(init.Thai);
+                text.setFont(Thai);
                 text.setString(s);
                 text.setCharacterSize(60);
-                text.setPosition(1600, 900);
+                text.setPosition(160, 90);
                 text.setFillColor(Color::Black);
                 userAnswers[Day][Question].push_back(text);
             }
@@ -174,10 +267,10 @@ int Relation() {
         for (int Question = 0; Question < charactorActionMessage[Day].size(); Question++) {
             for (int Action = 0; Action < charactorActionMessage[Day][Question].size(); Action++) {
                 s = charactorActionMessage[Day][Question][Action];
-                text.setFont(init.Thai);
+                text.setFont(Thai);
                 text.setString(s);
                 text.setCharacterSize(60);
-                text.setPosition(1600, 900);
+                text.setPosition(160, 90);
                 text.setFillColor(Color::Black);
                 charactorAction[Day][Question].push_back(text);
             }
@@ -186,15 +279,14 @@ int Relation() {
 
     for (int Day = 0; Day < finalDay; Day++) {
         for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++) {
-            while (true) {
-                break;
-            }
+            
         }
 
         for (int Question = 0; Question < charactorQuestionMessage[Day].size(); Question++) {
-            cout << endl << "คำถามที่ " << Question + 1 << " " << charactorQuestionMessage[Day][Question] << endl; // เทส
+            //cout << endl << "คำถามที่ " << Question + 1 << " " << charactorQuestionMessage[Day][Question] << endl; // เทส
+            
             for (int Answer = 0; Answer < userAnswerMessage[Day][Question].size(); Answer++) {
-                cout << "คำตอบที่ " << Answer + 1 << " " << userAnswerMessage[Day][Question][Answer] << endl; // เทส
+                //cout << "คำตอบที่ " << Answer + 1 << " " << userAnswerMessage[Day][Question][Answer] << endl; // เทส
             }
 
             while (true) {
@@ -211,11 +303,18 @@ int Relation() {
             }
             break; // เทส
         }
-        cin.get(); // ตัวเทส
-        cout << endl << charactorTalkMessege[Day][endBasicTalk] << endl; // เทส
-        cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส  
+        //cin.get(); // ตัวเทส
+        // cout << endl << charactorTalkMessege[Day][endBasicTalk] << endl; // เทส
+        // cout << userTalkMessege[Day][endBasicTalk] << endl << endl; // เทส  
     }
 
 
     return relation;
+}
+
+
+void WaitClick(){
+    while(1){
+        if (rectangle.getGlobalBounds().contains(mousePos)) break;
+    }
 }
