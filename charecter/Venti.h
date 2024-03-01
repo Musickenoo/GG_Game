@@ -27,6 +27,11 @@ public:
     Texture V15;
     Texture V16;
     Texture V17;
+    Texture V18;
+    Texture V19;
+    Texture V20;
+    Texture V21;
+    Texture V22;
     Sprite waifu2;
 };
 
@@ -51,6 +56,11 @@ Venti::Venti() {
     V15.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisadtalk.png");
     V16.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisad.png");
     V17.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventilaught.png");
+    V18.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventinocharect.png");
+    V19.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiunknow.png");
+    V20.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeilshy.png");
+    V21.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventishyangry.png");
+    V22.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondage2.png");
 
 
     ventiTalk = {
@@ -101,6 +111,57 @@ Venti::Venti() {
             "วันตัดสินก็มาถึง",
             "Venti :วันสุดท้ายแล้วสิน่ะ",
             "คุณได้จากลา Venti เป็นรอบสุดท้าย"
+        }
+    };
+
+    ventiActionImageTalk = {
+        // วันที่ 1
+        {
+           V10,
+           V15,
+           V12
+        },
+
+        // วันที่ 2
+        {
+            V11,
+            V3,
+            V7
+        },
+
+        // วันที่ 3
+        {
+            V20,
+            V21,
+            V13
+        },
+
+        // วันที่ 4
+        {
+            V9,
+            V18,
+            V13
+        },
+
+        // วันที่ 5
+        {
+            V18,
+            V4,
+            V22
+        },
+
+        // วันที่ 6
+        {
+            V6,
+            V3,
+            V18
+        },
+
+        // วันที่ 7
+        {
+            V18,
+            V16,
+            V2
         }
     };
 
@@ -159,7 +220,7 @@ Venti::Venti() {
         // วันที่ 1
         {
             "Venti :เธอลองเดาซิว่าเจอกันครั้งแรกที่ไหน",
-            "Venti :ทายซิ เครื่องเล่นดนตรีเราคืออะไรล่ะ",
+            "Venti :ตอนไป เครื่องเล่นดนตรีเราคืออะไรล่ะ",
             "Venti :งั้นหรอเธอรู้จักเพื่อนฉันไหม รู้ไหมเข้าชื่ออะไร"
         },
 
@@ -202,6 +263,56 @@ Venti::Venti() {
             "Venti :ฉันขอให้ทำอะไรเพื่อฉันหน่อยก่อนจากไปไหม",
             "Venti :และก่อนที่จากลา นายชอบฉันไหม",
             "Venti :ไม่ว่ายังไงก็ขอบคุณน่ะที่ดูแลฉันมาตั้ง 7 วันน่ะ"
+        }
+    };
+
+    ventiQusImageTalk = {
+        // วันที่ 1
+        {
+            V10,
+            V16,
+            V12
+        },
+
+        // วันที่ 2
+        {   V12,
+            V8,
+            V12
+        },
+
+        // วันที่ 3
+        {
+            V7,
+            V19,
+            V7
+        },
+
+        // วันที่ 4
+        {
+            V13,
+            V13,
+            V21
+        },
+
+        // วันที่ 5
+        {
+            V2,
+            V2,
+            V22
+        },
+
+        // วันที่ 6
+        {
+            V16,
+            V2,
+            V22
+        },
+
+        // วันที่ 7
+        {
+             V2,
+             V7,
+             V22
         }
     };
 
@@ -382,14 +493,14 @@ Venti::Venti() {
         {
             {"Venti :อ่อหรอ.................", "Venti :.............", "Venti :หาาาาาา............."},
             {"Venti :เปล่าหรอก...ฮึ่ม", "Venti :อย่ามากพูดบ้าๆ..ฮึ่ย", "Venti :สัสเอ้ย....555"},
-            {"Venti :ไม่เป็นไร แต่ก็น่ะ", "Venti :โรคจิต แต่ก็....", "Venti  :ช่างเถอะ"}
+            {"Venti :ไม่เป็นไร แต่ก็น่ะ", "Venti :โรคจิต ", "Venti  :ช่างเถอะ"}
         },
 
         // วันที่ห้า
         {
             {"Venti :ถูกแล้ว", "Venti :หมอนั้นเป็นมังกรน่ะ 555 ไม่ใชาหรอก", "Venti :ใครครับเนี่ย555"},
-            {"Venti :ติดเกมหรอเนี่ย ไม่ใช่หรอก", "Venti :ถูก", "Venti :อันนั้นแค่สมที่ทุกคนคิดแบบนั้น"},
-            {"Venti :ก็ใช่น่ะ แต่ไม่ถูกเสมอไป", "Venti :ฉันน่ารักขนาดนั้นเลยหรอ", "Venti  :อุ้ย...พูดมาก็ถูกต้อง(เขิน)"}
+            {"Venti :ติดเกมหรอเนี่ย ไม่ใช่หรอก", "Venti :ถูก", "Venti :อันนั้นแค่สมที่ทุกคนคิดแบบนั้ฮึ่ม"},
+            {"Venti :ก็ใช่น่ะ แต่ไม่ถูกเสมอไป", "Venti :ฉันน่ารักขนาดนั้นเลยหรอ", "Venti  :พูดมาก็ถูกต้อง"}
         },
 
         // วันที่หก
@@ -409,51 +520,51 @@ Venti::Venti() {
     ActionImage = {
         // วันแรก
         {
-            {V11,V12,V1},
-            {V4,V4,V12},
-            {V12,V4,V4}
+            {V11,V11,V1},
+            {V19,V19,V11},
+            {V11,V4,V4}
         },
 
         // วันที่สอง
         {
-            {V11,V4,V1},
-            {V2,V13,V4},
-            {V14,V11,V11}
+            {V11,V11,V1},
+            {V3,V13,V4},
+            {V4,V11,V11}
         },
 
         // วันที่สาม
         {
-            {V5,V4,V4},
-            {V4,V4,V2},
+            {V15,V4,V11},
+            {V4,V4,V22},
             {V5,V4, V11}
         },
 
         // วันที่สี่
         {
-            {V3,V6,V5},
-            {V5,V5,V5},
-            {V2,V13,V6}
+            {V3,V6,V21},
+            {V5,V21,V5},
+            {V22,V21,V1}
         },
 
         // วันที่ห้า
         {
-            {V3,V4,V4},
-            {V4, V3,V1},
-            {V3,V3}
+            {V22,V4,V4},
+            {V14,V22,V5},
+            {V3,V3,V20}
         },
 
         // วันที่หก
         {
             {V11,V5,V3},
             {V6,V3,V16},
-            {V11,V11,V3}
+            {V8,V20,V3}
         },
 
         // วันที่เจ็ด
         {
-            {V7,V8,V16},
-            {V2,V2,V15},
-            {V2,V8, V13}
+            {V22,V20,V15},
+            {V20,V18,V2},
+            {V2,V8, V18}
         }
     };
     actionRelation = {
