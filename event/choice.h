@@ -10,6 +10,7 @@
 
 // Get Class
 initGame init;
+Venti venti;
 
 vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
 vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
@@ -40,6 +41,8 @@ Texture V22;
 
 
 Sprite waifu2;
+    // ดึงค่าข้อมูลตัวละคร
+    //Sakura Sakura;
 
 int Charactor = 'Venti';
 
@@ -52,40 +55,38 @@ int Relation() {
     Text text;
     string s;
 
-    // ดึงค่าข้อมูลตัวละคร
-    Venti Venti;
-    //Sakura Sakura;
+   
 
 
     switch (Charactor) {
-    case 'Venti':  charactorTalkMessege = Venti.ventiTalk;
-        userTalkMessege = Venti.userTalk;
-        charactorQuestionMessage = Venti.ventiQuestions;
-        userAnswerMessage = Venti.userAnswers;
-        charactorActionMessage = Venti.ventiAction;
-        actionRelation = Venti.actionRelation;
-        V1 = Venti.V1;
-        V2 = Venti.V2;
-        V3 = Venti.V3;
-        V4 = Venti.V4;
-        V5 = Venti.V5;
-        V6 = Venti.V6;
-        V7 = Venti.V7;
-        V8 = Venti.V8;
-        V9 = Venti.V9;
-        V10 = Venti.V10;
-        V11 = Venti.V11;
-        V12 = Venti.V12;
-        V13 = Venti.V13;
-        V14 = Venti.V14;
-        V15 = Venti.V15;
-        V16 = Venti.V16;
-        V17 = Venti.V17;
-        V18 = Venti.V18;
-        V19 = Venti.V19;
-        V20 = Venti.V20;
-        V21 = Venti.V21;
-        V22 = Venti.V22;
+    case 'Venti':  charactorTalkMessege = venti.ventiTalk;
+        userTalkMessege = venti.userTalk;
+        charactorQuestionMessage = venti.ventiQuestions;
+        userAnswerMessage = venti.userAnswers;
+        charactorActionMessage = venti.ventiAction;
+        actionRelation = venti.actionRelation;
+        V1 = venti.V1;
+        V2 = venti.V2;
+        V3 = venti.V3;
+        V4 = venti.V4;
+        V5 = venti.V5;
+        V6 = venti.V6;
+        V7 = venti.V7;
+        V8 = venti.V8;
+        V9 = venti.V9;
+        V10 = venti.V10;
+        V11 = venti.V11;
+        V12 = venti.V12;
+        V13 = venti.V13;
+        V14 = venti.V14;
+        V15 = venti.V15;
+        V16 = venti.V16;
+        V17 = venti.V17;
+        V18 = venti.V18;
+        V19 = venti.V19;
+        V20 = venti.V20;
+        V21 = venti.V21;
+        V22 = venti.V22;
 
         break;
 
@@ -129,7 +130,7 @@ int Relation() {
     vector<vector<Text>> userTalk(userTalkMessege.size());  // Resize the vector
     for (int Day = 0; Day < userTalkMessege.size(); Day++) {
         for (int Question = 0; Question < userTalkMessege[Day].size(); Question++) {
-            s = Venti.userTalk[Day][Question];
+            s = venti.userTalk[Day][Question];
             text.setFont(init.Thai);
             text.setString(s);
             text.setCharacterSize(60);
