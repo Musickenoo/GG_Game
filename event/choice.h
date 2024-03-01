@@ -104,7 +104,8 @@ int Relation() {
         break;
 
     case 'e':  break;
-    }*/
+    */
+    }
 
     waifu2.setTexture(V1);
     waifu2.setPosition(1600.f, 900.f);
