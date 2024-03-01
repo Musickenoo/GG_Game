@@ -32,7 +32,6 @@ public:
     Texture V20;
     Texture V21;
     Texture V22;
-    Sprite waifu2;
 };
 
 
@@ -44,7 +43,9 @@ Venti::Venti() {
     V3.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondamage1.png");
     V4.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventihappy.png");
     V5.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventigumact.png");
+
     V6.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifirstday.png");
+
     V7.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifeedgood.png");
     V8.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventienough.png");
     V9.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventizzz.png");
@@ -61,6 +62,9 @@ Venti::Venti() {
     V20.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeilshy.png");
     V21.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventishyangry.png");
     V22.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondage2.png");
+
+
+
 
 
     ventiTalk = {
