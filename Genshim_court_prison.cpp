@@ -1,8 +1,11 @@
 #include "../GG_Game/event/choice.h"
 
 int main(){
+<<<<<<< HEAD
+=======
     int relation = Relation();
     
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
     RenderWindow window(VideoMode(1600, 900), "SFML works!");
 
     Font amazing = init.amazing;
@@ -12,19 +15,15 @@ int main(){
     Texture back2 = init.back2;
     Texture back3 = init.back3;
     Texture back4 = init.back4;
-    Text VetiaT ;
-    VetiaT.setCharacterSize(100);
-    VetiaT.setColor(Color::Yellow);
-    VetiaT.setPosition(111,333);
-    VetiaT.setFont(Thai);
-
-    String s;
-    s = Venti.ventiTalk [0][0];
-    VetiaT.setString(s);
 
     RectangleShape rectangle(Vector2f(1600, 150));
     rectangle.setPosition(1600, 900);
     rectangle.setFillColor(Color(200, 200, 200, 100));
+
+<<<<<<< HEAD
+    int relation = Relation();
+=======
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
 
     // กำหนด starto
     Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
@@ -67,6 +66,7 @@ int main(){
     Texture waifu2Texture;
     waifu2Texture.loadFromFile("../GG_Game/image/test_charec/ac_profile.jpg");
 
+<<<<<<< HEAD
     // ภาพตัวแทนตัวละคร Venti
     Texture waifuface1Texture;
     waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
@@ -85,6 +85,8 @@ int main(){
     waifu2.setPosition(1600.f, 900.f);
     waifu2.setScale(1.7f, 1.8f);
 
+=======
+>>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
     bool buttonHovered = false;
     int state = 0;
     Clock clock;
