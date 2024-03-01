@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../initGame.h"
-#include "../charecter/Sakura.h"
+//#include "../charecter/Sakura.h"
 #include "../charecter/Venti.h"
 #include "../charecter/furina.h"
 #include "../charecter/nahida.h"
@@ -15,23 +15,29 @@ vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionM
 vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
 vector<vector<vector<int>>> actionRelation;
 
-Texture waifuface1Texture;
-Texture waifuface2Texture;
-Texture waifuface3Texture;
-Texture waifuface4Texture;
-Texture waifuface5Texture;
-Texture waifuface6Texture;
-Texture waifuface7Texture;
-Texture waifuface8Texture;
-Texture waifuface9Texture;
-Texture waifuface10Texture;
-Texture waifuface11Texture;
-Texture waifuface12Texture;
-Texture waifuface13Texture;
-Texture waifuface14Texture;
-Texture waifuface15Texture;
-Texture waifuface16Texture;
-Texture waifuface17Texture;
+Texture V1;
+Texture V2;
+Texture V3;
+Texture V4;
+Texture V5;
+Texture V6;
+Texture V7;
+Texture V8;
+Texture V9;
+Texture V10;
+Texture V11;
+Texture V12;
+Texture V13;
+Texture V14;
+Texture V15;
+Texture V16;
+Texture V17;
+Texture V18;
+Texture V19;
+Texture V20;
+Texture V21;
+Texture V22;
+
 
 Sprite waifu2;
 
@@ -48,54 +54,59 @@ int Relation() {
 
     // ดึงค่าข้อมูลตัวละคร
     Venti Venti;
-    Sakura Sakura;
+    //Sakura Sakura;
 
 
-    switch(Charactor){
-        case 'Venti' :  charactorTalkMessege     = Venti.ventiTalk;
-                        userTalkMessege          = Venti.userTalk; 
-                        charactorQuestionMessage = Venti.ventiQuestions;
-                        userAnswerMessage        = Venti.userAnswers;
-                        charactorActionMessage   = Venti.ventiAction;
-                        actionRelation           = Venti.actionRelation;
-                        waifuface1Texture        = Venti.V1;
-                        waifuface2Texture        = Venti.V2;
-                        waifuface3Texture        = Venti.V3;
-                        waifuface4Texture        = Venti.V4;
-                        waifuface5Texture        = Venti.V5;
-                        waifuface6Texture        = Venti.V6;
-                        waifuface7Texture        = Venti.V7;
-                        waifuface8Texture        = Venti.V8;
-                        waifuface9Texture        = Venti.V9;
-                        waifuface10Texture       = Venti.V10;
-                        waifuface11Texture       = Venti.V11;
-                        waifuface12Texture       = Venti.V12;
-                        waifuface13Texture       = Venti.V13;
-                        waifuface14Texture       = Venti.V14;
-                        waifuface15Texture       = Venti.V15;
-                        waifuface16Texture       = Venti.V16;
-                        waifuface17Texture       = Venti.V17;
+    switch (Charactor) {
+    case 'Venti':  charactorTalkMessege = Venti.ventiTalk;
+        userTalkMessege = Venti.userTalk;
+        charactorQuestionMessage = Venti.ventiQuestions;
+        userAnswerMessage = Venti.userAnswers;
+        charactorActionMessage = Venti.ventiAction;
+        actionRelation = Venti.actionRelation;
+        V1 = Venti.V1;
+        V2 = Venti.V2;
+        V3 = Venti.V3;
+        V4 = Venti.V4;
+        V5 = Venti.V5;
+        V6 = Venti.V6;
+        V7 = Venti.V7;
+        V8 = Venti.V8;
+        V9 = Venti.V9;
+        V10 = Venti.V10;
+        V11 = Venti.V11;
+        V12 = Venti.V12;
+        V13 = Venti.V13;
+        V14 = Venti.V14;
+        V15 = Venti.V15;
+        V16 = Venti.V16;
+        V17 = Venti.V17;
+        V18 = Venti.V18;
+        V19 = Venti.V19;
+        V20 = Venti.V20;
+        V21 = Venti.V21;
+        V22 = Venti.V22;
 
-                        break;
+        break;
 
-        case 'Sakura' : charactorTalkMessege     = Sakura.SakuraTalk;
-                        userTalkMessege          = Sakura.userTalk; 
-                        charactorQuestionMessage = Sakura.SakuraQuestions;
-                        userAnswerMessage        = Sakura.userAnswers;
-                        charactorActionMessage   = Sakura.SakuraAction;
-                        actionRelation           = Sakura.actionRelation;
-                        waifuface1Texture        = Sakura.waifuface1Texture; 
-                        waifuface2Texture        = Sakura.waifuface2Texture;
-                        waifuface3Texture        = Sakura.waifuface3Texture;
-                        waifuface4Texture        = Sakura.waifuface4Texture;
-                        waifuface5Texture        = Sakura.waifuface5Texture;
-                        waifuface6Texture        = Sakura.waifuface6Texture;
-                        break;
-        
-        case 'e'     :  break;
-    }
+    /*case 'Sakura': charactorTalkMessege = Sakura.SakuraTalk;
+        userTalkMessege = Sakura.userTalk;
+        charactorQuestionMessage = Sakura.SakuraQuestions;
+        userAnswerMessage = Sakura.userAnswers;
+        charactorActionMessage = Sakura.SakuraAction;
+        actionRelation = Sakura.actionRelation;
+        waifuface1Texture = Sakura.waifuface1Texture;
+        waifuface2Texture = Sakura.waifuface2Texture;
+        waifuface3Texture = Sakura.waifuface3Texture;
+        waifuface4Texture = Sakura.waifuface4Texture;
+        waifuface5Texture = Sakura.waifuface5Texture;
+        waifuface6Texture = Sakura.waifuface6Texture;
+        break;
 
-    waifu2.setTexture(waifuface1Texture);
+    case 'e':  break;
+    }*/
+
+    waifu2.setTexture(V1);
     waifu2.setPosition(1600.f, 900.f);
     waifu2.setScale(1.7f, 1.8f);
 
@@ -134,7 +145,7 @@ int Relation() {
             text.setFont(init.Thai);
             text.setString(s);
             text.setCharacterSize(60);
-            text.setPosition(1600,900);
+            text.setPosition(1600, 900);
             text.setFillColor(Color::Black);
             charactorQuestions[Day].push_back(text);
         }
@@ -170,14 +181,14 @@ int Relation() {
             }
         }
     }
-  
+
     for (int Day = 0; Day < finalDay; Day++) {
-        for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++){ 
+        for (int basicTalk = 0; basicTalk < endBasicTalk; basicTalk++) {
             while (true) {
                 break;
             }
         }
-    
+
         for (int Question = 0; Question < charactorQuestionMessage[Day].size(); Question++) {
             cout << endl << "คำถามที่ " << Question + 1 << " " << charactorQuestionMessage[Day][Question] << endl; // เทส
             for (int Answer = 0; Answer < userAnswerMessage[Day][Question].size(); Answer++) {
@@ -194,7 +205,7 @@ int Relation() {
                     // put text ขึ้นจอตรงนี้
                     //cout << charactorActionMessage[Day][Question][action]; // เทส
                     //relation += actionRelation[Day][Question][action];
-                    break; 
+                break;
             }
             break; // เทส
         }
@@ -206,7 +217,3 @@ int Relation() {
 
     return relation;
 }
-
-
-
-
