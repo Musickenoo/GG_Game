@@ -1,11 +1,6 @@
 #include "../GG_Game/event/choice.h"
 
-int main(){
-<<<<<<< HEAD
-=======
-    int relation = Relation();
-    
->>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
+int main() {
     RenderWindow window(VideoMode(1600, 900), "SFML works!");
 
     Font amazing = init.amazing;
@@ -20,73 +15,55 @@ int main(){
     rectangle.setPosition(1600, 900);
     rectangle.setFillColor(Color(200, 200, 200, 100));
 
-<<<<<<< HEAD
-    int relation = Relation();
-=======
->>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
 
     // กำหนด starto
     Text starto("Judgment Of Nevillete \n The Archon", amazing, 80);
     starto.setPosition(50, 50);
     starto.setFillColor(Color(255, 0, 108));
 
-    Text thaiText("สวัสดีชาวโลก",Thai, 80);
+    Text thaiText("สวัสดีชาวโลก", Thai, 80);
     thaiText.setFillColor(Color(255, 0, 108));;
     thaiText.setPosition(10, 10);
 
-    // กำหนด choosen waifu
-    Text c1("choosen waifu", amazing, 80);
+    // กำหนด chosen waifu
+    Text c1("chosen waifu", amazing, 80);
     c1.setPosition(1600, 900);
     c1.setFillColor(Color(255, 0, 108));
 
     Text day("DAY " + to_string(0), amazing, 80);
     day.setPosition(1600, 900);
-    day.setFillColor(Color(0,255,0));
+    day.setFillColor(Color(0, 255, 0));
 
     // กำหนด buttonnoimage และ buttonckimage
     Texture buttonno;
-    buttonno.loadFromFile("../GG_Game/image/button/nclick1.jpg");
+    buttonno.loadFromFile("../GG_Game/image/button/Button.png");
     Sprite buttonnoimage;
     buttonnoimage.setTexture(buttonno);
     buttonnoimage.setPosition(1200.f, 700.f);
 
     Texture buttonck;
-    buttonck.loadFromFile("../GG_Game/image/button/click1.jpg");
+    buttonck.loadFromFile("../GG_Game/image/button/Button1.png");
     Sprite buttonckimage;
     buttonckimage.setTexture(buttonck);
     buttonckimage.setPosition(1200.f, 700.f);
 
     //หน้าเลือกตัวตัวละคร
     Texture waifu1Texture;
-    waifu1Texture.loadFromFile("../GG_Game/image/test_charec/a_profile.jpg");
+    waifu1Texture.loadFromFile("../GG_Game/charecter/venti/Coliseum/first2.jpeg");
     Sprite waifu1;
     waifu1.setTexture(waifu1Texture);
     waifu1.setPosition(1600.f, 900.f);
 
     Texture waifu2Texture;
-    waifu2Texture.loadFromFile("../GG_Game/image/test_charec/ac_profile.jpg");
-
-<<<<<<< HEAD
+    waifu2Texture.loadFromFile("../GG_Game/charecter/venti/Coliseum/first1.jpeg");
     // ภาพตัวแทนตัวละคร Venti
     Texture waifuface1Texture;
-    waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
-    Texture waifuface2Texture;
-    waifuface2Texture.loadFromFile("../GG_Game/image/test_charec/2a_yes.png");
-    Texture waifuface3Texture;
-    waifuface3Texture.loadFromFile("../GG_Game/image/test_charec/3a_sadd.png");
-    Texture waifuface4Texture;
-    waifuface4Texture.loadFromFile("../GG_Game/image/test_charec/4a_cry.png");
-    Texture waifuface5Texture;
-    waifuface5Texture.loadFromFile("../GG_Game/image/test_charec/5a_angry.png");
-    Texture waifuface6Texture;
-    waifuface6Texture.loadFromFile("../GG_Game/image/test_charec/6a_happyy.png");
+    waifuface1Texture.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifirstday.png");
     Sprite waifu2;
     waifu2.setTexture(waifuface1Texture);
     waifu2.setPosition(1600.f, 900.f);
-    waifu2.setScale(1.7f, 1.8f);
+    waifu2.setScale(0.27f, 0.27f);
 
-=======
->>>>>>> 190d2899864bee565dbb3c634c202423d27fb3ea
     bool buttonHovered = false;
     int state = 0;
     Clock clock;
@@ -110,75 +87,68 @@ int main(){
                         buttonnoimage.setPosition(1600.f, 900.f);
                         c1.setPosition(10, 10);
                         waifu1.setPosition(600.f, 40.f);
-                    }
-                    else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
-                    {
-                        // เปลี่ยนรูป waifu1Texture เป็น waifu12Texture
-                        waifu1.setTexture(waifu2Texture);
+                        while (true) {
+                            if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                            {
+                                // เปลี่ยนรูป waifu1Texture เป็น waifu12Texture
+                                waifu1.setTexture(waifu2Texture);
 
-                        // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
-                        clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 1000)
-                        {
-                            // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
-                            window.clear();
-                            window.draw(back1image);
-                            window.draw(c1);
-                            window.draw(waifu1);
-                            window.display();
-                        }
+                                // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
+                                clock.restart();
+                                while (clock.getElapsedTime().asMilliseconds() < 3000)
+                                {
+                                    // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+                                    window.clear();
+                                    window.draw(back1image);
+                                    window.draw(c1);
+                                    window.draw(waifu1);
+                                    window.display();
+                                }
 
-                        // เลื่อนตำแหน่ง waifu1 และ c1 ไปยังตำแหน่งที่ระบุ (1600, 900)
-                        waifu1.setPosition(700.f, 900.f);
-                        c1.setPosition(1600, 900);
+                                // เลื่อนตำแหน่ง waifu1 และ c1 ไปยังตำแหน่งที่ระบุ (1600, 900)
+                                waifu1.setPosition(700.f, 900.f);
+                                c1.setPosition(1600, 900);
 
 
-                        
-                        day.setPosition(700, 400);
-                        back1image.setTexture(back3);
-                        clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 1000)
-                        {
-                                // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
-                                window.clear();
-                                window.draw(back1image);
-                                window.draw(day);
-                                window.draw(waifu1);
-                                window.display();
 
-                        }
-                        back1image.setTexture(back4);
-                        day.setPosition(10, 10);
-                        day.setFillColor(Color(0, 0, 0));
+                                day.setPosition(700, 400);
+                                back1image.setTexture(back3);
+                                clock.restart();
+                                while (clock.getElapsedTime().asMilliseconds() < 1000)
+                                {
+                                    // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+                                    window.clear();
+                                    window.draw(back1image);
+                                    window.draw(day);
+                                    window.draw(waifu1);
+                                    window.display();
 
-                        waifu2.setPosition(350.f, -180.f);
-                        clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 1000)
-                        {
-                            window.clear();
-                            window.draw(back1image);
-                            window.draw(day);
-                            window.draw(waifu2);
+                                }
+                                back1image.setTexture(back4);
+                                day.setPosition(10, 10);
+                                day.setFillColor(Color(0, 0, 0));
 
-                            window.display();
-                        }
+                                waifu2.setPosition(450.f, 200.f);
+                                clock.restart();
+                                while (clock.getElapsedTime().asMilliseconds() < 3000)
+                                {
+                                    window.clear();
+                                    window.draw(back1image);
+                                    window.draw(day);
+                                    window.draw(waifu2);
 
-                        rectangle.setPosition(0, 750);
-                        window.draw(rectangle);
-                        // Vtalk[j].setPosition(600, 750);
-                        // Vtalk[j].setFillColor(Color(0, 0, 0));
-                    }
-                    else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
-                    {   
-                        clock.restart();
-                        while (clock.getElapsedTime().asMilliseconds() < 1000)
-                        {
-                            window.clear();
-                            window.draw(back1image);
-                            window.draw(day);
-                            window.draw(waifu2);
+                                    window.display();
+                                }
 
-                            window.display();
+                                rectangle.setPosition(0, 750);
+                                window.draw(rectangle);
+                                while (true) {
+                                    int relation = Relation();
+                                    break;
+                                }
+                                break;
+                            }
+                            break;
                         }
                     }
                 }
@@ -216,12 +186,7 @@ int main(){
         window.draw(waifu1);
         window.draw(waifu2);
         window.draw(rectangle);
-        // window.draw(Vtalk[j]);
-        // window.draw(Utalk[j]);
-        // window.draw(Vqus[j]);
-        // window.draw(Uans1[j]);
-        // window.draw(Uans2[j]);
-        // window.draw(Uans3[j]);
+        window.draw(charactorTalk[0][0]);
         window.draw(starto);
         window.draw(buttonnoimage);
         window.display();
