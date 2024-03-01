@@ -13,7 +13,7 @@ public:
     Texture V1;
     Texture V2;
     Texture V3;
-    Texture V4;
+    Texture V4; 
     Texture V5;
     Texture V6;
     Texture V7;
@@ -612,3 +612,4 @@ Venti::Venti() {
         }
     };
 
+}
