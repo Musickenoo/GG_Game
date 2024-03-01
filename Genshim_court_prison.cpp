@@ -12,6 +12,15 @@ int main(){
     Texture back2 = init.back2;
     Texture back3 = init.back3;
     Texture back4 = init.back4;
+    Text VetiaT ;
+    VetiaT.setCharacterSize(100);
+    VetiaT.setColor(Color::Yellow);
+    VetiaT.setPosition(111,333);
+    VetiaT.setFont(Thai);
+
+    String s;
+    s = Venti.ventiTalk [0][0];
+    VetiaT.setString(s);
 
     RectangleShape rectangle(Vector2f(1600, 150));
     rectangle.setPosition(1600, 900);
