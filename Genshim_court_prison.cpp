@@ -1,51 +1,16 @@
  
 #include "../GG_Game/event/choice.h"
+Event event;
 
 int main(){
-    rectangle.setPosition(1600, 900);
-    rectangle.setFillColor(Color(200, 200, 200, 100));
-
-    // กำหนด starto
-    starto.setPosition(50, 50);
-    starto.setFillColor(Color(255, 0, 108));
-
-    thaiText.setFillColor(Color(255, 0, 108));;
-    thaiText.setPosition(10, 10);
-
-    // กำหนด choosen waifu
-    c1.setPosition(1600, 900);
-    c1.setFillColor(Color(255, 0, 108));
-
-    day.setPosition(1600, 900);
-    day.setFillColor(Color(0,255,0));
-
-    // กำหนด buttonnoimage และ buttonckimage
-    Texture buttonno;
-    buttonno.loadFromFile("../GG_Game/image/button/Button.png");
-    Sprite buttonnoimage;
-    buttonnoimage.setTexture(buttonno);
-    buttonnoimage.setPosition(1200.f, 700.f);
-
-    Texture buttonck;
-    buttonck.loadFromFile("../GG_Game/image/button/button1.png");
-    Sprite buttonckimage;
-    buttonckimage.setTexture(buttonck);
-    buttonckimage.setPosition(1200.f, 700.f);
-
-    //หน้าเลือกตัวตัวละคร
-    waifu1.setTexture(PictureCharector[0]);
-    waifu1.setPosition(1600.f, 900.f);
-
-    
     // ภาพตัวแทนตัวละคร Venti
   
     
-    Relation();
+    // Relation();
 
 
     while (window.isOpen())
     {
-        Event event;
         while (window.pollEvent(event))
         {
             if (event.type == Event::Closed)
@@ -55,7 +20,7 @@ int main(){
                 if (event.mouseButton.button == Mouse::Left)
                 {
                     mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
-                    if (buttonckimage.getGlobalBounds().contains(mousePos))
+                    if (buttonckimage.getGlobalBounds().contains(mousePos) && !AlreadyChooseCharector)
                     {
                         starto.setPosition(1600, 900);
                         back1image.setTexture(back2);
@@ -63,19 +28,51 @@ int main(){
                         c1.setPosition(10, 10);
                         waifu1.setPosition(600.f, 40.f);
                     }
-                    else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                    else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {
                         waifu1.setTexture(PictureCharectorChosses[0]);
                         choice choice;
-                        test();
+                        Setup();
                     }
-                    else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                    else if (QuestionTime){
+                        if(AnswerButton0.getGlobalBounds().contains(mousePos)){
+                            Action = 0;
+                        }
+                        if(AnswerButton1.getGlobalBounds().contains(mousePos)){
+                            Action = 1;
+                        }
+                        if(AnswerButton2.getGlobalBounds().contains(mousePos)){
+                            Action = 2;
+                        }
+                        text.setString(converter.from_bytes(charactorActionMessage[Day][Question][Action]));
+                        window.clear();
+                        window.draw(text);
+                        window.draw(back1image);
+                        window.draw(day);
+                        window.draw(waifu2);
+                        window.display();
+                        Question++;
+                        if(Question == 3){
+                            QuestionTime = false;
+                            Question = 0;
+                            basicTalk++;
+                            Answer0.setPosition(2000, 2000);
+                            Answer1.setPosition(2000, 2000);
+                            Answer2.setPosition(2000, 2000);
+                            AnswerButton0.setPosition(2000, 2000);
+                            AnswerButton1.setPosition(2000, 2000);
+                            AnswerButton2.setPosition(2000, 2000);
+                        }
+                        Talk();
+                    }
+
+                    else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0 && !QuestionTime) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
+                        Talk();
                         myTime.restart();
                         while (myTime.getElapsedTime().asMilliseconds() < 1000)
                         {
                             window.clear();
-                            text.setString(charactorTalkMessege[1][1]);
                             window.draw(text);
                             window.draw(back1image);
                             window.draw(day);
@@ -83,12 +80,20 @@ int main(){
                             window.display();
                         }
                     }
+
+                    if(Day == finalDay) {
+                        whoTalk = 0;
+                        basicTalk = 0;
+                        Question = 0;
+                        Day = 0;
+                        AlreadyChooseCharector = false;
+                        break;
+                    }  
                 }
             }
         }
 
         // ตรวจสอบว่าเมาส์อยู่ในพื้นที่ของ buttonnoimage หรือไม่
-        Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
         if (buttonnoimage.getGlobalBounds().contains(mousePos))
         {
             // เมาส์อยู่ในพื้นที่ของ buttonnoimage แสดง buttonckimage
@@ -116,24 +121,20 @@ int main(){
         //ฉากแรก
         window.draw(back1image);
         window.draw(c1);
-        for (Day = 0; Day < charactorTalkMessege.size(); Day++) {
-        for (Question = 0; Question < charactorTalkMessege[Day].size(); Question++) {
-            s = charactorTalkMessege[Day][Question];
-            text.setFont(Thai);
-            text.setString(s);
-            text.setCharacterSize(60);
-            text.setPosition(100, 90);
-            text.setFillColor(Color::Black);
-            charactorTalk[Day].push_back(text);
-            window.draw(charactorTalk[Day][Question]);
-        }
-        }
         window.draw(day);
         window.draw(waifu1);
         window.draw(waifu2);
-        window.draw(rectangle);
         window.draw(starto);
         window.draw(buttonnoimage);
+        window.draw(text);
+        window.draw(Answer0);
+        window.draw(Answer1);
+        window.draw(Answer2);
+
+        window.draw(rectangle);
+        window.draw(AnswerButton0);
+        window.draw(AnswerButton1);
+        window.draw(AnswerButton2);
         window.display();
     }
 

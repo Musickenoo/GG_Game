@@ -1,3 +1,8 @@
 {
-  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat"
+  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat",
+  "files.associations": {
+    "*.tcc": "cpp",
+    "codecvt": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
