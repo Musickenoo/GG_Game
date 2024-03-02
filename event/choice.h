@@ -13,7 +13,7 @@ initGame init;
 Venti venti;
 void test();
 int thisIsCharacterNum;
-
+size_t Day,Question,Action ,Answer;
 
 Clock myTime;
 Text c1("choosen waifu", amazing, 80);
@@ -208,8 +208,8 @@ int Relation() {
 
 
     // สร้างอาร์เรย์ของ Text จากประโยคคำถาม
-    for (int Day = 0; Day < charactorTalkMessege.size(); Day++) {
-        for (int Question = 0; Question < charactorTalkMessege[Day].size(); Question++) {
+    for (Day = 0; Day < charactorTalkMessege.size(); Day++) {
+        for (Question = 0; Question < charactorTalkMessege[Day].size(); Question++) {
             s = charactorTalkMessege[Day][Question];
             text.setFont(Thai);
             text.setString(s);
@@ -221,8 +221,8 @@ int Relation() {
     }
 
     vector<vector<Text>> userTalk(userTalkMessege.size());  // Resize the vector
-    for (int Day = 0; Day < userTalkMessege.size(); Day++) {
-        for (int Question = 0; Question < userTalkMessege[Day].size(); Question++) {
+    for (Day = 0; Day < userTalkMessege.size(); Day++) {
+        for (Question = 0; Question < userTalkMessege[Day].size(); Question++) {
             s = venti.userTalk[Day][Question];
             text.setFont(Thai);
             text.setString(s);
@@ -234,8 +234,8 @@ int Relation() {
     }
 
     vector<vector<Text>> charactorQuestions(charactorQuestionMessage.size());  // Resize the vector
-    for (int Day = 0; Day < charactorQuestionMessage.size(); Day++) {
-        for (int Question = 0; Question < charactorQuestionMessage[Day].size(); Question++) {
+    for (Day = 0; Day < charactorQuestionMessage.size(); Day++) {
+        for (Question = 0; Question < charactorQuestionMessage[Day].size(); Question++) {
             s = charactorQuestionMessage[Day][Question];
             text.setFont(Thai);
             text.setString(s);
@@ -246,10 +246,10 @@ int Relation() {
         }
     }
     vector<vector<vector<Text>>> userAnswers(userAnswerMessage.size());  // Resize the vector
-    for (int Day = 0; Day < userAnswerMessage.size(); Day++) {
+    for (Day = 0; Day < userAnswerMessage.size(); Day++) {
         userAnswers[Day].resize(userAnswerMessage[Day].size());  // Resize the inner vector
-        for (int Question = 0; Question < userAnswerMessage[Day].size(); Question++) {
-            for (int Answer = 0; Answer < userAnswerMessage[Day][Question].size(); Answer++) {
+        for (Question = 0; Question < userAnswerMessage[Day].size(); Question++) {
+            for (Answer = 0; Answer < userAnswerMessage[Day][Question].size(); Answer++) {
                 s = userAnswerMessage[Day][Question][Answer];
                 text.setFont(Thai);
                 text.setString(s);
@@ -262,10 +262,10 @@ int Relation() {
     }
 
     vector<vector<vector<Text>>> charactorAction(charactorActionMessage.size());  // Resize the vector
-    for (int Day = 0; Day < charactorActionMessage.size(); Day++) {
+    for (Day = 0; Day < charactorActionMessage.size(); Day++) {
         charactorAction[Day].resize(charactorActionMessage[Day].size());  // Resize the inner vector
-        for (int Question = 0; Question < charactorActionMessage[Day].size(); Question++) {
-            for (int Action = 0; Action < charactorActionMessage[Day][Question].size(); Action++) {
+        for (Question = 0; Question < charactorActionMessage[Day].size(); Question++) {
+            for (Action = 0; Action < charactorActionMessage[Day][Question].size(); Action++) {
                 s = charactorActionMessage[Day][Question][Action];
                 text.setFont(Thai);
                 text.setString(s);
@@ -301,7 +301,7 @@ int Relation() {
                     //relation += actionRelation[Day][Question][action];
                 break;
             }
-            break; // เทส
+            // break; // เทส
         }
         //cin.get(); // ตัวเทส
         // cout << endl << charactorTalkMessege[Day][endBasicTalk] << endl; // เทส
