@@ -35,15 +35,36 @@ int main(){
                         Setup();
                     }
                     else if (QuestionTime){
+                        text_String = charactorQuestionMessage[Day][Question];
+                        AnswerMessage = userAnswerMessage[Day][Question][0];
+                        Answer0.setString(converter.from_bytes(AnswerMessage));
+                        AnswerMessage = userAnswerMessage[Day][Question][1];
+                        Answer1.setString(converter.from_bytes(AnswerMessage));
+                        AnswerMessage = userAnswerMessage[Day][Question][2];
+                        Answer2.setString(converter.from_bytes(AnswerMessage));
+                        
+                        Answer0.setPosition(100, 100);
+                        AnswerButton0.setPosition(0, 50);
+                        window.draw(AnswerButton0);
+                        Answer1.setPosition(100, 350);
+                        AnswerButton1.setPosition(0, 300);
+                        window.draw(AnswerButton1);
+                        Answer2.setPosition(100, 600);
+                        AnswerButton2.setPosition(0, 550);
+                        window.draw(AnswerButton2);
                         if(AnswerButton0.getGlobalBounds().contains(mousePos)){
                             Action = 0;
+                            QuestionTime = false;
                         }
                         if(AnswerButton1.getGlobalBounds().contains(mousePos)){
                             Action = 1;
+                            QuestionTime = false;
                         }
                         if(AnswerButton2.getGlobalBounds().contains(mousePos)){
                             Action = 2;
+                            QuestionTime = false;
                         }
+                        waifu2.setTexture(charactorActionAnswerImage[Day][Question][Action]);
                         text.setString(converter.from_bytes(charactorActionMessage[Day][Question][Action]));
                         window.clear();
                         window.draw(text);
@@ -62,11 +83,11 @@ int main(){
                             AnswerButton0.setPosition(2000, 2000);
                             AnswerButton1.setPosition(2000, 2000);
                             AnswerButton2.setPosition(2000, 2000);
+                            continue;
                         }
-                        Talk();
                     }
 
-                    else if (rectangle.getGlobalBounds().contains(mousePos) && state >= 0 && !QuestionTime) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                    else if (rectangle.getGlobalBounds().contains(mousePos) && !QuestionTime) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
                         Talk();
                         myTime.restart();
@@ -117,6 +138,7 @@ int main(){
             }
         }
 
+        day.setString("DAY " + to_string(Day+1));
         window.clear();
         //ฉากแรก
         window.draw(back1image);

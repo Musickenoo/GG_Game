@@ -146,9 +146,8 @@ void Setup(){
     whoTalk = 0;
     basicTalk = 0;
     Question = 0;
-    Day = 0;     
-    waitAnswer = false;   
-    Talk();            
+    Day = 0;           
+    Talk();         
 }
 
 void Talk() {
@@ -160,13 +159,17 @@ void Talk() {
         whoTalk++;
     }
 
-    if(whoTalk == 2) {
+    if(basicTalk == 1 && !QuestionTime && whoTalk == 2){
+        QuestionTime = true;
+    }
+
+    if(whoTalk == 2 && !QuestionTime) {
         whoTalk = 0;
         basicTalk++;
     }
-
-    if(basicTalk == 2){
-        QuestionTime = true;
+    if(basicTalk == 2 && !QuestionTime) {
+        basicTalk = 0;
+        Day++;
     }
 
     text.setString(converter.from_bytes(text_String));
