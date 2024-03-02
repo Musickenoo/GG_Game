@@ -40,6 +40,8 @@ int main(){
     // ภาพตัวแทนตัวละคร Venti
   
     
+    Relation();
+
 
     while (window.isOpen())
     {
@@ -48,7 +50,7 @@ int main(){
         {
             if (event.type == Event::Closed)
                 window.close();
-            if (event.type == Event::MouseButtonPressed)
+            else if (event.type == Event::MouseButtonPressed)
             {
                 if (event.mouseButton.button == Mouse::Left)
                 {
@@ -114,8 +116,8 @@ int main(){
         //ฉากแรก
         window.draw(back1image);
         window.draw(c1);
-        for (int Day = 0; Day < charactorTalkMessege.size(); Day++) {
-        for (int Question = 0; Question < charactorTalkMessege[Day].size(); Question++) {
+        for (Day = 0; Day < charactorTalkMessege.size(); Day++) {
+        for (Question = 0; Question < charactorTalkMessege[Day].size(); Question++) {
             s = charactorTalkMessege[Day][Question];
             text.setFont(Thai);
             text.setString(s);
