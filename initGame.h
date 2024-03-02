@@ -18,6 +18,7 @@ vector<Texture> PictureCharector;
 vector<Texture> PictureCharectorChosses;
 Sprite waifu2;
 Texture waifuface1Texture;
+int i;
 
 // ตรวจสอบว่าคลิกที่ buttonckimage หรือไม่
 RenderWindow window(VideoMode(1600, 900), "SFML works!");
@@ -53,12 +54,12 @@ initGame::initGame(){
     PictureCharector.resize(CharectorCanChoose.size());
     PictureCharectorChosses.resize(CharectorChooses.size());
 
-    for(int i = 0; i < CharectorCanChoose.size(); i++){
+    for(i = 0; i < CharectorCanChoose.size(); i++){
         PictureCharector[i].loadFromFile(CharectorCanChoose[i]);
     }
 
 
-    for(int i = 0; i < CharectorCanChoose.size(); i++){
+    for(i = 0; i < CharectorCanChoose.size(); i++){
         PictureCharectorChosses[i].loadFromFile(CharectorChooses[i]);
     }
 }
