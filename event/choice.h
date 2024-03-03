@@ -70,12 +70,16 @@ choice::choice(int Charactor)
         userAnswerMessage = Sakura.userAnswers;
         charactorActionMessage = Sakura.SakuraAction;
         actionRelation = Sakura.actionRelation;
+        charactorActionAnswerImage = venti.ActionImage;
+        charactorQuestionImage = venti.ventiQusImageTalk;
+        charactorTalkImage  = venti.ventiActionImageTalk;
         V1 = Sakura.waifuface1Texture;
         V2 = Sakura.waifuface2Texture;
         V3 = Sakura.waifuface3Texture;
         V4 = Sakura.waifuface4Texture;
         V5 = Sakura.waifuface5Texture;
         V6 = Sakura.waifuface6Texture;
+        thisIsCharacterNum = 1;
         break;
 
     case 'e':  break;
@@ -164,6 +168,7 @@ void Talk() {
 
     if (basicTalk == 2 && !alreadyQuestion) {
         QuestionTime = true;
+        Question = 0;
         whoTalk = 0;
     }
 

@@ -65,6 +65,7 @@ int main(){
                             if(AnswerButton2.getGlobalBounds().contains(mousePos)) Action = 2;
 
                             if (Action >= 0 && Action <=2){
+                                Relation += actionRelation[Day][Question][Action];
                                 waifu2.setTexture(charactorActionAnswerImage[Day][Question][Action]);
                                 text.setString(converter.from_bytes(charactorActionMessage[Day][Question][Action]));
                                 Answer0.setPosition(2000, 2000);
