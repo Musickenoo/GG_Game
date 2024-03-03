@@ -176,3 +176,34 @@ void Talk() {
 
     text.setString(converter.from_bytes(text_String));
 }
+
+void questionText(){
+    text_String = charactorQuestionMessage[Day][Question];
+    AnswerMessage = userAnswerMessage[Day][Question][0];
+    Answer0.setString(converter.from_bytes(AnswerMessage));
+    AnswerMessage = userAnswerMessage[Day][Question][1];
+    Answer1.setString(converter.from_bytes(AnswerMessage));
+    AnswerMessage = userAnswerMessage[Day][Question][2];
+    Answer2.setString(converter.from_bytes(AnswerMessage));
+    
+    Answer0.setPosition(100, 100);
+    AnswerButton0.setPosition(0, 55);
+    window.draw(AnswerButton0);
+    Answer1.setPosition(100, 350);
+    AnswerButton1.setPosition(0, 305);
+    window.draw(AnswerButton1);
+    Answer2.setPosition(100, 600);
+    AnswerButton2.setPosition(0, 555);
+    window.draw(AnswerButton2);
+    text.setString(converter.from_bytes(text_String));
+    window.draw(text);
+}
+
+void clearAnswer(){
+    Answer0.setPosition(2000, 2000);
+    Answer1.setPosition(2000, 2000);
+    Answer2.setPosition(2000, 2000);
+    AnswerButton0.setPosition(2000, 2000);
+    AnswerButton1.setPosition(2000, 2000);
+    AnswerButton2.setPosition(2000, 2000);
+}  
