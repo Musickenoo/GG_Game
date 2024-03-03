@@ -26,14 +26,14 @@ int main(){
                     }
                     else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {
+                        waifu1.setTexture(PictureCharectorChosses[0]);
                         choice choice('Venti');
-                        waifu1.setTexture(PictureCharectorChosses[thisIsCharacterNum]);
                         Setup();
                     }
                     else if (sakura1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {
+                        sakura1.setTexture(PictureCharectorChosses[1]);
                         choice choice('Sakura');
-                        sakura1.setTexture(PictureCharectorChosses[thisIsCharacterNum]);
                         Setup();
                     }
                     else if (skipButton.getGlobalBounds().contains(mousePos)){
@@ -118,6 +118,7 @@ int main(){
                                     window.draw(back1image);
                                     window.draw(day);
                                     window.draw(waifu1);
+                                    window.draw(sakura1);
                                     window.display();
 
                             }
@@ -165,6 +166,7 @@ int main(){
 
         day.setString("DAY " + to_string(Day+1));
         window.clear();
+        window.setView(view);
         //ฉากแรก
         window.draw(back1image);
         window.draw(c1);

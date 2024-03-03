@@ -15,6 +15,7 @@ Texture back1, back2, back3, back4;
 vector<Texture> PictureCharector, PictureCharectorChosses;
 Texture waifuface1Texture, buttonno, buttonck;
 Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2;
+View view(FloatRect(0,0,1600,900));
 
 int thisIsCharacterNum, Day = 0, finalDay = 7, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
 bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false;
