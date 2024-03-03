@@ -34,7 +34,13 @@ int main(){
                         choice choice('Sakura');
                         Setup();
                     }
-
+                    else if (skipButton.getGlobalBounds().contains(mousePos)){
+                        Day = 6;
+                        basicTalk = 2;
+                        alreadyQuestion = true;
+                        whoTalk = 1;
+                        Talk();
+                    }
                     else if (QuestionTime){
                         if (!waitAnswer){
                             text_String = charactorQuestionMessage[Day][Question];
@@ -135,6 +141,23 @@ int main(){
                                 Question = 0;
                                 Day = 0;
                                 AlreadyChooseCharector = false;
+
+                                starto.setPosition(1600, 900);
+                                back1image.setTexture(back2);
+                                buttonnoimage.setPosition(1600.f, 900.f);
+                                c1.setPosition(10, 10);
+                                waifu1.setPosition(600.f, 40.f);
+                                Answer0.setPosition(1600, 960);
+                                Answer1.setPosition(1600, 960);
+                                Answer2.setPosition(1600, 960);
+                                AnswerButton0.setPosition(1600, 960);
+                                AnswerButton1.setPosition(1600, 960);
+                                AnswerButton2.setPosition(1600, 960);
+                                rectangle.setPosition(1600, 960);
+                                skipButton.setPosition(1600, 960);
+                                day.setPosition(1600, 960);
+                                waifu2.setPosition(1600, 960);
+                                text.setString("");
                                 break;
                             }  
                             whoTalk = 0;
@@ -166,6 +189,9 @@ int main(){
                         }
                         Talk();
                         myTime.restart();
+                        back1image.setTexture(back2);
+                        buttonnoimage.setPosition(1600.f, 900.f);
+                        c1.setPosition(10, 10);
                         while (myTime.getElapsedTime().asMilliseconds() < 1000){
                             window.clear();
                         }
@@ -218,6 +244,7 @@ int main(){
         window.draw(AnswerButton0);
         window.draw(AnswerButton1);
         window.draw(AnswerButton2);
+        window.draw(skipButton);
         window.display();
     }
 

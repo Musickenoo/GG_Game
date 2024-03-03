@@ -24,7 +24,8 @@ Text c1("choosen waifu", amazing, 80), starto("Judgment Of Nevillete \n The Arch
      thaiText("สวัสดีชาวโลก",Thai, 80), day("DAY " + to_string(Day+1), amazing, 80);
 Text text, Answer0, Answer1, Answer2;
 RectangleShape rectangle(Vector2f(1600, 150)), AnswerButton0(Vector2f(1600, 150)),
-               AnswerButton1(Vector2f(1600, 150)), AnswerButton2(Vector2f(1600, 150));
+               AnswerButton1(Vector2f(1600, 150)), AnswerButton2(Vector2f(1600, 150)),
+               skipButton(Vector2f(300, 150));
 
 string text_String, AnswerMessage;
 wstring_convert<codecvt_utf8<wchar_t>> converter;
@@ -121,6 +122,8 @@ initGame::initGame(){
     AnswerButton1.setFillColor(Color(200, 200, 200, 100));
     AnswerButton2.setPosition(1600, 900);
     AnswerButton2.setFillColor(Color(200, 200, 200, 100));
+    skipButton.setPosition(1600, 900);
+    skipButton.setFillColor(Color(255, 0, 0, 100));
 
     // กำหนด starto
     starto.setPosition(50, 50);

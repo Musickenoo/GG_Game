@@ -143,6 +143,8 @@ void Setup(){
 
     rectangle.setPosition(0, 750);
     window.draw(rectangle);
+    skipButton.setPosition(1300, 0);
+    window.draw(skipButton);
     // Vtalk[j].setPosition(600, 750);
     // Vtalk[j].setFillColor(Color(0, 0, 0));
     
