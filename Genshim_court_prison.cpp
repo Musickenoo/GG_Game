@@ -34,61 +34,137 @@ int main(){
                         choice choice;
                         Setup();
                     }
+
                     else if (QuestionTime){
-                        text_String = charactorQuestionMessage[Day][Question];
-                        AnswerMessage = userAnswerMessage[Day][Question][0];
-                        Answer0.setString(converter.from_bytes(AnswerMessage));
-                        AnswerMessage = userAnswerMessage[Day][Question][1];
-                        Answer1.setString(converter.from_bytes(AnswerMessage));
-                        AnswerMessage = userAnswerMessage[Day][Question][2];
-                        Answer2.setString(converter.from_bytes(AnswerMessage));
-                        
-                        Answer0.setPosition(100, 100);
-                        AnswerButton0.setPosition(0, 50);
-                        window.draw(AnswerButton0);
-                        Answer1.setPosition(100, 350);
-                        AnswerButton1.setPosition(0, 300);
-                        window.draw(AnswerButton1);
-                        Answer2.setPosition(100, 600);
-                        AnswerButton2.setPosition(0, 550);
-                        window.draw(AnswerButton2);
-                        if(AnswerButton0.getGlobalBounds().contains(mousePos)){
-                            Action = 0;
-                            QuestionTime = false;
+                        if (!waitAnswer){
+                            text_String = charactorQuestionMessage[Day][Question];
+                            AnswerMessage = userAnswerMessage[Day][Question][0];
+                            Answer0.setString(converter.from_bytes(AnswerMessage));
+                            AnswerMessage = userAnswerMessage[Day][Question][1];
+                            Answer1.setString(converter.from_bytes(AnswerMessage));
+                            AnswerMessage = userAnswerMessage[Day][Question][2];
+                            Answer2.setString(converter.from_bytes(AnswerMessage));
+                            
+                            Answer0.setPosition(100, 100);
+                            AnswerButton0.setPosition(0, 55);
+                            window.draw(AnswerButton0);
+                            Answer1.setPosition(100, 350);
+                            AnswerButton1.setPosition(0, 305);
+                            window.draw(AnswerButton1);
+                            Answer2.setPosition(100, 600);
+                            AnswerButton2.setPosition(0, 555);
+                            window.draw(AnswerButton2);
+                            text.setString(converter.from_bytes(text_String));
+                            window.draw(text);
+
+                            waitAnswer = true;
                         }
-                        if(AnswerButton1.getGlobalBounds().contains(mousePos)){
-                            Action = 1;
-                            QuestionTime = false;
-                        }
-                        if(AnswerButton2.getGlobalBounds().contains(mousePos)){
-                            Action = 2;
-                            QuestionTime = false;
-                        }
-                        waifu2.setTexture(charactorActionAnswerImage[Day][Question][Action]);
-                        text.setString(converter.from_bytes(charactorActionMessage[Day][Question][Action]));
-                        window.clear();
-                        window.draw(text);
-                        window.draw(back1image);
-                        window.draw(day);
-                        window.draw(waifu2);
-                        window.display();
-                        Question++;
-                        if(Question == 3){
-                            QuestionTime = false;
-                            Question = 0;
-                            basicTalk++;
-                            Answer0.setPosition(2000, 2000);
-                            Answer1.setPosition(2000, 2000);
-                            Answer2.setPosition(2000, 2000);
-                            AnswerButton0.setPosition(2000, 2000);
-                            AnswerButton1.setPosition(2000, 2000);
-                            AnswerButton2.setPosition(2000, 2000);
-                            continue;
+                        if(waitAnswer){
+                            if(AnswerButton0.getGlobalBounds().contains(mousePos)) Action = 0;
+                            if(AnswerButton1.getGlobalBounds().contains(mousePos)) Action = 1;
+                            if(AnswerButton2.getGlobalBounds().contains(mousePos)) Action = 2;
+
+                            if (Action >= 0 && Action <=2){
+                                waifu2.setTexture(charactorActionAnswerImage[Day][Question][Action]);
+                                text.setString(converter.from_bytes(charactorActionMessage[Day][Question][Action]));
+                                Answer0.setPosition(2000, 2000);
+                                Answer1.setPosition(2000, 2000);
+                                Answer2.setPosition(2000, 2000);
+                                AnswerButton0.setPosition(2000, 2000);
+                                AnswerButton1.setPosition(2000, 2000);
+                                AnswerButton2.setPosition(2000, 2000);
+                                if (rectangle.getGlobalBounds().contains(mousePos)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                                {
+                                    Question++;
+
+                                    if(Question == 3){
+                                        QuestionTime = false;
+                                        alreadyQuestion = true;
+                                        Question = 0;
+                                        whoTalk = 0;
+                                        basicTalk = 2;
+                                        Answer0.setPosition(2000, 2000);
+                                        Answer1.setPosition(2000, 2000);
+                                        Answer2.setPosition(2000, 2000);
+                                        AnswerButton0.setPosition(2000, 2000);
+                                        AnswerButton1.setPosition(2000, 2000);
+                                        AnswerButton2.setPosition(2000, 2000);
+                                        // Talk();
+                                        continue;
+                                    }
+
+                                    Action = 100;
+                                    waitAnswer = false;
+
+                                    text.setString(converter.from_bytes(charactorQuestionMessage[Day][Question]));
+                                    AnswerMessage = userAnswerMessage[Day][Question][0];
+                                    Answer0.setString(converter.from_bytes(AnswerMessage));
+                                    AnswerMessage = userAnswerMessage[Day][Question][1];
+                                    Answer1.setString(converter.from_bytes(AnswerMessage));
+                                    AnswerMessage = userAnswerMessage[Day][Question][2];
+                                    Answer2.setString(converter.from_bytes(AnswerMessage));
+                                    
+                                    Answer0.setPosition(100, 100);
+                                    AnswerButton0.setPosition(0, 55);
+                                    window.draw(AnswerButton0);
+                                    Answer1.setPosition(100, 350);
+                                    AnswerButton1.setPosition(0, 305);
+                                    window.draw(AnswerButton1);
+                                    Answer2.setPosition(100, 600);
+                                    AnswerButton2.setPosition(0, 555);
+                                    window.draw(AnswerButton2);
+                                }
+                                window.clear();
+                                window.draw(text);
+                                window.draw(back1image);
+                                window.draw(day);
+                                window.draw(waifu2);
+                                window.display();
+                            }
                         }
                     }
 
                     else if (rectangle.getGlobalBounds().contains(mousePos) && !QuestionTime) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
+                        if (basicTalk == 3) {
+                            Day++;
+                            whoTalk = 0;
+                            basicTalk = 0;
+                            alreadyQuestion = waitAnswer = QuestionTime = false;
+                            waifu1.setPosition(700.f, 900.f);
+                            c1.setPosition(1600, 900);  
+                            day.setPosition(700, 400);
+                            back1image.setTexture(back3);
+                            myTime.restart();
+                            while (myTime.getElapsedTime().asMilliseconds() < 1000)
+                            {
+                                    // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+                                    window.clear();
+                                    window.draw(back1image);
+                                    window.draw(day);
+                                    window.draw(waifu1);
+                                    window.display();
+
+                            }
+                            back1image.setTexture(back4);
+                            day.setPosition(10, 10);
+                            day.setFillColor(Color(0, 0, 0));
+
+                            waifu2.setPosition(450.f, 200.f);
+                            myTime.restart();
+                            while (myTime.getElapsedTime().asMilliseconds() < 1000)
+                            {
+                                window.clear();
+                                window.draw(back1image);
+                                window.draw(day);
+                                window.draw(waifu2);
+
+                                window.display();
+                            }
+
+                            rectangle.setPosition(0, 750);
+                            window.draw(rectangle);
+                        }
                         Talk();
                         myTime.restart();
                         while (myTime.getElapsedTime().asMilliseconds() < 1000)

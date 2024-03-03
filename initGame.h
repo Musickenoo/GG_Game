@@ -16,8 +16,8 @@ vector<Texture> PictureCharector, PictureCharectorChosses;
 Texture waifuface1Texture, buttonno, buttonck;
 Sprite waifu1, waifu2, buttonnoimage, buttonckimage;
 
-int thisIsCharacterNum, Day = 0, finalDay = 7, basicTalk = 0, endBasicTalk = 2, Question = 0, Action, Relation = 0;
-bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false;
+int thisIsCharacterNum, Day = 0, finalDay = 7, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
+bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false;
 
 Clock myTime;
 Text c1("choosen waifu", amazing, 80), starto("Judgment Of Nevillete \n The Archon", amazing, 80),

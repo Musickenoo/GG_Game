@@ -151,25 +151,20 @@ void Setup(){
 }
 
 void Talk() {
-    
-    if(basicTalk < 2){
-        if (whoTalk == 0) text_String = charactorTalkMessege[Day][basicTalk];
-        if (whoTalk == 1) text_String = userTalkMessege[Day][basicTalk];
-        waifu2.setTexture(charactorTalkImage[Day][Question]);
-        whoTalk++;
-    }
 
-    if(basicTalk == 1 && !QuestionTime && whoTalk == 2){
-        QuestionTime = true;
-    }
+    if (whoTalk == 0) text_String = charactorTalkMessege[Day][basicTalk];
+    if (whoTalk == 1) text_String = userTalkMessege[Day][basicTalk];
+    waifu2.setTexture(charactorTalkImage[Day][basicTalk]);
+    whoTalk++;
 
-    if(whoTalk == 2 && !QuestionTime) {
+    if (whoTalk == 2) {
         whoTalk = 0;
         basicTalk++;
     }
-    if(basicTalk == 2 && !QuestionTime) {
-        basicTalk = 0;
-        Day++;
+
+    if (basicTalk == 2 && !alreadyQuestion) {
+        QuestionTime = true;
+        whoTalk = 0;
     }
 
     text.setString(converter.from_bytes(text_String));
