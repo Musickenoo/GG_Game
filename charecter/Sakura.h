@@ -81,7 +81,7 @@ Sakura::Sakura(){
         }
     };
 
-    ventiActionImageTalk = {
+    SakuraActionImageTalk = {
         // วันที่ 1
         {
            V10,
@@ -237,7 +237,7 @@ Sakura::Sakura(){
         }
     };
 
-     ventiQusImageTalk = {
+     SakuraQusImageTalk = {
         // วันที่ 1
         {
             V10,
