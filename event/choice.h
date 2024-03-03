@@ -11,7 +11,7 @@
 // Get Class
 initGame init;
 Venti venti;
-Sakura Sakura;
+Sakura sakura;
 void Setup();
 void Talk();
 
@@ -61,28 +61,32 @@ choice::choice(int Charactor)
         V22 = venti.V22;
         thisIsCharacterNum = 0;
         waifu2.setTexture(V10);
+        waifu2.setPosition(1600.f, 900.f);
+        waifu2.setScale(0.27f, 0.27f);
         
 
 
         break;
 
-    case 'Sakura': charactorTalkMessege = Sakura.SakuraTalk;
-        userTalkMessege = Sakura.userTalk;
-        charactorQuestionMessage = Sakura.SakuraQuestions;
-        userAnswerMessage = Sakura.userAnswers;
-        charactorActionMessage = Sakura.SakuraAction;
-        actionRelation = Sakura.actionRelation;
-        charactorActionAnswerImage = venti.ActionImage;
-        charactorQuestionImage = venti.ventiQusImageTalk;
-        charactorTalkImage  = venti.ventiActionImageTalk;
-        V1 = Sakura.waifuface1Texture;
-        V2 = Sakura.waifuface2Texture;
-        V3 = Sakura.waifuface3Texture;
-        V4 = Sakura.waifuface4Texture;
-        V5 = Sakura.waifuface5Texture;
-        V6 = Sakura.waifuface6Texture;
+    case 'Sakura': charactorTalkMessege = sakura.SakuraTalk;
+        userTalkMessege = sakura.userTalk;
+        charactorQuestionMessage = sakura.SakuraQuestions;
+        userAnswerMessage = sakura.userAnswers;
+        charactorActionMessage = sakura.SakuraAction;
+        actionRelation = sakura.actionRelation;
+        charactorActionAnswerImage = sakura.ActionImage;
+        charactorQuestionImage = sakura.SakuraQusImageTalk;
+        charactorTalkImage  = sakura.SakuraActionImageTalk;
+        V1 = sakura.S1;
+        V2 = sakura.S2;
+        V3 = sakura.S3;
+        V4 = sakura.S4;
+        V5 = sakura.S5;
+        V6 = sakura.S6;
         thisIsCharacterNum = 1;
-        waifu2.setTexture(V1);
+        sakura2.setTexture(V1);
+        sakura2.setPosition(1600.f, 900.f);
+        sakura2.setScale(0.27f, 0.27f);
         break;
 
     case 'e':  break;
@@ -92,9 +96,6 @@ choice::choice(int Charactor)
 // Variable
 
 void Setup(){
-
-    waifu2.setPosition(1600.f, 900.f);
-    waifu2.setScale(0.27f, 0.27f);
     
     // กำหนดเวลาในการเปลี่ยนรูปภาพเป็น 3 วินาที (3000 milliseconds)
     myTime.restart();
@@ -105,12 +106,27 @@ void Setup(){
         window.draw(back1image);
         window.draw(c1);
         window.draw(waifu1);
+        window.draw(sakura1);
         window.display();
     }
 
     // เลื่อนตำแหน่ง waifu1 และ c1 ไปยังตำแหน่งที่ระบุ (1600, 900)
-    waifu1.setPosition(700.f, 900.f);
     c1.setPosition(1600, 900);
+    if (thisIsCharacterNum == 0)
+    {
+        waifu1.setPosition(700.f, 900.f);
+        sakura1.setPosition(1600.f,900.f);
+    }
+    
+
+    if (thisIsCharacterNum==1)
+    {
+        sakura1.setPosition(700.f,900.f);
+        waifu1.setPosition(1600.f,900.f);
+        waifu2.setScale(1.2f,1.2f);
+        waifu2.setTexture(sakura.S6);
+    }
+   
 
 
     
@@ -124,6 +140,7 @@ void Setup(){
             window.draw(back1image);
             window.draw(day);
             window.draw(waifu1);
+            window.draw(sakura1);
             window.display();
 
     }
@@ -131,11 +148,12 @@ void Setup(){
     day.setPosition(10, 10);
     day.setFillColor(Color(0, 0, 0));
 
-    waifu2.setPosition(450.f, 200.f);
+    waifu2.setPosition(455.f, 180.f);
     myTime.restart();
     while (myTime.getElapsedTime().asMilliseconds() < 1000)
     {
         window.clear();
+        window.setView(view);
         window.draw(back1image);
         window.draw(day);
         window.draw(waifu2);
@@ -198,6 +216,7 @@ void questionText(){
     AnswerButton2.setPosition(0, 555);
     window.draw(AnswerButton2);
     text.setString(converter.from_bytes(text_String));
+    window.setView(view);
     window.draw(text);
 }
 
