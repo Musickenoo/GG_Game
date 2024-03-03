@@ -60,6 +60,8 @@ choice::choice(int Charactor)
         V21 = venti.V21;
         V22 = venti.V22;
         thisIsCharacterNum = 0;
+        waifu2.setTexture(V10);
+        
 
 
         break;
@@ -80,6 +82,7 @@ choice::choice(int Charactor)
         V5 = Sakura.waifuface5Texture;
         V6 = Sakura.waifuface6Texture;
         thisIsCharacterNum = 1;
+        waifu2.setTexture(V1);
         break;
 
     case 'e':  break;
@@ -90,7 +93,6 @@ choice::choice(int Charactor)
 
 void Setup(){
 
-    waifu2.setTexture(venti.V10);
     waifu2.setPosition(1600.f, 900.f);
     waifu2.setScale(0.27f, 0.27f);
     

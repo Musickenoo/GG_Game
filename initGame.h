@@ -14,7 +14,7 @@ Sprite back1image;
 Texture back1, back2, back3, back4;
 vector<Texture> PictureCharector, PictureCharectorChosses;
 Texture waifuface1Texture, buttonno, buttonck;
-Sprite waifu1, waifu2, buttonnoimage, buttonckimage;
+Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2;
 
 int thisIsCharacterNum, Day = 0, finalDay = 7, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
 bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false;
@@ -90,8 +90,8 @@ initGame::initGame(){
 
     back4.loadFromFile("../GG_Game/image/background/testb6.PNG");
 
-    vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg"};
-    vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg"};
+    vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG"};
+    vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg","../GG_Game/charecter/Sakura/Second.PNG"};
 
     PictureCharector.resize(CharectorCanChoose.size());
     PictureCharectorChosses.resize(CharectorChooses.size());
@@ -142,6 +142,10 @@ initGame::initGame(){
     //หน้าเลือกตัวตัวละคร
     waifu1.setTexture(PictureCharector[0]);
     waifu1.setPosition(1600.f, 900.f);
+    sakura1.setTexture(PictureCharector[1]);
+    sakura1.setScale(0.55f,0.55f);
+    sakura1.setPosition(1600.f, 900.f);
+    
 
     text.setFont(Thai);
     text.setCharacterSize(40);
@@ -177,6 +181,7 @@ void CleanScreen(){
     day.setPosition(1600, 960);
     waifu1.setPosition(1600, 960);
     waifu2.setPosition(1600, 960);
+    sakura1.setPosition(1600, 960);
     starto.setPosition(1600, 960);
     Answer0.setPosition(1600, 960);
     Answer1.setPosition(1600, 960);
@@ -212,4 +217,6 @@ void Start(){
     c1.setPosition(10, 10);
     waifu1.setTexture(PictureCharector[0]);
     waifu1.setPosition(600.f, 40.f);
+    sakura1.setTexture(PictureCharector[1]);
+    sakura1.setPosition(900.f, 40.f);
 }
