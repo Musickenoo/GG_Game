@@ -128,12 +128,22 @@ int main(){
                     {   
                         if (basicTalk == 3) {
                             Day++;
+                            if(Day == finalDay) {
+                                whoTalk = 0;
+                                basicTalk = 0;
+                                Question = 0;
+                                Day = 0;
+                                AlreadyChooseCharector = false;
+                                break;
+                            }  
                             whoTalk = 0;
                             basicTalk = 0;
                             alreadyQuestion = waitAnswer = QuestionTime = false;
                             waifu1.setPosition(700.f, 900.f);
-                            c1.setPosition(1600, 900);  
+                            c1.setPosition(1600, 900);
                             day.setPosition(700, 400);
+                            day.setFillColor(Color(0,255,0));
+                            day.setString("DAY " + to_string(Day+1));
                             back1image.setTexture(back3);
                             myTime.restart();
                             while (myTime.getElapsedTime().asMilliseconds() < 1000)
@@ -149,43 +159,17 @@ int main(){
                             back1image.setTexture(back4);
                             day.setPosition(10, 10);
                             day.setFillColor(Color(0, 0, 0));
-
-                            waifu2.setPosition(450.f, 200.f);
-                            myTime.restart();
-                            while (myTime.getElapsedTime().asMilliseconds() < 1000)
-                            {
-                                window.clear();
-                                window.draw(back1image);
-                                window.draw(day);
-                                window.draw(waifu2);
-
-                                window.display();
-                            }
-
                             rectangle.setPosition(0, 750);
                             window.draw(rectangle);
+                            Question = 0;
                         }
                         Talk();
                         myTime.restart();
-                        while (myTime.getElapsedTime().asMilliseconds() < 1000)
-                        {
+                        while (myTime.getElapsedTime().asMilliseconds() < 1000){
                             window.clear();
-                            window.draw(text);
-                            window.draw(back1image);
-                            window.draw(day);
-                            window.draw(waifu2);
-                            window.display();
                         }
                     }
 
-                    if(Day == finalDay) {
-                        whoTalk = 0;
-                        basicTalk = 0;
-                        Question = 0;
-                        Day = 0;
-                        AlreadyChooseCharector = false;
-                        break;
-                    }  
                 }
             }
         }

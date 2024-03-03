@@ -86,7 +86,7 @@ choice::choice()
 
 void Setup(){
 
-    waifu2.setTexture(venti.V6);
+    waifu2.setTexture(venti.V10);
     waifu2.setPosition(1600.f, 900.f);
     waifu2.setScale(0.27f, 0.27f);
     

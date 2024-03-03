@@ -89,8 +89,8 @@ initGame::initGame(){
 
     back4.loadFromFile("../GG_Game/image/background/testb6.PNG");
 
-    vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg"};
-    vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg"};
+    vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg"};
+    vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg"};
 
     PictureCharector.resize(CharectorCanChoose.size());
     PictureCharectorChosses.resize(CharectorChooses.size());
@@ -114,7 +114,7 @@ initGame::initGame(){
     buttonckimage.setPosition(1200.f, 700.f);
 
     rectangle.setPosition(1600, 900);
-    rectangle.setFillColor(Color(200, 200, 200, 100));
+    rectangle.setFillColor(Color(200, 200, 200, 150));
     AnswerButton0.setPosition(1600, 900);
     AnswerButton0.setFillColor(Color(200, 200, 200, 100));
     AnswerButton1.setPosition(1600, 900);
@@ -141,20 +141,28 @@ initGame::initGame(){
     waifu1.setPosition(1600.f, 900.f);
 
     text.setFont(Thai);
-    text.setCharacterSize(60);
+    text.setCharacterSize(40);
     text.setPosition(100, 790);
     text.setFillColor(Color::Black);
+    text.setOutlineColor(Color::White);
+    text.setOutlineThickness(4.f);
     Answer0.setFont(Thai);
-    Answer0.setCharacterSize(60);
+    Answer0.setCharacterSize(40);
     Answer0.setPosition(1600, 960);
     Answer0.setFillColor(Color::Black);
+    Answer0.setFillColor(Color::Black);
+    Answer0.setOutlineColor(Color::White);
     Answer1.setFont(Thai);
-    Answer1.setCharacterSize(60);
+    Answer1.setCharacterSize(40);
     Answer1.setPosition(1600, 960);
     Answer1.setFillColor(Color::Black);
+    Answer1.setFillColor(Color::Black);
+    Answer1.setOutlineColor(Color::White);
     Answer2.setFont(Thai);
-    Answer2.setCharacterSize(60);
+    Answer2.setCharacterSize(40);
     Answer2.setPosition(1600, 960);
     Answer2.setFillColor(Color::Black);
+    Answer2.setFillColor(Color::Black);
+    Answer2.setOutlineColor(Color::White);
 }
     
