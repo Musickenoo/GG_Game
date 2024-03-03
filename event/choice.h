@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../initGame.h"
-//#include "../charecter/Sakura.h"
+#include "../charecter/Sakura.h"
 #include "../charecter/Venti.h"
 #include "../charecter/furina.h"
 #include "../charecter/nahida.h"
@@ -11,20 +11,21 @@
 // Get Class
 initGame init;
 Venti venti;
+Sakura Sakura;
 void Setup();
 void Talk();
 
-int Charactor = 'Venti';
+// int Charactor = 'Venti';
 int whoTalk = 0;
 
 
 class choice
 {
 public:
-    choice();
+    choice(int);
 };
 
-choice::choice()
+choice::choice(int Charactor)
 {
     switch (Charactor) {
     case 'Venti':  charactorTalkMessege = venti.ventiTalk;
@@ -63,22 +64,21 @@ choice::choice()
 
         break;
 
-    /*case 'Sakura': charactorTalkMessege = Sakura.SakuraTalk;
+    case 'Sakura': charactorTalkMessege = Sakura.SakuraTalk;
         userTalkMessege = Sakura.userTalk;
         charactorQuestionMessage = Sakura.SakuraQuestions;
         userAnswerMessage = Sakura.userAnswers;
         charactorActionMessage = Sakura.SakuraAction;
         actionRelation = Sakura.actionRelation;
-        waifuface1Texture = Sakura.waifuface1Texture;
-        waifuface2Texture = Sakura.waifuface2Texture;
-        waifuface3Texture = Sakura.waifuface3Texture;
-        waifuface4Texture = Sakura.waifuface4Texture;
-        waifuface5Texture = Sakura.waifuface5Texture;
-        waifuface6Texture = Sakura.waifuface6Texture;
+        V1 = Sakura.waifuface1Texture;
+        V2 = Sakura.waifuface2Texture;
+        V3 = Sakura.waifuface3Texture;
+        V4 = Sakura.waifuface4Texture;
+        V5 = Sakura.waifuface5Texture;
+        V6 = Sakura.waifuface6Texture;
         break;
 
     case 'e':  break;
-    */
     }
 }
 

@@ -31,7 +31,7 @@ int main(){
                     else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {
                         waifu1.setTexture(PictureCharectorChosses[0]);
-                        choice choice;
+                        choice choice('Sakura');
                         Setup();
                     }
 
