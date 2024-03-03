@@ -3,30 +3,32 @@
 #include "../initGame.h"
 
 class Sakura{
-    public:
-        Sakura();
-        vector<vector<string>> SakuraTalk, userTalk, SakuraQuestions;
-        vector<vector<vector<string>>> userAnswers, SakuraAction;
-        vector<vector<vector<int>>> actionRelation;
-        Texture waifuface1Texture;
-        Texture waifuface2Texture;
-        Texture waifuface3Texture;
-        Texture waifuface4Texture;
-        Texture waifuface5Texture;
-        Texture waifuface6Texture;
-        Sprite waifu2;
+public:
+    Sakura();
+     vector<vector<string>> SakuraTalk, userTalk, SakuraQuestions;
+    vector<vector<vector<string>>> userAnswers, SakuraAction;
+    vector<vector<vector<int>>> actionRelation;
+    vector<vector<vector<Texture>>> ActionImage;
+    vector<vector<Texture>>  SakuraActionImageTalk, SakuraQusImageTalk;
+    Texture S1;
+    Texture S2;
+    Texture S3;
+    Texture S4; 
+    Texture S5;
+    Texture S6;
+    
 };
 
 
 Sakura::Sakura(){
     
-    // ภาพตัวแทนตัวละคร Venti
-    waifuface1Texture.loadFromFile("../GG_Game/image/test_charec/IMG_0273.PNG");
-    waifuface2Texture.loadFromFile("../GG_Game/image/test_charec/2a_yes.png");
-    waifuface3Texture.loadFromFile("../GG_Game/image/test_charec/3a_sadd.png");
-    waifuface4Texture.loadFromFile("../GG_Game/image/test_charec/4a_cry.png");
-    waifuface5Texture.loadFromFile("../GG_Game/image/test_charec/5a_angry.png");
-    waifuface6Texture.loadFromFile("../GG_Game/image/test_charec/6a_happyy.png");
+    // ภาพตัวแทนตัวละคร Sakura
+    S1.loadFromFile("../GG_Game/charecter/Sakura/Sakuraangry.PNG");
+    S2.loadFromFile("../GG_Game/charecter/Sakura/Sakuraannoy.PNG");
+    S3.loadFromFile("../GG_Game/charecter/Sakura/Sakuralove.PNG");
+    S4.loadFromFile("../GG_Game/charecter/Sakura/Sakurasad.PNG");
+    S5.loadFromFile("../GG_Game/charecter/Sakura/Sakurasleep.PNG");
+    S6.loadFromFile("../GG_Game/charecter/Sakura/Sakuraverycutelv1.PNG");
 
     SakuraTalk = {
         // วันที่ 1
@@ -79,6 +81,56 @@ Sakura::Sakura(){
         }
     };
 
+    ventiActionImageTalk = {
+        // วันที่ 1
+        {
+           V10,
+           V15,
+           V12
+        },
+
+        // วันที่ 2
+        {
+            V11,
+            V3,
+            V7
+        },
+
+        // วันที่ 3
+        {
+            V20,
+            V21,
+            V13
+        },
+
+        // วันที่ 4
+        {
+            V9,
+            V18,
+            V13
+        },
+
+        // วันที่ 5
+        {
+            V18,
+            V4,
+            V22
+        },
+
+        // วันที่ 6
+        {
+            V6,
+            V3,
+            V18
+        },
+
+        // วันที่ 7
+        {
+            V18,
+            V16,
+            V2
+        }
+    };
     userTalk = {
         // วันที่ 1
         {
@@ -184,6 +236,57 @@ Sakura::Sakura(){
             "Sakura :นี่!!! คุณกำลังจะทำอะไรน่ะ"
         }
     };
+
+     ventiQusImageTalk = {
+        // วันที่ 1
+        {
+            V10,
+            V16,
+            V12
+        },
+
+        // วันที่ 2
+        {   V12,
+            V8,
+            V12
+        },
+
+        // วันที่ 3
+        {
+            V7,
+            V19,
+            V7
+        },
+
+        // วันที่ 4
+        {
+            V13,
+            V13,
+            V21
+        },
+
+        // วันที่ 5
+        {
+            V2,
+            V2,
+            V22
+        },
+
+        // วันที่ 6
+        {
+            V16,
+            V2,
+            V22
+        },
+
+        // วันที่ 7
+        {
+             V2,
+             V7,
+             V22
+        }
+    };
+
 
     userAnswers = {
         // วันที่ 1
@@ -389,6 +492,56 @@ Sakura::Sakura(){
         }
     };
 
+    ActionImage = {
+        // วันแรก
+        {
+            {V11,V11,V1},
+            {V19,V19,V11},
+            {V11,V4,V4}
+        },
+
+        // วันที่สอง
+        {
+            {V11,V11,V1},
+            {V3,V13,V4},
+            {V4,V11,V11}
+        },
+
+        // วันที่สาม
+        {
+            {V15,V4,V11},
+            {V4,V4,V22},
+            {V5,V4, V11}
+        },
+
+        // วันที่สี่
+        {
+            {V3,V6,V21},
+            {V5,V21,V5},
+            {V22,V21,V1}
+        },
+
+        // วันที่ห้า
+        {
+            {V22,V4,V4},
+            {V14,V22,V5},
+            {V3,V3,V20}
+        },
+
+        // วันที่หก
+        {
+            {V11,V5,V3},
+            {V6,V3,V16},
+            {V8,V20,V3}
+        },
+
+        // วันที่เจ็ด
+        {
+            {V22,V20,V15},
+            {V20,V18,V2},
+            {V2,V8, V18}
+        }
+    };
     
     actionRelation = {
         // วันแรก
