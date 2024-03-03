@@ -141,23 +141,7 @@ int main(){
                                 Question = 0;
                                 Day = 0;
                                 AlreadyChooseCharector = false;
-
-                                starto.setPosition(1600, 900);
-                                back1image.setTexture(back2);
-                                buttonnoimage.setPosition(1600.f, 900.f);
-                                c1.setPosition(10, 10);
-                                waifu1.setPosition(600.f, 40.f);
-                                Answer0.setPosition(1600, 960);
-                                Answer1.setPosition(1600, 960);
-                                Answer2.setPosition(1600, 960);
-                                AnswerButton0.setPosition(1600, 960);
-                                AnswerButton1.setPosition(1600, 960);
-                                AnswerButton2.setPosition(1600, 960);
-                                rectangle.setPosition(1600, 960);
-                                skipButton.setPosition(1600, 960);
-                                day.setPosition(1600, 960);
-                                waifu2.setPosition(1600, 960);
-                                text.setString("");
+                                break;
                                 break;
                             }  
                             whoTalk = 0;
@@ -189,9 +173,6 @@ int main(){
                         }
                         Talk();
                         myTime.restart();
-                        back1image.setTexture(back2);
-                        buttonnoimage.setPosition(1600.f, 900.f);
-                        c1.setPosition(10, 10);
                         while (myTime.getElapsedTime().asMilliseconds() < 1000){
                             window.clear();
                         }
