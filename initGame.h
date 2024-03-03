@@ -168,4 +168,48 @@ initGame::initGame(){
     Answer2.setFillColor(Color::Black);
     Answer2.setOutlineColor(Color::White);
 }
-    
+
+void CleanScreen(){
+    window.clear();
+    back1image.setTexture(back3);
+    window.draw(back1image);
+    text.setString("");
+    day.setPosition(1600, 960);
+    waifu1.setPosition(1600, 960);
+    waifu2.setPosition(1600, 960);
+    starto.setPosition(1600, 960);
+    Answer0.setPosition(1600, 960);
+    Answer1.setPosition(1600, 960);
+    Answer2.setPosition(1600, 960);
+    rectangle.setPosition(1600, 960);
+    AnswerButton0.setPosition(1600, 960);
+    AnswerButton1.setPosition(1600, 960);
+    AnswerButton2.setPosition(1600, 960);
+    skipButton.setPosition(1600, 960);
+    myTime.restart();
+    while (myTime.getElapsedTime().asMilliseconds() < 1000) continue;
+    window.draw(day);
+    window.draw(waifu1);
+    window.draw(waifu2);
+    window.draw(starto);
+    window.draw(buttonnoimage);
+    window.draw(text);
+    window.draw(Answer0);
+    window.draw(Answer1);
+    window.draw(Answer2);
+    window.draw(rectangle);
+    window.draw(AnswerButton0);
+    window.draw(AnswerButton1);
+    window.draw(AnswerButton2);
+    window.draw(skipButton);
+    window.display();
+}
+
+void Start(){
+    starto.setPosition(1600, 900);
+    back1image.setTexture(back2);
+    buttonnoimage.setPosition(1600.f, 900.f);
+    c1.setPosition(10, 10);
+    waifu1.setTexture(PictureCharector[0]);
+    waifu1.setPosition(600.f, 40.f);
+}

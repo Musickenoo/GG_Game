@@ -22,11 +22,7 @@ int main(){
                     mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
                     if (buttonckimage.getGlobalBounds().contains(mousePos) && !AlreadyChooseCharector)
                     {
-                        starto.setPosition(1600, 900);
-                        back1image.setTexture(back2);
-                        buttonnoimage.setPosition(1600.f, 900.f);
-                        c1.setPosition(10, 10);
-                        waifu1.setPosition(600.f, 40.f);
+                        Start();
                     }
                     else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {
@@ -141,7 +137,8 @@ int main(){
                                 Question = 0;
                                 Day = 0;
                                 AlreadyChooseCharector = false;
-                                break;
+                                CleanScreen();
+                                Start();
                                 break;
                             }  
                             whoTalk = 0;
