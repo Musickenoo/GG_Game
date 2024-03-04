@@ -13,6 +13,7 @@ initGame init;
 Venti venti;
 Sakura sakura;
 Nahida nahida;
+// Raiden raiden;
 void Setup();
 void Talk();
 
@@ -114,6 +115,30 @@ choice::choice(long long Charactor)
     
 
         break;
+
+        // case 'Raiden' : charactorTalkMessege = nahida.NahidaTalk;
+        // userTalkMessege = nahida.userTalk;
+        // charactorQuestionMessage = nahida.NahidaQuestions;
+        // userAnswerMessage = nahida.userAnswers;
+        // charactorActionMessage = nahida.NahidaAction;
+        // actionRelation = nahida.actionRelation;
+        // charactorActionAnswerImage = nahida.ActionImage;
+        // charactorQuestionImage = nahida.NahidaQusImageTalk;
+        // charactorTalkImage  = nahida.NahidaActionImageTalk;
+        // endingMessage = nahida.Ending;
+        // EndingScreen = nahida.endScreen;
+        // V1 = nahida.N1;
+        // V2 = nahida.N2;
+        // V3 = nahida.N3;
+        // V4 = nahida.N4;
+        // V5 = nahida.N5;
+        // V6 = nahida.N6;
+        // V7 = nahida.N7;
+        // V8 = nahida.N8;
+        // V9 = nahida.N9;
+        // thisIsCharacterNum = 2;
+        // break;
+
     case 'e':  break;
     }
 }
@@ -162,6 +187,14 @@ void Setup(){
         waifu1.setPosition(1600.f,900.f);
         waifu2.setTexture(nahida.N1);
     }
+    // if (thisIsCharacterNum == 3)
+    // {
+    //     raiden.setPosition(700.f,900.f);
+    //     sakura1.setPosition(1600.f,900.f);
+    //     waifu1.setPosition(1600.f,900.f);
+
+    // }
+    
    
 
 
@@ -178,6 +211,7 @@ void Setup(){
             window.draw(waifu1);
             window.draw(sakura1);
             window.draw(nahiden1);
+            // window.draw(raiden);
             window.display();
 
     }
