@@ -20,21 +20,22 @@ int main(){
                 if (event.mouseButton.button == Mouse::Left)
                 {
                     mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
-                    if (buttonckimage.getGlobalBounds().contains(mousePos) && !AlreadyChooseCharector)
-                    {
-                        Start();
-                    }
-                    else if (waifu1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
-                    {
-                        waifu1.setTexture(PictureCharectorChosses[0]);
-                        choice choice('Venti');
-                        Setup();
-                    }
-                    else if (sakura1.getGlobalBounds().contains(mousePos) && state >= 0 && !AlreadyChooseCharector) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
-                    {
-                        sakura1.setTexture(PictureCharectorChosses[1]);
-                        choice choice('Sakura');
-                        Setup();
+                    if (!AlreadyChooseCharector){
+                        if (buttonckimage.getGlobalBounds().contains(mousePos)){
+                            Start();
+                        }
+                        if (waifu1.getGlobalBounds().contains(mousePos)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                        {
+                            waifu1.setTexture(PictureCharectorChosses[0]);
+                            choice choice('Venti');
+                            Setup();
+                        }
+                        else if (sakura1.getGlobalBounds().contains(mousePos)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                        {
+                            sakura1.setTexture(PictureCharectorChosses[1]);
+                            choice choice('Sakura');
+                            Setup();
+                        }
                     }
                     else if (skipButton.getGlobalBounds().contains(mousePos)) End();
                     else if (QuestionTime){
@@ -81,7 +82,7 @@ int main(){
                         }
                     }
 
-                    else if ((rectangle.getGlobalBounds().contains(mousePos) && !QuestionTime)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                    else if ((rectangle.getGlobalBounds().contains(mousePos) && !QuestionTime && AlreadyChooseCharector)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
                         if (basicTalk == 3) {
                             Day++;

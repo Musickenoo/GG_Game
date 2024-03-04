@@ -212,11 +212,11 @@ void CleanScreen(){
     AnswerButton2.setPosition(1600, 960);
     skipButton.setPosition(1600, 960);
     myTime.restart();
-    // while (myTime.getElapsedTime().asMilliseconds() < 1000) continue;
+    while (myTime.getElapsedTime().asMilliseconds() < 100) continue;
     window.draw(day);
     window.draw(waifu1);
     window.draw(waifu2);
-    window.draw(starto);
+    window.draw(starto);    
     window.draw(buttonnoimage);
     window.draw(text);
     window.draw(Answer0);
@@ -244,11 +244,7 @@ void Start(){
 }
 
 void End(){
-    whoTalk = 0;
-    basicTalk = 0;
-    Question = 0;
-    Day = 0;
-    AlreadyChooseCharector = skip = false;
+    
     CleanScreen();
     if(Relation < 20) endScreen = 0;
     else if(Relation < 50) endScreen = 1;
@@ -271,6 +267,8 @@ void End(){
         window.display();
 
     }
+    thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
+    QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false, skip = false;
     CleanScreen();
     Start();
 }
