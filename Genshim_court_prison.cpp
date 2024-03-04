@@ -103,33 +103,36 @@ int main(){
                                 AlreadyChooseCharector = false;
                                 CleanScreen();
                                 if(Relation < 35){
+                                    thisEndCharector = 0;
                                     if (thisIsCharacterNum == 1)
                                     {  
-                                    back1image.setTexture(SakuraFinalBackGround1);
+                                    back1image.setTexture(SakuraEndScreen[thisEndCharector]);
                                     }
                                     if (thisIsCharacterNum == 0)
                                     {
-                                    back1image.setTexture(VentiFinalBackGround1);
+                                    back1image.setTexture(VentiEndScreen[thisEndCharector]);
                                     }
                                 }
                                 else if(Relation < 70){
+                                    thisEndCharector = 1;
                                     if (thisIsCharacterNum == 1)
                                     {  
-                                    back1image.setTexture(SakuraFinalBackGround2);
+                                    back1image.setTexture(SakuraEndScreen[thisEndCharector]);
                                     }
                                     if (thisIsCharacterNum == 0)
                                     {
-                                    back1image.setTexture(VentiFinalBackGround2);
+                                    back1image.setTexture(VentiEndScreen[thisEndCharector]);
                                     }
                                 }
                                 else{
+                                    thisEndCharector = 3;
                                     if (thisIsCharacterNum == 1)
                                     {  
-                                    back1image.setTexture(SakuraFinalBackGround3);
+                                    back1image.setTexture(SakuraEndScreen[thisEndCharector]);
                                     }
                                     if (thisIsCharacterNum == 0)
                                     {
-                                    back1image.setTexture(VentiFinalBackGround3);
+                                    back1image.setTexture(VentiEndScreen[thisEndCharector]);
                                     }
                                 }
                              
