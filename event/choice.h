@@ -4,14 +4,15 @@
 #include "../charecter/Sakura.h"
 #include "../charecter/Venti.h"
 #include "../charecter/furina.h"
-#include "../charecter/nahida.h"
 #include "../charecter/raiden.h"
 #include "../charecter/zhongli.h"
+#include "../charecter/Nahida.h"
 
 // Get Class
 initGame init;
 Venti venti;
 Sakura sakura;
+Nahida nahida;
 void Setup();
 void Talk();
 
@@ -89,23 +90,26 @@ choice::choice(long long Charactor)
         break;
 
 
-    case 'Nahuda' : charactorTalkMessege = sakura.SakuraTalk;
-        userTalkMessege = sakura.userTalk;
-        charactorQuestionMessage = sakura.SakuraQuestions;
-        userAnswerMessage = sakura.userAnswers;
-        charactorActionMessage = sakura.SakuraAction;
-        actionRelation = sakura.actionRelation;
-        charactorActionAnswerImage = sakura.ActionImage;
-        charactorQuestionImage = sakura.SakuraQusImageTalk;
-        charactorTalkImage  = sakura.SakuraActionImageTalk;
-        endingMessage = sakura.Ending;
-        EndingScreen = sakura.endScreen;
-        V1 = sakura.S1;
-        V2 = sakura.S2;
-        V3 = sakura.S3;
-        V4 = sakura.S4;
-        V5 = sakura.S5;
-        V6 = sakura.S6;
+    case 'Nahida' : charactorTalkMessege = nahida.NahidaTalk;
+        userTalkMessege = nahida.userTalk;
+        charactorQuestionMessage = nahida.NahidaQuestions;
+        userAnswerMessage = nahida.userAnswers;
+        charactorActionMessage = nahida.NahidaAction;
+        actionRelation = nahida.actionRelation;
+        charactorActionAnswerImage = nahida.ActionImage;
+        charactorQuestionImage = nahida.NahidaQusImageTalk;
+        charactorTalkImage  = nahida.NahidaActionImageTalk;
+        endingMessage = nahida.Ending;
+        EndingScreen = nahida.endScreen;
+        V1 = nahida.N1;
+        V2 = nahida.N2;
+        V3 = nahida.N3;
+        V4 = nahida.N4;
+        V5 = nahida.N5;
+        V6 = nahida.N6;
+        V7 = nahida.N7;
+        V8 = nahida.N8;
+        V9 = nahida.N9;
         thisIsCharacterNum = 2;
     
 
@@ -156,6 +160,7 @@ void Setup(){
         nahiden1.setPosition(700.f,900.f);
         sakura1.setPosition(1600.f,900.f);
         waifu1.setPosition(1600.f,900.f);
+        waifu2.setTexture(nahida.N1);
     }
    
 

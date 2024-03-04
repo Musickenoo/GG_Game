@@ -43,8 +43,8 @@ int main(){
                             else if (nahiden1.getGlobalBounds().contains(mousePos))
                             {
                                 nahiden1.setTexture(PictureCharectorChosses[2]);
-                                choice choice('Nahiden');
-                                setup();
+                                choice choice('Nahida');
+                                Setup();
                             }
                             
                         }
@@ -179,7 +179,7 @@ int main(){
         window.draw(waifu1);
         window.draw(waifu2);
         window.draw(sakura1);
-        window.draw(sakura2);
+        window.draw(nahiden1);
         window.draw(starto);
         window.draw(buttonnoimage);
         window.draw(text);
