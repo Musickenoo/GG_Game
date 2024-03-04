@@ -93,6 +93,7 @@ int main(){
                             Day++;
                             whoTalk = 0;
                             basicTalk = 0;
+                            Action = 100;
                             alreadyQuestion = waitAnswer = QuestionTime = false;
                             if(Day == finalDay) {
                                 whoTalk = 0;
@@ -203,6 +204,11 @@ int main(){
                 buttonHovered = false;
             }
         }
+
+        cout << "Day : " << Day+1 << endl;
+        cout << "whoTalk : " << whoTalk << endl;
+        cout << "basicTalk : " << basicTalk << endl;
+        cout << "Question : " << Question << endl; 
 
         day.setString("DAY " + to_string(Day+1));
         window.clear();
