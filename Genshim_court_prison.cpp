@@ -149,11 +149,11 @@ int main(){
             }
         }
 
-        cout << "Day : " << Day+1 << endl;
-        cout << "whoTalk : " << whoTalk << endl;
-        cout << "basicTalk : " << basicTalk << endl;
-        cout << "Question : " << Question << endl; 
-        cout << "Ending : "<< Relation <<endl;
+        // cout << "Day : " << Day+1 << endl;
+        // cout << "whoTalk : " << whoTalk << endl;
+        // cout << "basicTalk : " << basicTalk << endl;
+        // cout << "Question : " << Question << endl; 
+        // cout << "Ending : "<< Relation <<endl;
 
         day.setString("DAY " + to_string(Day+1));
         window.clear();
