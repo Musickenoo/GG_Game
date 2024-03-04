@@ -11,7 +11,7 @@ using namespace std;
 
 Font amazing, Thai;
 Sprite back1image;
-Texture back1, back2, back3, back4, SakuraFinalBackGround1, VentiFinalBackGround1;
+Texture back1, back2, back3, back4, SakuraFinalBackGround1,SakuraFinalBackGround2,SakuraFinalBackGround3,VentiFinalBackGround1,VentiFinalBackGround2,VentiFinalBackGround3;
 vector<Texture> PictureCharector, PictureCharectorChosses;
 Texture waifuface1Texture, buttonno, buttonck;
 Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2;
@@ -92,8 +92,14 @@ initGame::initGame(){
     back4.loadFromFile("../GG_Game/image/background/backwall3.PNG");
 
     SakuraFinalBackGround1.loadFromFile("../GG_Game/image/background/Sakurafinal1.PNG");
+    SakuraFinalBackGround2.loadFromFile("../GG_Game/image/background/Sakurafinal2.PNG");
+    SakuraFinalBackGround3.loadFromFile("../GG_Game/image/background/Sakurafinal3.PNG");
+
 
     VentiFinalBackGround1.loadFromFile("../GG_Game/image/background/Ventifinal1.PNG");
+    VentiFinalBackGround2.loadFromFile("../GG_Game/image/background/Ventifinal2.PNG");
+    VentiFinalBackGround3.loadFromFile("../GG_Game/image/background/Ventifinal3.PNG");
+
 
     vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG"};
     vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg","../GG_Game/charecter/Sakura/Second.PNG"};
