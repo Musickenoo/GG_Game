@@ -98,7 +98,7 @@ int main(){
                                 Day = 0;
                                 AlreadyChooseCharector = false;
                                 CleanScreen();
-                                if(Relation < 30){
+                                if(Relation < 35){
                                     if (thisIsCharacterNum == 1)
                                     {  
                                     back1image.setTexture(SakuraFinalBackGround1);
@@ -108,7 +108,7 @@ int main(){
                                     back1image.setTexture(VentiFinalBackGround1);
                                     }
                                 }
-                                else if(Relation < 60){
+                                else if(Relation < 70){
                                     if (thisIsCharacterNum == 1)
                                     {  
                                     back1image.setTexture(SakuraFinalBackGround2);

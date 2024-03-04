@@ -92,13 +92,13 @@ initGame::initGame(){
     back4.loadFromFile("../GG_Game/image/background/backwall3.PNG");
 
     SakuraFinalBackGround1.loadFromFile("../GG_Game/image/background/Sakurafinal1.PNG");
-    //SakuraFinalBackGround2.loadFromFile("../GG_Game/image/background/Sakurafinal2.PNG");
-    //SakuraFinalBackGround3.loadFromFile("../GG_Game/image/background/Sakurafinal3.PNG");
+    SakuraFinalBackGround2.loadFromFile("../GG_Game/image/background/Sakurafinal2.PNG");
+    SakuraFinalBackGround3.loadFromFile("../GG_Game/image/background/Sakurafinal3.PNG");
 
 
     VentiFinalBackGround1.loadFromFile("../GG_Game/image/background/Ventifinal1.PNG");
-    //VentiFinalBackGround2.loadFromFile("../GG_Game/image/background/Ventifinal2.PNG");
-    //VentiFinalBackGround3.loadFromFile("../GG_Game/image/background/Ventifinal3.PNG");
+    VentiFinalBackGround2.loadFromFile("../GG_Game/image/background/Ventifinal2.PNG");
+    VentiFinalBackGround3.loadFromFile("../GG_Game/image/background/Ventifinal3.PNG");
 
 
     vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG"};
@@ -170,18 +170,22 @@ initGame::initGame(){
     Answer0.setFillColor(Color::Black);
     Answer0.setFillColor(Color::Black);
     Answer0.setOutlineColor(Color::White);
+    Answer0.setOutlineThickness(4.f);
     Answer1.setFont(Thai);
     Answer1.setCharacterSize(40);
     Answer1.setPosition(1600, 960);
     Answer1.setFillColor(Color::Black);
     Answer1.setFillColor(Color::Black);
     Answer1.setOutlineColor(Color::White);
+    Answer1.setOutlineThickness(4.f);
     Answer2.setFont(Thai);
     Answer2.setCharacterSize(40);
     Answer2.setPosition(1600, 960);
     Answer2.setFillColor(Color::Black);
     Answer2.setFillColor(Color::Black);
     Answer2.setOutlineColor(Color::White);
+    Answer2.setOutlineThickness(4.f);
+
 }
 
 void CleanScreen(){
