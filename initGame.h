@@ -15,7 +15,7 @@ Texture back1, back2, back3, back4,SkipPicture;
 vector<Texture> PictureCharector, PictureCharectorChosses ;
 vector<Texture> EndingScreen;
 Texture waifuface1Texture, buttonno, buttonck;
-Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2 ,skipButton;
+Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,nahiden1 ,skipButton;
 View view(FloatRect(0,0,1600,900));
 
 int thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0, waitTimeChooseSkip = 0;
@@ -212,10 +212,14 @@ void Start(){
     back1image.setTexture(back2);
     buttonnoimage.setPosition(1600.f, 900.f);
     c1.setPosition(10, 10);
+    
     waifu1.setTexture(PictureCharector[0]);
     waifu1.setPosition(600.f, 40.f);
     sakura1.setTexture(PictureCharector[1]);
     sakura1.setPosition(900.f, 40.f);
+    nahiden1.setTexture(PictureCharector[2]);
+    nahiden1.setPosition(600.f, 80.f);
+
     text.setPosition(100, 790);
 
 }

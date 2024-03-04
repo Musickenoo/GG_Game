@@ -40,6 +40,13 @@ int main(){
                                 choice choice('Sakura');
                                 Setup();
                             }
+                            else if (nahiden1.getGlobalBounds().contains(mousePos))
+                            {
+                                nahiden1.setTexture(PictureCharectorChosses[2]);
+                                choice choice('Nahiden');
+                                setup();
+                            }
+                            
                         }
                         else if (skipButton.getGlobalBounds().contains(mousePos)) {
                             Skip();

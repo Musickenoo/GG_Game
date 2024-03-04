@@ -84,11 +84,32 @@ choice::choice(long long Charactor)
         V5 = sakura.S5;
         V6 = sakura.S6;
         thisIsCharacterNum = 1;
-        sakura2.setTexture(V1);
-        sakura2.setPosition(1600.f, 900.f);
-        sakura2.setScale(0.27f, 0.27f);
+
+
         break;
 
+
+    case 'Nahuda' : charactorTalkMessege = sakura.SakuraTalk;
+        userTalkMessege = sakura.userTalk;
+        charactorQuestionMessage = sakura.SakuraQuestions;
+        userAnswerMessage = sakura.userAnswers;
+        charactorActionMessage = sakura.SakuraAction;
+        actionRelation = sakura.actionRelation;
+        charactorActionAnswerImage = sakura.ActionImage;
+        charactorQuestionImage = sakura.SakuraQusImageTalk;
+        charactorTalkImage  = sakura.SakuraActionImageTalk;
+        endingMessage = sakura.Ending;
+        EndingScreen = sakura.endScreen;
+        V1 = sakura.S1;
+        V2 = sakura.S2;
+        V3 = sakura.S3;
+        V4 = sakura.S4;
+        V5 = sakura.S5;
+        V6 = sakura.S6;
+        thisIsCharacterNum = 2;
+    
+
+        break;
     case 'e':  break;
     }
 }
@@ -107,6 +128,7 @@ void Setup(){
         window.draw(c1);
         window.draw(waifu1);
         window.draw(sakura1);
+        window.draw(nahiden1);
         window.display();
     }
 
@@ -115,17 +137,25 @@ void Setup(){
     if (thisIsCharacterNum == 0)
     {
         waifu1.setPosition(700.f, 900.f);
+        nahiden1.setPosition(1600.f,900.f);
         sakura1.setPosition(1600.f,900.f);
         waifu2.setScale(1.2f,1.2f);
     }
     
 
-    if (thisIsCharacterNum==1)
+    if (thisIsCharacterNum == 1)
     {
         sakura1.setPosition(700.f,900.f);
         waifu1.setPosition(1600.f,900.f);
         waifu2.setScale(1.2f,1.2f);
+        nahiden1.setPosition(1600.f,900.f);
         waifu2.setTexture(sakura.S6);
+    }
+
+    if(thisIsCharacterNum == 2){
+        nahiden1.setPosition(700.f,900.f);
+        sakura1.setPosition(1600.f,900.f);
+        waifu1.setPosition(1600.f,900.f);
     }
    
 
@@ -142,6 +172,7 @@ void Setup(){
             window.draw(day);
             window.draw(waifu1);
             window.draw(sakura1);
+            window.draw(nahiden1);
             window.display();
 
     }
