@@ -98,6 +98,30 @@ int main(){
                                 Day = 0;
                                 AlreadyChooseCharector = false;
                                 CleanScreen();
+                                if (thisIsCharacterNum == 1)
+                                {
+                                    
+                                back1image.setTexture(SakuraFinalBackGround1);
+                                }
+                                if (thisIsCharacterNum == 0)
+                                {
+                                back1image.setTexture(VentiFinalBackGround1);
+                                }
+                                
+                                
+                                myTime.restart();
+                                while (myTime.getElapsedTime().asMilliseconds() < 1000)
+                                {
+                                    // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+                                    window.clear();
+                                    window.draw(back1image);
+                                    window.draw(day);
+                                    window.draw(waifu1);
+                                    window.draw(sakura1);
+                                    window.display();
+
+                                }
+
                                 Start();
                                 break;
                             }  
