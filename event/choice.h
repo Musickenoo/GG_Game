@@ -112,7 +112,7 @@ choice::choice(long long Charactor)
         V8 = nahida.N8;
         V9 = nahida.N9;
         thisIsCharacterNum = 2;
-    
+        waifu2.setScale(1.25f,1.25f);
 
         break;
 
