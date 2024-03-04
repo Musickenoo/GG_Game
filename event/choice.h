@@ -197,6 +197,7 @@ void Talk() {
     text.setString(converter.from_bytes(text_String));
 }
 
+
 void questionText(){
     text_String = charactorQuestionMessage[Day][Question];
     AnswerMessage = userAnswerMessage[Day][Question][0];
