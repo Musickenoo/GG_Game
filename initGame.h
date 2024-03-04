@@ -92,13 +92,13 @@ initGame::initGame(){
     back4.loadFromFile("../GG_Game/image/background/backwall3.PNG");
 
     SakuraFinalBackGround1.loadFromFile("../GG_Game/image/background/Sakurafinal1.PNG");
-    SakuraFinalBackGround2.loadFromFile("../GG_Game/image/background/Sakurafinal2.PNG");
-    SakuraFinalBackGround3.loadFromFile("../GG_Game/image/background/Sakurafinal3.PNG");
+    //SakuraFinalBackGround2.loadFromFile("../GG_Game/image/background/Sakurafinal2.PNG");
+    //SakuraFinalBackGround3.loadFromFile("../GG_Game/image/background/Sakurafinal3.PNG");
 
 
     VentiFinalBackGround1.loadFromFile("../GG_Game/image/background/Ventifinal1.PNG");
-    VentiFinalBackGround2.loadFromFile("../GG_Game/image/background/Ventifinal2.PNG");
-    VentiFinalBackGround3.loadFromFile("../GG_Game/image/background/Ventifinal3.PNG");
+    //VentiFinalBackGround2.loadFromFile("../GG_Game/image/background/Ventifinal2.PNG");
+    //VentiFinalBackGround3.loadFromFile("../GG_Game/image/background/Ventifinal3.PNG");
 
 
     vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG"};
