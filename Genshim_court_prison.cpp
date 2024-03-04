@@ -98,15 +98,37 @@ int main(){
                                 Day = 0;
                                 AlreadyChooseCharector = false;
                                 CleanScreen();
-                                if (thisIsCharacterNum == 1)
-                                {
-                                    
-                                back1image.setTexture(SakuraFinalBackGround1);
+                                if(Relation < 30){
+                                    if (thisIsCharacterNum == 1)
+                                    {  
+                                    back1image.setTexture(SakuraFinalBackGround1);
+                                    }
+                                    if (thisIsCharacterNum == 0)
+                                    {
+                                    back1image.setTexture(VentiFinalBackGround1);
+                                    }
                                 }
-                                if (thisIsCharacterNum == 0)
-                                {
-                                back1image.setTexture(VentiFinalBackGround1);
+                                else if(Relation < 60){
+                                    if (thisIsCharacterNum == 1)
+                                    {  
+                                    back1image.setTexture(SakuraFinalBackGround2);
+                                    }
+                                    if (thisIsCharacterNum == 0)
+                                    {
+                                    back1image.setTexture(VentiFinalBackGround2);
+                                    }
                                 }
+                                else{
+                                    if (thisIsCharacterNum == 1)
+                                    {  
+                                    back1image.setTexture(SakuraFinalBackGround3);
+                                    }
+                                    if (thisIsCharacterNum == 0)
+                                    {
+                                    back1image.setTexture(VentiFinalBackGround3);
+                                    }
+                                }
+                             
                                 
                                 
                                 myTime.restart();
