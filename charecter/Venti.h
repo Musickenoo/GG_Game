@@ -5,6 +5,7 @@
 class Venti {
 public:
     Venti();
+    vector<string> Ending;
     vector<vector<string>> ventiTalk, userTalk, ventiQuestions;
     vector<vector<vector<string>>> userAnswers, ventiAction;
     vector<vector<vector<int>>> actionRelation;
@@ -615,5 +616,9 @@ Venti::Venti() {
             {3, 200, 500}
         }
     };
-
+    Ending = {
+        "แย่ คุณทำใจยอมรับเรื่องราวที่เกิดขึ้นตรงหน้า",
+        "ดี คุณก่อความวุ่นวายในคุกและพาเวนดิหนีไป",
+        "ดีมาก คุณหนีไปพร้อมกับเวนดิ"
+    };
 }

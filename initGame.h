@@ -31,6 +31,7 @@ RectangleShape rectangle(Vector2f(1600, 150)), AnswerButton0(Vector2f(1600, 150)
 string text_String, AnswerMessage;
 wstring_convert<codecvt_utf8<wchar_t>> converter;
 
+vector<string> Ending;
 vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
 vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
 vector<vector<vector<int>>> actionRelation;

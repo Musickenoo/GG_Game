@@ -5,7 +5,8 @@
 class Sakura{
 public:
     Sakura();
-     vector<vector<string>> SakuraTalk, userTalk, SakuraQuestions;
+    vector<string> Ending;
+    vector<vector<string>> SakuraTalk, userTalk, SakuraQuestions;
     vector<vector<vector<string>>> userAnswers, SakuraAction;
     vector<vector<vector<int>>> actionRelation;
     vector<vector<vector<Texture>>> ActionImage;
@@ -588,5 +589,10 @@ Sakura::Sakura(){
             {3, -4, -3},
             {30, 50, -50}
         }
+    };
+    Ending = {
+        "แย่  คุณหลอกซากุระไปฆ่า เพราะแท้จริงแล้ว คุณเป็นฆาตกรต่อเนื่องคนนั้น \nแต่คุณจัดฉากทั้งหมดให้ซากุระเป็นคนร้าย",
+        "ดี คุณได้ไปคุยกับผู้คุมทำให้ซากุระได้รับพิพากษาโทษใหม่อีกครั้ง",
+        "ดีมาก คุณพาซากุระหนีไปกับคุณและไปใช้ชีวิตอยู่ด้วยกันอย่างมีความสุข\nในที่ที่จะไม่มีใครหาคุณเจอ"
     };
 }

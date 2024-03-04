@@ -91,6 +91,9 @@ int main(){
                     {   
                         if (basicTalk == 3) {
                             Day++;
+                            whoTalk = 0;
+                            basicTalk = 0;
+                            alreadyQuestion = waitAnswer = QuestionTime = false;
                             if(Day == finalDay) {
                                 whoTalk = 0;
                                 basicTalk = 0;
@@ -129,8 +132,6 @@ int main(){
                                     }
                                 }
                              
-                                
-                                
                                 myTime.restart();
                                 while (myTime.getElapsedTime().asMilliseconds() < 1000)
                                 {
@@ -147,9 +148,6 @@ int main(){
                                 Start();
                                 break;
                             }  
-                            whoTalk = 0;
-                            basicTalk = 0;
-                            alreadyQuestion = waitAnswer = QuestionTime = false;
                             waifu1.setPosition(700.f, 900.f);
                             c1.setPosition(1600, 900);
                             day.setPosition(700, 400);
@@ -176,10 +174,6 @@ int main(){
                             Question = 0;
                         }
                         Talk();
-                        myTime.restart();
-                        while (myTime.getElapsedTime().asMilliseconds() < 1000){
-                            window.clear();
-                        }
                     }
 
                 }

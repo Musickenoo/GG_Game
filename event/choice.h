@@ -37,6 +37,7 @@ choice::choice(int Charactor)
         charactorActionAnswerImage = venti.ActionImage;
         charactorQuestionImage = venti.ventiQusImageTalk;
         charactorTalkImage  = venti.ventiActionImageTalk;
+        Ending = venti.Ending;
         V1 = venti.V1;
         V2 = venti.V2;
         V3 = venti.V3;
@@ -77,6 +78,7 @@ choice::choice(int Charactor)
         charactorActionAnswerImage = sakura.ActionImage;
         charactorQuestionImage = sakura.SakuraQusImageTalk;
         charactorTalkImage  = sakura.SakuraActionImageTalk;
+        Ending = sakura.Ending;
         V1 = sakura.S1;
         V2 = sakura.S2;
         V3 = sakura.S3;
