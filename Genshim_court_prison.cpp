@@ -36,13 +36,7 @@ int main(){
                         choice choice('Sakura');
                         Setup();
                     }
-                    else if (skipButton.getGlobalBounds().contains(mousePos)){
-                        Day = 6;
-                        basicTalk = 2;
-                        alreadyQuestion = true;
-                        whoTalk = 1;
-                        Talk();
-                    }
+                    else if (skipButton.getGlobalBounds().contains(mousePos)) End();
                     else if (QuestionTime){
                         if (!waitAnswer){
                             questionText();
@@ -54,12 +48,12 @@ int main(){
                             if(AnswerButton2.getGlobalBounds().contains(mousePos)) Action = 2;
 
                             if (Action >= 0 && Action <=2){
-                                Relation += actionRelation[Day][Question][Action];
                                 waifu2.setTexture(charactorActionAnswerImage[Day][Question][Action]);
                                 text.setString(converter.from_bytes(charactorActionMessage[Day][Question][Action]));
                                 clearAnswer();
                                 if (rectangle.getGlobalBounds().contains(mousePos)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                                 {
+                                    Relation += actionRelation[Day][Question][Action];
                                     Question++;
 
                                     if(Question == 3){
@@ -87,7 +81,7 @@ int main(){
                         }
                     }
 
-                    else if (rectangle.getGlobalBounds().contains(mousePos) && !QuestionTime) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                    else if ((rectangle.getGlobalBounds().contains(mousePos) && !QuestionTime)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
                     {   
                         if (basicTalk == 3) {
                             Day++;
@@ -96,60 +90,7 @@ int main(){
                             Action = 100;
                             alreadyQuestion = waitAnswer = QuestionTime = false;
                             if(Day == finalDay) {
-                                whoTalk = 0;
-                                basicTalk = 0;
-                                Question = 0;
-                                Day = 0;
-                                AlreadyChooseCharector = false;
-                                CleanScreen();
-                                if(Relation < 35){
-                                    thisEndCharector = 0;
-                                    if (thisIsCharacterNum == 1)
-                                    {  
-                                    back1image.setTexture(SakuraEndScreen[thisEndCharector]);
-                                    }
-                                    if (thisIsCharacterNum == 0)
-                                    {
-                                    back1image.setTexture(VentiEndScreen[thisEndCharector]);
-                                    }
-                                }
-                                else if(Relation < 70){
-                                    thisEndCharector = 1;
-                                    if (thisIsCharacterNum == 1)
-                                    {  
-                                    back1image.setTexture(SakuraEndScreen[thisEndCharector]);
-                                    }
-                                    if (thisIsCharacterNum == 0)
-                                    {
-                                    back1image.setTexture(VentiEndScreen[thisEndCharector]);
-                                    }
-                                }
-                                else{
-                                    thisEndCharector = 3;
-                                    if (thisIsCharacterNum == 1)
-                                    {  
-                                    back1image.setTexture(SakuraEndScreen[thisEndCharector]);
-                                    }
-                                    if (thisIsCharacterNum == 0)
-                                    {
-                                    back1image.setTexture(VentiEndScreen[thisEndCharector]);
-                                    }
-                                }
-                             
-                                myTime.restart();
-                                while (myTime.getElapsedTime().asMilliseconds() < 1000)
-                                {
-                                    // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
-                                    window.clear();
-                                    window.draw(back1image);
-                                    window.draw(day);
-                                    window.draw(waifu1);
-                                    window.draw(sakura1);
-                                    window.display();
-
-                                }
-
-                                Start();
+                                End();
                                 break;
                             }  
                             waifu1.setPosition(700.f, 900.f);
@@ -212,6 +153,7 @@ int main(){
         cout << "whoTalk : " << whoTalk << endl;
         cout << "basicTalk : " << basicTalk << endl;
         cout << "Question : " << Question << endl; 
+        cout << "Ending : "<< Relation <<endl;
 
         day.setString("DAY " + to_string(Day+1));
         window.clear();

@@ -12,13 +12,14 @@ using namespace std;
 Font amazing, Thai;
 Sprite back1image;
 Texture back1, back2, back3, back4, SakuraFinalBackGround1,SakuraFinalBackGround2,SakuraFinalBackGround3,VentiFinalBackGround1,VentiFinalBackGround2,VentiFinalBackGround3;
-vector<Texture> PictureCharector, PictureCharectorChosses ,VentiEndScreen , SakuraEndScreen; 
+vector<Texture> PictureCharector, PictureCharectorChosses ,VentiEndScreen , SakuraEndScreen;
+vector<Texture> EndingScreen;
 Texture waifuface1Texture, buttonno, buttonck;
 Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2;
 View view(FloatRect(0,0,1600,900));
 
-int thisIsCharacterNum, thisEndCharector, Day = 0, finalDay = 7, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
-bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false;
+int thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
+bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false, skip = false;
 
 Clock myTime;
 Text c1("choosen waifu", amazing, 80), starto("Judgment Of Nevillete \n The Archon", amazing, 80),
@@ -31,7 +32,7 @@ RectangleShape rectangle(Vector2f(1600, 150)), AnswerButton0(Vector2f(1600, 150)
 string text_String, AnswerMessage;
 wstring_convert<codecvt_utf8<wchar_t>> converter;
 
-vector<string> Ending;
+vector<string> endingMessage;
 vector<vector<string>> charactorTalkMessege, userTalkMessege, charactorQuestionMessage;
 vector<vector<vector<string>>> userAnswerMessage, charactorActionMessage;
 vector<vector<vector<int>>> actionRelation;
@@ -70,7 +71,6 @@ Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
 
 bool buttonHovered = false;
 int state = 0;
-./GG_G
 class initGame{
     public:
         initGame();
@@ -92,7 +92,7 @@ initGame::initGame(){
 
     back4.loadFromFile("../GG_Game/image/background/backwall3.PNG");
 
-    vector<string> EndingScreen = {"../GG_Game/image/background/Ventifinal1.PNG" , "../GG_Game/image/background/Ventifinal2.PNG","../GG_Game/image/background/Ventifinal3.PNG","../GG_Game/image/background/Sakurafinal1.PNG", "../GG_Game/image/background/Sakurafinal2.PNG","../GG_Game/image/background/Sakurafinal3.PNG"};
+    // vector<string> EndingScreen = {"../GG_Game/image/background/Ventifinal1.PNG" , "../GG_Game/image/background/Ventifinal2.PNG","../GG_Game/image/background/Ventifinal3.PNG","../GG_Game/image/background/Sakurafinal1.PNG", "../GG_Game/image/background/Sakurafinal2.PNG","../GG_Game/image/background/Sakurafinal3.PNG"};
     vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG"};
     vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg","../GG_Game/charecter/Sakura/Second.PNG"};
 
@@ -101,15 +101,15 @@ initGame::initGame(){
     PictureCharector.resize(CharectorCanChoose.size());
     PictureCharectorChosses.resize(CharectorChooses.size());
     
-    for (i = 0; i < 3; i++)
-    {
-        VentiEndScreen[i].loadFromFile(EndingScreen[i]);
-    }
+    // for (i = 0; i < 3; i++)
+    // {
+    //     VentiEndScreen[i].loadFromFile(EndingScreen[i]);
+    // }
 
-    for (i = 0; i < 3; i++)
-    {
-        SakuraEndScreen[i].loadFromFile(EndingScreen[i+3]);
-    }
+    // for (i = 0; i < 3; i++)
+    // {
+    //     SakuraEndScreen[i].loadFromFile(EndingScreen[i+3]);
+    // }
     
     
     for(i = 0; i < CharectorCanChoose.size(); i++){
@@ -212,7 +212,7 @@ void CleanScreen(){
     AnswerButton2.setPosition(1600, 960);
     skipButton.setPosition(1600, 960);
     myTime.restart();
-    while (myTime.getElapsedTime().asMilliseconds() < 1000) continue;
+    // while (myTime.getElapsedTime().asMilliseconds() < 1000) continue;
     window.draw(day);
     window.draw(waifu1);
     window.draw(waifu2);
@@ -239,4 +239,38 @@ void Start(){
     waifu1.setPosition(600.f, 40.f);
     sakura1.setTexture(PictureCharector[1]);
     sakura1.setPosition(900.f, 40.f);
+    text.setPosition(100, 790);
+
+}
+
+void End(){
+    whoTalk = 0;
+    basicTalk = 0;
+    Question = 0;
+    Day = 0;
+    AlreadyChooseCharector = skip = false;
+    CleanScreen();
+    if(Relation < 20) endScreen = 0;
+    else if(Relation < 50) endScreen = 1;
+    else endScreen = 2;
+
+    back1image.setTexture(EndingScreen[endScreen]);
+    text.setString(converter.from_bytes(endingMessage[endScreen]));
+    text.setPosition(200, 750);
+    
+    myTime.restart();
+    while (myTime.getElapsedTime().asMilliseconds() < 10000)
+    {
+        // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+        window.clear();
+        window.draw(back1image);
+        window.draw(day);
+        window.draw(text);
+        window.draw(waifu1);
+        window.draw(sakura1);
+        window.display();
+
+    }
+    CleanScreen();
+    Start();
 }

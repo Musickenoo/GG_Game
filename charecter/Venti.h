@@ -3,9 +3,11 @@
 #include "../initGame.h"
 
 class Venti {
+    vector<string> endingScreenFile;
 public:
     Venti();
     vector<string> Ending;
+    vector<Texture> endScreen;
     vector<vector<string>> ventiTalk, userTalk, ventiQuestions;
     vector<vector<vector<string>>> userAnswers, ventiAction;
     vector<vector<vector<int>>> actionRelation;
@@ -39,36 +41,49 @@ public:
 Venti::Venti() {
 
     // ภาพตัวแทนตัวละคร Venti
-    V1.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiangry.png");
-    V2.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondamage.png");
-    V3.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondamage1.png");
-    V4.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventihappy.png");
-    V5.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventigumact.png");
+    V1.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiangry.PNG");
+    V2.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondamage.PNG");
+    V3.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondamage1.PNG");
+    V4.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventihappy.PNG");
+    V5.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventigumact.PNG");
 
-    V6.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifirstday.png");
+    V6.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifirstday.PNG");
 
-    V7.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifeedgood.png");
-    V8.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventienough.png");
-    V9.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventizzz.png");
-    V10.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiverysad.png");
-    V11.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeiltalk.png");
-    V12.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeil.png");
-    V13.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventishy.png");
-    V14.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiscary.png");
-    V15.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisadtalk.png");
-    V16.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisad.png");
-    V17.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventilaught.png");
+    V7.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventifeedgood.PNG");
+    V8.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventienough.PNG");
+    V9.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventizzz.PNG");
+    V10.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiverysad.PNG");
+    V11.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeiltalk.PNG");
+    V12.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeil.PNG");
+    V13.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventishy.PNG");
+    V14.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiscary.PNG");
+    V15.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisadtalk.PNG");
+    V16.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventisad.PNG");
+    V17.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventilaught.PNG");
     V18.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventinocharect.png");
-    V19.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiunknow.png");
-    V20.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeilshy.png");
-    V21.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventishyangry.png");
-    V22.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondage2.png");
+    V19.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiunknow.PNG");
+    V20.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventismeilshy.PNG");
+    V21.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventishyangry.PNG");
+    V22.loadFromFile("../GG_Game/charecter/venti/Coliseum/ventiemotiondage2.PNG");
 
+    endingScreenFile = {"../GG_Game/image/background/Ventifinal1.PNG", 
+                    "../GG_Game/image/background/Ventifinal2.PNG",
+                    "../GG_Game/image/background/Ventifinal3.PNG"
+                    };
 
+    endScreen.resize(endingScreenFile.size());
+    
+    for (i = 0; i < 3; i++){
+        endScreen[i].loadFromFile(endingScreenFile[i]);
+    }
 
 
 
     ventiTalk = {
+
+
+    
+
         // วันที่ 1
         {
             ".............................",

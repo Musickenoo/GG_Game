@@ -15,10 +15,6 @@ Sakura sakura;
 void Setup();
 void Talk();
 
-// int Charactor = 'Venti';
-int whoTalk = 0;
-
-
 class choice
 {
 public:
@@ -37,7 +33,8 @@ choice::choice(int Charactor)
         charactorActionAnswerImage = venti.ActionImage;
         charactorQuestionImage = venti.ventiQusImageTalk;
         charactorTalkImage  = venti.ventiActionImageTalk;
-        Ending = venti.Ending;
+        endingMessage = venti.Ending;
+        EndingScreen = venti.endScreen;
         V1 = venti.V1;
         V2 = venti.V2;
         V3 = venti.V3;
@@ -78,7 +75,8 @@ choice::choice(int Charactor)
         charactorActionAnswerImage = sakura.ActionImage;
         charactorQuestionImage = sakura.SakuraQusImageTalk;
         charactorTalkImage  = sakura.SakuraActionImageTalk;
-        Ending = sakura.Ending;
+        endingMessage = sakura.Ending;
+        EndingScreen = sakura.endScreen;
         V1 = sakura.S1;
         V2 = sakura.S2;
         V3 = sakura.S3;
@@ -118,6 +116,7 @@ void Setup(){
     {
         waifu1.setPosition(700.f, 900.f);
         sakura1.setPosition(1600.f,900.f);
+        waifu2.setScale(1.2f,1.2f);
     }
     
 

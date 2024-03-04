@@ -3,9 +3,11 @@
 #include "../initGame.h"
 
 class Sakura{
+    vector<string> endingScreenFile;
 public:
     Sakura();
     vector<string> Ending;
+    vector<Texture> endScreen;
     vector<vector<string>> SakuraTalk, userTalk, SakuraQuestions;
     vector<vector<vector<string>>> userAnswers, SakuraAction;
     vector<vector<vector<int>>> actionRelation;
@@ -31,6 +33,17 @@ Sakura::Sakura(){
     S5.loadFromFile("../GG_Game/charecter/Sakura/Sakurasleep.PNG");
     S6.loadFromFile("../GG_Game/charecter/Sakura/Sakuraverycutelv1.PNG");
 
+    endingScreenFile = {"../GG_Game/image/background/Sakurafinal1.PNG", 
+                    "../GG_Game/image/background/Sakurafinal2.PNG",
+                    "../GG_Game/image/background/Sakurafinal3.PNG"
+                    };
+
+    endScreen.resize(endingScreenFile.size());
+    
+    for (i = 0; i < 3; i++){
+        endScreen[i].loadFromFile(endingScreenFile[i]);
+    }
+    
     SakuraTalk = {
         // วันที่ 1
         {   
@@ -590,9 +603,12 @@ Sakura::Sakura(){
             {30, 50, -50}
         }
     };
+
     Ending = {
         "แย่  คุณหลอกซากุระไปฆ่า เพราะแท้จริงแล้ว คุณเป็นฆาตกรต่อเนื่องคนนั้น \nแต่คุณจัดฉากทั้งหมดให้ซากุระเป็นคนร้าย",
         "ดี คุณได้ไปคุยกับผู้คุมทำให้ซากุระได้รับพิพากษาโทษใหม่อีกครั้ง",
         "ดีมาก คุณพาซากุระหนีไปกับคุณและไปใช้ชีวิตอยู่ด้วยกันอย่างมีความสุข\nในที่ที่จะไม่มีใครหาคุณเจอ"
     };
+
+
 }
