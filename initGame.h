@@ -11,11 +11,11 @@ using namespace std;
 
 Font amazing, Thai;
 Sprite back1image;
-Texture back1, back2, back3, back4, SakuraFinalBackGround1,SakuraFinalBackGround2,SakuraFinalBackGround3,VentiFinalBackGround1,VentiFinalBackGround2,VentiFinalBackGround3;
-vector<Texture> PictureCharector, PictureCharectorChosses ,VentiEndScreen , SakuraEndScreen;
+Texture back1, back2, back3, back4,SkipPicture;
+vector<Texture> PictureCharector, PictureCharectorChosses ;
 vector<Texture> EndingScreen;
 Texture waifuface1Texture, buttonno, buttonck;
-Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2;
+Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2 ,skipButton;
 View view(FloatRect(0,0,1600,900));
 
 int thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0, waitTimeChooseSkip = 0;
@@ -26,8 +26,7 @@ Text c1("choosen waifu", amazing, 80), starto("Judgment Of Nevillete \n The Arch
      thaiText("สวัสดีชาวโลก",Thai, 80), day("DAY " + to_string(Day+1), amazing, 80);
 Text text, Answer0, Answer1, Answer2;
 RectangleShape rectangle(Vector2f(1600, 150)), AnswerButton0(Vector2f(1600, 150)),
-               AnswerButton1(Vector2f(1600, 150)), AnswerButton2(Vector2f(1600, 150)),
-               skipButton(Vector2f(300, 150));
+               AnswerButton1(Vector2f(1600, 150)), AnswerButton2(Vector2f(1600, 150));
 
 string text_String, AnswerMessage;
 wstring_convert<codecvt_utf8<wchar_t>> converter;
@@ -39,28 +38,7 @@ vector<vector<vector<int>>> actionRelation;
 vector<vector<Texture>> charactorQuestionImage, charactorTalkImage;
 vector<vector<vector<Texture>>> charactorActionAnswerImage;
 
-Texture V1;
-Texture V2;
-Texture V3;
-Texture V4;
-Texture V5;
-Texture V6;
-Texture V7;
-Texture V8;
-Texture V9;
-Texture V10;
-Texture V11;
-Texture V12;
-Texture V13;
-Texture V14;
-Texture V15;
-Texture V16;
-Texture V17;
-Texture V18;
-Texture V19;
-Texture V20;
-Texture V21;
-Texture V22;
+Texture V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, V11, V12, V13, V14, V15, V16, V17, V18, V19, V20, V21, V22;
 
 
 int i;
@@ -91,13 +69,12 @@ initGame::initGame(){
     back3.loadFromFile("../GG_Game/image/background/testb3.jpg");
 
     back4.loadFromFile("../GG_Game/image/background/backwall3.PNG");
-
+    SkipPicture.loadFromFile("../GG_Game/image/background/skip.PNG");
+    
     // vector<string> EndingScreen = {"../GG_Game/image/background/Ventifinal1.PNG" , "../GG_Game/image/background/Ventifinal2.PNG","../GG_Game/image/background/Ventifinal3.PNG","../GG_Game/image/background/Sakurafinal1.PNG", "../GG_Game/image/background/Sakurafinal2.PNG","../GG_Game/image/background/Sakurafinal3.PNG"};
     vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG"};
     vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg","../GG_Game/charecter/Sakura/Second.PNG"};
 
-    SakuraEndScreen.resize(EndingScreen.size());
-    VentiEndScreen.resize(EndingScreen.size());
     PictureCharector.resize(CharectorCanChoose.size());
     PictureCharectorChosses.resize(CharectorChooses.size());
     
@@ -139,7 +116,7 @@ initGame::initGame(){
     AnswerButton2.setPosition(1600, 900);
     AnswerButton2.setFillColor(Color(200, 200, 200, 100));
     skipButton.setPosition(1600, 900);
-    skipButton.setFillColor(Color(255, 0, 0, 100));
+    skipButton.setTexture(SkipPicture);
 
     // กำหนด starto
     starto.setPosition(50, 50);
@@ -285,13 +262,14 @@ void Skip(){
     Answer1.setString(converter.from_bytes("So sweet End"));
     Answer2.setString(converter.from_bytes("Good End"));
     
-    Answer0.setPosition(100, 100);
-    Answer1.setPosition(100, 350);
-    Answer2.setPosition(100, 600);
+    text.setPosition(100 , 80);
+    Answer2.setPosition(100, 200);
+    Answer1.setPosition(100, 450);
+    Answer0.setPosition(100, 700);
     
-    AnswerButton0.setPosition(0, 55);
-    AnswerButton1.setPosition(0, 305);
-    AnswerButton2.setPosition(0, 555);
+    AnswerButton2.setPosition(0, 155);
+    AnswerButton1.setPosition(0, 405);
+    AnswerButton0.setPosition(0, 655);
     
     if(AnswerButton0.getGlobalBounds().contains(mousePos)) Relation = 0;
     if(AnswerButton1.getGlobalBounds().contains(mousePos)) Relation = 31;

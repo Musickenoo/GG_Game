@@ -18,10 +18,10 @@ void Talk();
 class choice
 {
 public:
-    choice(int);
+    choice(long long);
 };
 
-choice::choice(int Charactor)
+choice::choice(long long Charactor)
 {
     switch (Charactor) {
     case 'Venti':  charactorTalkMessege = venti.ventiTalk;
@@ -164,7 +164,7 @@ void Setup(){
 
     rectangle.setPosition(0, 750);
     window.draw(rectangle);
-    skipButton.setPosition(1300, 0);
+    skipButton.setPosition(1200, -100);
     window.draw(skipButton);
     // Vtalk[j].setPosition(600, 750);
     // Vtalk[j].setFillColor(Color(0, 0, 0));
