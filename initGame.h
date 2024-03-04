@@ -18,8 +18,8 @@ Texture waifuface1Texture, buttonno, buttonck;
 Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,sakura2;
 View view(FloatRect(0,0,1600,900));
 
-int thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
-bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false, skip = false;
+int thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0, waitTimeChooseSkip = 0;
+bool QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false, skip = false, alreadySkip = false;
 
 Clock myTime;
 Text c1("choosen waifu", amazing, 80), starto("Judgment Of Nevillete \n The Archon", amazing, 80),
@@ -267,8 +267,61 @@ void End(){
         window.display();
 
     }
-    thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0;
-    QuestionTime = false, AlreadyChooseCharector = false, waitAnswer = false, alreadyQuestion = false, skip = false;
+    Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0, waitTimeChooseSkip = 0;
+    QuestionTime = AlreadyChooseCharector = waitAnswer = alreadyQuestion = skip = alreadySkip = false;
     CleanScreen();
     Start();
+}
+ 
+
+void Skip(){
+    skip = true;
+    
+    CleanScreen();
+
+    text.setString(converter.from_bytes("เลือกฉากจบ"));
+    
+    Answer0.setString(converter.from_bytes("Bad End"));
+    Answer1.setString(converter.from_bytes("So sweet End"));
+    Answer2.setString(converter.from_bytes("Good End"));
+    
+    Answer0.setPosition(100, 100);
+    Answer1.setPosition(100, 350);
+    Answer2.setPosition(100, 600);
+    
+    AnswerButton0.setPosition(0, 55);
+    AnswerButton1.setPosition(0, 305);
+    AnswerButton2.setPosition(0, 555);
+    
+    if(AnswerButton0.getGlobalBounds().contains(mousePos)) Relation = 0;
+    if(AnswerButton1.getGlobalBounds().contains(mousePos)) Relation = 31;
+    if(AnswerButton2.getGlobalBounds().contains(mousePos)) Relation = 82;
+    
+        // รีเฟรชหน้าจอเพื่อปรับปรุงการแสดงผล
+    window.draw(AnswerButton1);
+    window.draw(AnswerButton0);
+    window.draw(AnswerButton2);
+    window.setView(view);
+    window.draw(text);
+    
+    while (myTime.getElapsedTime().asMilliseconds() < 250) continue;
+
+    if (waitTimeChooseSkip > 0){
+        if(AnswerButton0.getGlobalBounds().contains(mousePos)) {
+            Relation = 0;
+            skip = false;
+        }
+        if(AnswerButton1.getGlobalBounds().contains(mousePos)) {
+            Relation = 31;
+            skip = false;
+        }
+        if(AnswerButton2.getGlobalBounds().contains(mousePos)) {
+            Relation = 82;
+            skip = false;
+        }
+    }
+
+    waitTimeChooseSkip++;   
+
+    if (skip == false) End();
 }
