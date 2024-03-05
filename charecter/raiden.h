@@ -2,15 +2,18 @@
 
 #include "../initGame.h"
 
-class raiden{
+class Raiden{
+    vector<string> endingScreenFile;
+
 public:
-    raiden();
+    Raiden();
     vector<string> Ending;
-    vector<vector<string>> raidenTalk, userTalk, raidenQuestions;
-    vector<vector<vector<string>>> userAnswers, raidenAction;
+    vector<Texture> endScreen;
+    vector<vector<string>> RaidenTalk, userTalk, RaidenQuestions;
+    vector<vector<vector<string>>> userAnswers, RaidenAction;
     vector<vector<vector<int>>> actionRelation;
     vector<vector<vector<Texture>>> ActionImage;
-    vector<vector<Texture>>  raidenActionImageTalk, raidenQusImageTalk;
+    vector<vector<Texture>>  RaidenActionImageTalk,RaidenQusImageTalk;
     Texture R1;
     Texture R2;
     Texture R3;
@@ -20,14 +23,14 @@ public:
 };
 
 
-raiden::raiden(){
+Raiden::Raiden(){
     
     // ภาพตัวแทนตัวละคร raiden
-    R1.loadFromFile("../GG_Game/charecter/raiden/raidenhappy.PNG");
-    R2.loadFromFile("../GG_Game/charecter/raiden/raidencold.PNG");
-    R3.loadFromFile("../GG_Game/charecter/raiden/raidencry.PNG");
-    R4.loadFromFile("../GG_Game/charecter/raiden/raidenoverwhelmed.PNG");
-    R5.loadFromFile("../GG_Game/charecter/raiden/raidensad.PNG");
+    R1.loadFromFile("../GG_Game/charecter/Raiden/raidenhappy.PNG");
+    R2.loadFromFile("../GG_Game/charecter/Raiden/raidencold.PNG");
+    R3.loadFromFile("../GG_Game/charecter/Raiden/raidencry.PNG");
+    R4.loadFromFile("../GG_Game/charecter/Raiden/raidenoverwhelmed.PNG");
+    R5.loadFromFile("../GG_Game/charecter/Raiden/raidensad.PNG");
 
     endingScreenFile = {"../GG_Game/image/background/Sakurafinal1.PNG", 
                         "../GG_Game/image/background/Sakurafinal2.PNG",
@@ -41,7 +44,7 @@ raiden::raiden(){
     }
     
 
-    raidenTalk = {
+    RaidenTalk = {
         // วันที่ 1
         {   
             "raiden : .................",
@@ -92,7 +95,7 @@ raiden::raiden(){
         }
     };
 
-    raidenActionImageTalk = {
+    RaidenActionImageTalk = {
         // วันที่ 1
         {
            R2,
@@ -195,7 +198,7 @@ raiden::raiden(){
         }
     };
 
-    raidenQuestions = {
+    RaidenQuestions = {
         // วันที่ 1
         {   
             "raiden : .................",
@@ -248,7 +251,7 @@ raiden::raiden(){
         },
     };
 
-     raidenQusImageTalk = {
+     RaidenQusImageTalk = {
         // วันที่ 1
         {
             R2,
@@ -454,7 +457,7 @@ raiden::raiden(){
 
 
     };
-    raidenAction = {
+    RaidenAction = {
         // วันแรก
         {
             {"raiden :.................",".................","................."},

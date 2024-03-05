@@ -46,12 +46,12 @@ int main(){
                                 choice choice('Nahida');
                                 Setup();
                             }
-                            // else if (raiden.getGlobalBounds().contains(mousePos)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
-                            // {
-                            //     raiden.setTexture(PictureCharectorChosses[3]);
-                            //     choice choice('Raiden');
-                            //     Setup();
-                            // }
+                            else if (raiden1.getGlobalBounds().contains(mousePos)) // เพิ่มเงื่อนไขตรวจสอบการคลิกที่ waifu1
+                            {
+                                raiden1.setTexture(PictureCharectorChosses[3]);
+                                choice choice('Raiden');
+                                Setup();
+                            }
                             
                             
                         }
@@ -130,6 +130,7 @@ int main(){
                                         window.draw(waifu1);
                                         window.draw(sakura1);
                                         window.draw(nahiden1);
+                                        window.draw(raiden1);
                                         window.display();
 
                                 }
@@ -188,9 +189,7 @@ int main(){
         window.draw(waifu2);
         window.draw(sakura1);
         window.draw(nahiden1);
-
-        // window.draw(null);
-
+        window.draw(raiden1);
         window.draw(starto);
         window.draw(buttonnoimage);
         window.draw(text);

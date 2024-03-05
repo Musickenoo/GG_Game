@@ -15,7 +15,7 @@ Texture back1, back2, back3, back4,SkipPicture;
 vector<Texture> PictureCharector, PictureCharectorChosses ;
 vector<Texture> EndingScreen;
 Texture waifuface1Texture, buttonno, buttonck;
-Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,nahiden1, raiden ,skipButton;
+Sprite waifu1, waifu2, buttonnoimage, buttonckimage, sakura1,nahiden1, raiden1 ,skipButton;
 View view(FloatRect(0,0,1600,900));
 
 int thisIsCharacterNum, endScreen, Day = 0, finalDay = 7, whoTalk = 0, basicTalk = 0, endBasicTalk = 2, Question = 0, Action = 100, Relation = 0, waitTimeChooseSkip = 0;
@@ -72,8 +72,8 @@ initGame::initGame(){
     SkipPicture.loadFromFile("../GG_Game/image/background/skip.PNG");
     
     // vector<string> EndingScreen = {"../GG_Game/image/background/Ventifinal1.PNG" , "../GG_Game/image/background/Ventifinal2.PNG","../GG_Game/image/background/Ventifinal3.PNG","../GG_Game/image/background/Sakurafinal1.PNG", "../GG_Game/image/background/Sakurafinal2.PNG","../GG_Game/image/background/Sakurafinal3.PNG"};
-    vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG", "../GG_Game/charecter/Nahida/First.PNG"};
-    vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg","../GG_Game/charecter/Sakura/Second.PNG", "../GG_Game/charecter/Nahida/Second.PNG"};
+    vector<string> CharectorCanChoose = {"../GG_Game/charecter/venti/Coliseum/first2.jpeg","../GG_Game/charecter/Sakura/First.PNG", "../GG_Game/charecter/Nahida/First.PNG","../GG_Game/charecter/Raiden/First.PNG"};
+    vector<string> CharectorChooses = {"../GG_Game/charecter/venti/Coliseum/first1.jpeg","../GG_Game/charecter/Sakura/Second.PNG", "../GG_Game/charecter/Nahida/Second.PNG","../GG_Game/charecter/Raiden/Second.PNG"};
 
     PictureCharector.resize(CharectorCanChoose.size());
     PictureCharectorChosses.resize(CharectorChooses.size());
@@ -141,9 +141,9 @@ initGame::initGame(){
     nahiden1.setTexture(PictureCharector[2]);
     nahiden1.setPosition(1600.f,900.f);
     nahiden1.setScale(0.55f,0.55f);
-    // raiden.setTexture(PictureCharector[3]);
-    // raiden.setPosition(1600.f,900.f);
-    // raiden.setScale(0.55f,0.55f);
+    raiden1.setTexture(PictureCharector[3]);
+    raiden1.setPosition(1600.f,900.f);
+    raiden1.setScale(0.55f,0.55f);
 
     text.setFont(Thai);
     text.setCharacterSize(40);
@@ -185,7 +185,7 @@ void CleanScreen(){
     waifu2.setPosition(1600, 960);
     sakura1.setPosition(1600, 960);
     nahiden1.setPosition(1600,900);
-    // raiden.setPosition(1600, 960);
+    raiden1.setPosition(1600, 960);
     starto.setPosition(1600, 960);
     Answer0.setPosition(1600, 960);
     Answer1.setPosition(1600, 960);
@@ -226,8 +226,8 @@ void Start(){
     sakura1.setPosition(900.f, 40.f);
     nahiden1.setTexture(PictureCharector[2]);
     nahiden1.setPosition(600.f, 440.f);
-    // raiden.setPosition(900.f, 440.f);
-    // raiden.setTexture(PictureCharector[3]);
+    raiden1.setTexture(PictureCharector[3]);
+    raiden1.setPosition(900.f, 440.f);
 
     text.setPosition(100, 790);
 

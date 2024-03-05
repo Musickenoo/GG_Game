@@ -13,7 +13,7 @@ initGame init;
 Venti venti;
 Sakura sakura;
 Nahida nahida;
-// Raiden raiden;
+Raiden raiden;
 void Setup();
 void Talk();
 
@@ -116,28 +116,25 @@ choice::choice(long long Charactor)
 
         break;
 
-        // case 'Raiden' : charactorTalkMessege = nahida.NahidaTalk;
-        // userTalkMessege = nahida.userTalk;
-        // charactorQuestionMessage = nahida.NahidaQuestions;
-        // userAnswerMessage = nahida.userAnswers;
-        // charactorActionMessage = nahida.NahidaAction;
-        // actionRelation = nahida.actionRelation;
-        // charactorActionAnswerImage = nahida.ActionImage;
-        // charactorQuestionImage = nahida.NahidaQusImageTalk;
-        // charactorTalkImage  = nahida.NahidaActionImageTalk;
-        // endingMessage = nahida.Ending;
-        // EndingScreen = nahida.endScreen;
-        // V1 = nahida.N1;
-        // V2 = nahida.N2;
-        // V3 = nahida.N3;
-        // V4 = nahida.N4;
-        // V5 = nahida.N5;
-        // V6 = nahida.N6;
-        // V7 = nahida.N7;
-        // V8 = nahida.N8;
-        // V9 = nahida.N9;
-        // thisIsCharacterNum = 2;
-        // break;
+        case 'Raiden' : charactorTalkMessege = raiden.RaidenTalk;
+        userTalkMessege = raiden.userTalk;
+        charactorQuestionMessage = raiden.RaidenQuestions;
+        userAnswerMessage = raiden.userAnswers;
+        charactorActionMessage = raiden.RaidenAction;
+        actionRelation = raiden.actionRelation;
+        charactorActionAnswerImage = raiden.ActionImage;
+        charactorQuestionImage = raiden.RaidenQusImageTalk;
+        charactorTalkImage  = raiden.RaidenActionImageTalk;
+        endingMessage = raiden.Ending;
+        EndingScreen = raiden.endScreen;
+        V1 = raiden.R1;
+        V2 = raiden.R2;
+        V3 = raiden.R3;
+        V4 = raiden.R4;
+        V5 = raiden.R5;
+     
+        thisIsCharacterNum = 3;
+        break;
 
     case 'e':  break;
     }
@@ -158,6 +155,7 @@ void Setup(){
         window.draw(waifu1);
         window.draw(sakura1);
         window.draw(nahiden1);
+        window.draw(raiden1);
         window.display();
     }
 
@@ -168,6 +166,7 @@ void Setup(){
         waifu1.setPosition(700.f, 900.f);
         nahiden1.setPosition(1600.f,900.f);
         sakura1.setPosition(1600.f,900.f);
+        raiden1.setPosition(1600,900);
         waifu2.setScale(1.2f,1.2f);
     }
     
@@ -177,6 +176,7 @@ void Setup(){
         sakura1.setPosition(700.f,900.f);
         waifu1.setPosition(1600.f,900.f);
         waifu2.setScale(1.2f,1.2f);
+        raiden1.setPosition(1600,900);
         nahiden1.setPosition(1600.f,900.f);
         waifu2.setTexture(sakura.S6);
     }
@@ -185,15 +185,19 @@ void Setup(){
         nahiden1.setPosition(700.f,900.f);
         sakura1.setPosition(1600.f,900.f);
         waifu1.setPosition(1600.f,900.f);
+        raiden1.setPosition(1600,900);
         waifu2.setTexture(nahida.N1);
     }
-    // if (thisIsCharacterNum == 3)
-    // {
-    //     raiden.setPosition(700.f,900.f);
-    //     sakura1.setPosition(1600.f,900.f);
-    //     waifu1.setPosition(1600.f,900.f);
+    if (thisIsCharacterNum == 3)
+    {
+        raiden1.setPosition(700.f,900.f);
+        sakura1.setPosition(1600.f,900.f);
+        waifu1.setPosition(1600.f,900.f);
+        nahiden1.setPosition(1600,900);
+        waifu2.setScale(1.2f,1.2f);
+        waifu2.setTexture(raiden.R2);
 
-    // }
+    }
     
    
 
@@ -211,7 +215,7 @@ void Setup(){
             window.draw(waifu1);
             window.draw(sakura1);
             window.draw(nahiden1);
-            // window.draw(raiden);
+            window.draw(raiden1);
             window.display();
 
     }
