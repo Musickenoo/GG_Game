@@ -16,7 +16,6 @@ public:
     Texture R3;
     Texture R4; 
     Texture R5;
-    Texture R6;
     
 };
 
@@ -28,8 +27,7 @@ raiden::raiden(){
     R2.loadFromFile("../GG_Game/charecter/raiden/raidencold.PNG");
     R3.loadFromFile("../GG_Game/charecter/raiden/raidencry.PNG");
     R4.loadFromFile("../GG_Game/charecter/raiden/raidenoverwhelmed.PNG");
-    R5.loadFromFile("../GG_Game/charecter/raiden/raidensmile.PNG");
-    R6.loadFromFile("../GG_Game/charecter/raiden/raidensad.PNG");
+    R5.loadFromFile("../GG_Game/charecter/raiden/raidensad.PNG");
 
 
 
@@ -103,34 +101,34 @@ raiden::raiden(){
         {
             R2,
             R2,
-            R5
+            R1
         },
 
         // วันที่ 4
         {
             R1,
-            R5,
+            R1,
             R1
         },
 
         // วันที่ 5
         {
             R1,
-            R5,
+            R1,
             R4
         },
 
         // วันที่ 6
         {
             R1,
-            R5,
-            R6
+            R1,
+            R5
         },
 
         // วันที่ 7
         {
-            R6,
-            R6,
+            R5,
+            R5,
             R3
         }
     };
@@ -264,14 +262,14 @@ raiden::raiden(){
         // วันที่ 4
         {
             R1,
-            R6,
+            R5,
             R3
         },
 
         // วันที่ 5
         {
-            R6,
-            R6,
+            R5,
+            R5,
             R1
         },
 
@@ -286,7 +284,7 @@ raiden::raiden(){
         {
              R4,
              R4,
-             R6
+             R5
         }
     };
 
@@ -521,30 +519,30 @@ raiden::raiden(){
 
         // วันที่สี่
         {
-            {R6,R6,R6},
+            {R5,R5,R5},
             {R3,R3,R3},
             {R3,R3,R3}
         },
 
         // วันที่ห้า
         {
-            {R4,R1,R5},
-            {R4,R1,R5},
-            {R4,R1,R5}
+            {R4,R1,R1},
+            {R4,R1,R1},
+            {R4,R1,R1}
         },
 
         // วันที่หก
         {
-            {R4,R1,R5},
-            {R4,R1,R5},
-            {R4,R1,R5}
+            {R4,R1,R1},
+            {R4,R1,R1},
+            {R4,R1,R1}
         },
 
         // วันที่เจ็ด
         {
-            {R4,R1,R5},
-            {R4,R1,R5},
-            {R4,R1,R5}
+            {R4,R1,R1},
+            {R4,R1,R1},
+            {R4,R1,R1}
         }
     };
     
