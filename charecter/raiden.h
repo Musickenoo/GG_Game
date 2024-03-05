@@ -29,7 +29,17 @@ raiden::raiden(){
     R4.loadFromFile("../GG_Game/charecter/raiden/raidenoverwhelmed.PNG");
     R5.loadFromFile("../GG_Game/charecter/raiden/raidensad.PNG");
 
+    endingScreenFile = {"../GG_Game/image/background/Sakurafinal1.PNG", 
+                        "../GG_Game/image/background/Sakurafinal2.PNG",
+                        "../GG_Game/image/background/Sakurafinal3.PNG"
+                        };
 
+    endScreen.resize(endingScreenFile.size());
+    
+    for (i = 0; i < 3; i++){
+        endScreen[i].loadFromFile(endingScreenFile[i]);
+    }
+    
 
     raidenTalk = {
         // วันที่ 1
@@ -153,7 +163,7 @@ raiden::raiden(){
         {
             "คุณ : มีอะไรรึเปล่า มองแบบนี้ฉันก็เขินแย่",
             "คุณ : เธอนี่จริงๆเลยนะ",
-            "คุณ : คุณตกตะลึงในความสวยของเธอ",
+            "คุณ : คุณตกตะลึงในความสวยของเธอ"
         },
         
         // วันที่ 4
@@ -410,7 +420,7 @@ raiden::raiden(){
             {
                 "ฉันจะทำทุกอย่างที่ทำให้เราจะได้อยู่ด้วยกัน",
                 "ฉันอยากใช้เวลากับเธอให้นานกว่านี้", 
-                "ฉันก็รู้สึกแบบนั้นเหมือนกัน", 
+                "ฉันก็รู้สึกแบบนั้นเหมือนกัน" 
             },
 
             {
